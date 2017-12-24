@@ -1,0 +1,62 @@
+  // Завершить вычисления на шаге, данная функция всегда ставится в конце события
+  SMEV3ProcessStepCompletion(Wizard; wfatPrevious)
+
+'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatPrevious)'
+
+'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089 +
+                #1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatPrev' +
+                'ious)'
+				
+				
+  Params = Wizard.Params'#13#10'  '#13#10'  // '#1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1077' '#1085#1086#1084#1077#1088#1072#13#10'  SMEVChe' +
+'ckWizardParamFormat(Params.ValueByName('#39'cad_number'#39'); '#39#1082#1072#1076#1085#1086#1084#1077#1088#39 +
+')'#13#10'  '#13#10'  if not VarIsNull(Params.ValueByName('#39'_AddCadLinks'#39').Val' +
+'ue)'#13#10'    if Params.ValueByName('#39'_AddCadLinks'#39').Value '#13#10'      Wiz' +
+'ard.NextStep = Wizard.Steps.ValueByName('#39'CadLinks'#39')'#13#10'    else'#13#10' ' +
+'     Wizard.NextStep = Wizard.Steps.ValueByName('#39'Params'#39')'#13#10'    e' +
+'ndif'#13#10'  else'#13#10'    Wizard.NextStep = Wizard.Steps.ValueByName('#39'Pa' +
+'rams'#39')'#13#10'  endif  '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085 +
+#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompleti' +
+'on(Wizard; wfatNext)'
+
+
+
+
+            '  Params = Wizard.Params'#13#10'  SMEVProcessMultiStepBegin(Wizard; ;'#13 +
+            #10'                            Params.ValueByName('#39'MLCadNumberCoun' +
+            't'#39');'#13#10'                            Params.ValueByName('#39'MLCadNumbe' +
+            'rPage'#39');'#13#10'                            Params.ValueByName('#39'_AddLa' +
+            'ndCadNumbers'#39');                          '#13#10'                     ' +
+            '       Params.ValueByName('#39'MLCadNumberData'#39');'#13#10'                 ' +
+            '           ArrayOf(Params.ValueByName('#39'CadNumber1'#39');'#13#10'          ' +
+            '                          Params.ValueByName('#39'CadNumber2'#39');'#13#10'   ' +
+            '                                 Params.ValueByName('#39'CadNumber3'#39 +
+            ');'#13#10'                                    Params.ValueByName('#39'CadN' +
+            'umber4'#39');'#13#10'                                    Params.ValueByNam' +
+            'e('#39'CadNumber5'#39'));'#13#10'                            TRUE)'
+
+  Params = Wizard.Params
+  SMEVProcessMultiStepBegin(Wizard; ;
+                            Params.ValueByName('MLCadNumberCount');
+                            Params.ValueByName('MLCadNumberPage');
+                            Params.ValueByName('_AddLandCadNumbers');
+                            Params.ValueByName('MLCadNumberData');
+                            ArrayOf(Params.ValueByName('CadNumber1');
+                                    Params.ValueByName('CadNumber2');
+                                    Params.ValueByName('CadNumber3');
+                                    Params.ValueByName('CadNumber4');
+                                    Params.ValueByName('CadNumber5'));
+                            TRUE)
+
+            '  Params = Wizard.Params'#13#10'  SMEVProcessMultiStepBegin(Wizard; ;'#13 +
+            #10'                            Params.ValueByName('#39'MLCadNumberCoun' +
+            't'#39');'#13#10'                            Params.ValueByName('#39'MLCadNumbe' +
+            'rPage'#39');'#13#10'                            Params.ValueByName('#39'_AddLa' +
+            'ndCadNumbers'#39');                          '#13#10'                     ' +
+            '       Params.ValueByName('#39'MLCadNumberData'#39');'#13#10'                 ' +
+            '           ArrayOf(Params.ValueByName('#39'CadNumber1'#39');'#13#10'          ' +
+            '                          Params.ValueByName('#39'CadNumber2'#39');'#13#10'   ' +
+            '                                 Params.ValueByName('#39'CadNumber3'#39 +
+            ');'#13#10'                                    Params.ValueByName('#39'CadN' +
+            'umber4'#39');'#13#10'                                    Params.ValueByNam' +
+            'e('#39'CadNumber5'#39'));'#13#10'                            TRUE)'
