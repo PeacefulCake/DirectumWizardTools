@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using System.IO;
 using FAA.WizardEncoding;
 using WizardTools.Types;
+using WizardTools.Utils;
 
 namespace WizardTools
 {
@@ -53,8 +54,10 @@ namespace WizardTools
                 Title = new WizardString()
             };
 
+
             w.Code.DecodedValue = "WizardCode";
-            w.Title.DecodedValue = "ТестовыйМастер_bak 11.02.03";
+            // w.Title.DecodedValue = "ТестовыйМастер_bak 11.02.03";
+            w.Title.LoadFromStringList(StringListUtils.GetListFromText(wizardStrangeText2));
 
             Console.WriteLine(w.ToStructuredString());
 

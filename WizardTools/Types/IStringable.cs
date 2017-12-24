@@ -9,5 +9,6 @@ namespace WizardTools.Types
     interface IStringable
     {
         string ToStructuredString(int indentLevel);
+        void LoadFromStringList(IList<String> data);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WizardTools.Utils;
 
 namespace WizardTools.Types
 {
@@ -20,15 +21,16 @@ namespace WizardTools.Types
 
         public string ToStructuredString()
         {
-            string innerIndent = new string(' ', 2);
+            int currentIndenLevel = 1;
+            string innerIndent = new string(' ', currentIndenLevel * 2);
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("object TSBWizard");
-            sb.AppendFormat("{0}Code = {1}{2}", innerIndent, Code.ToStructuredString(1), Const.CR);
+            sb.AppendLine(Const.WizardHeader);
+            sb.AppendFormat("{0}Code = {1}{2}", innerIndent, Code.ToStructuredString(currentIndenLevel), Const.CR);
             sb.AppendFormat("{0}ID = {1}{2}", innerIndent, ID.ToString(), Const.CR);
-            sb.AppendFormat("{0}Title = {1}{2}", innerIndent, Title.ToStructuredString(1), Const.CR);
+            sb.AppendFormat("{0}Title = {1}{2}", innerIndent, Title.ToStructuredString(currentIndenLevel), Const.CR);
 
-            sb.Append("end");
+            sb.Append(Const.End);
             return sb.ToString();
         }
     }

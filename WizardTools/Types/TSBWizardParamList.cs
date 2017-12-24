@@ -10,6 +10,11 @@ namespace WizardTools.Types
     {
         TSBWizardParam[] Params;
 
+        public void LoadFromStringList(IList<string> data)
+        {
+            throw new NotImplementedException();
+        }
+
         public string ToStructuredString(int indentLevel)
         {
             throw new NotImplementedException();

@@ -8,6 +8,11 @@ namespace WizardTools.Types
 {
     class TSBWizardParam : IStringable
     {
+        public void LoadFromStringList(IList<string> data)
+        {
+            throw new NotImplementedException();
+        }
+
         public string ToStructuredString(int indentLevel)
         {
             throw new NotImplementedException();

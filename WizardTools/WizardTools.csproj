@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Types\Const.cs" />
+    <Compile Include="Utils\Const.cs" />
     <Compile Include="Types\IStringable.cs" />
     <Compile Include="Types\TSBFormWizardStep.cs" />
     <Compile Include="Types\TSBWizardParam.cs" />
@@ -54,6 +54,7 @@
     <Compile Include="Types\TSBWizardEvent.cs" />
     <Compile Include="Types\TSBWizard.cs" />
     <Compile Include="Types\WizardString.cs" />
+    <Compile Include="Utils\StringListUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

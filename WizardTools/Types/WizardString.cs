@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FAA.WizardEncoding;
+using WizardTools.Utils;
 
 namespace WizardTools.Types
 {
@@ -69,6 +70,11 @@ namespace WizardTools.Types
             Encode(indentLevel);
             if(EncodedValue.IndexOf(Const.CR) > -1) return Const.CR + EncodedValue;
             else return EncodedValue;
+        }
+
+        public void LoadFromStringList(IList<String> data)
+        {
+            EncodedValue = string.Join(Const.CR, data);
         }
     }
 }
