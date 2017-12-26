@@ -47,7 +47,8 @@ namespace WizardTools.Types
         }
         public WizardString()
         {
-
+            encodedValue = "";
+            decodedValue = "";
         }
 
         private void Decode()
@@ -61,7 +62,7 @@ namespace WizardTools.Types
         }
         private void Encode(int indentLevel)
         {
-            string indents = new string(' ', indentLevel * 2);
+            string indents = new string(' ', (indentLevel + 1) * 2); // Т.к. передается уровень вложения элемента, многострочный элемент отрисуется еще с одним отступом
             encodedValue = WizardUTFEncoder.EncodeText(decodedValue, indents);
         }
 

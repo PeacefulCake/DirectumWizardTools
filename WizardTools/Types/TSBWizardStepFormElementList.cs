@@ -6,17 +6,8 @@ using System.Threading.Tasks;
 
 namespace WizardTools.Types
 {
-    class TSBWizardStep : IStringable
+    class TSBWizardStepFormElementList : IStringable
     {
-        WizardString StepName;
-        WizardString Title;
-
-        public TSBWizardEvent[] Events;
-
-        WizardString Description;
-
-        TSBWizardActionList ActionList;
-
         public void LoadFromStringList(IList<string> data)
         {
             throw new NotImplementedException();

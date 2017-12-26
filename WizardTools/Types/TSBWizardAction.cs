@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace WizardTools.Types
 {
-    class TSBWizardStep : IStringable
+    class TSBWizardAction : IStringable
     {
-        WizardString StepName;
-        WizardString Title;
+        public WizardString ActionName;
+        public WizardString Title;
 
         public TSBWizardEvent[] Events;
 
-        WizardString Description;
+        public TWizardActionType ActionType;
 
-        TSBWizardActionList ActionList;
+        public bool Enabled;
 
         public void LoadFromStringList(IList<string> data)
         {

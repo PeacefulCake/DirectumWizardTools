@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WizardTools.Extensions;
 using WizardTools.Utils;
 
 namespace WizardTools.Types
@@ -13,22 +14,24 @@ namespace WizardTools.Types
         public int ID;
         public WizardString Title;
 
-        TSBWizardEvent[] Events;
+        public TSBWizardEvent[] Events;
 
-        TSBWizardStepList StepList;
+        public TSBWizardStepList StepList;
 
-        TSBWizardParamList ParamList;
+        public TSBWizardParamList ParamList;
 
         public string ToStructuredString()
         {
             int currentIndenLevel = 1;
-            string innerIndent = new string(' ', currentIndenLevel * 2);
+            string currentIndent = new string(' ', currentIndenLevel * 2);
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(Const.WizardHeader);
-            sb.AppendFormat("{0}Code = {1}{2}", innerIndent, Code.ToStructuredString(currentIndenLevel), Const.CR);
-            sb.AppendFormat("{0}ID = {1}{2}", innerIndent, ID.ToString(), Const.CR);
-            sb.AppendFormat("{0}Title = {1}{2}", innerIndent, Title.ToStructuredString(currentIndenLevel), Const.CR);
+            sb.AppendFormat("{0}Code = {1}{2}", currentIndent, Code.ToStructuredString(currentIndenLevel), Const.CR);
+            sb.AppendFormat("{0}ID = {1}{2}", currentIndent, ID.ToString(), Const.CR);
+            sb.AppendFormat("{0}Title = {1}{2}", currentIndent, Title.ToStructuredString(currentIndenLevel), Const.CR);
+
+            sb.AppendFormat("{0}Events = {1}{2}", currentIndent, Events.ToStructuredString(currentIndenLevel), Const.CR);
 
             sb.Append(Const.End);
             return sb.ToString();

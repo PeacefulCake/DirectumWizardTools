@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace WizardTools.Types
 {
-    class TSBFormWizardStep : TSBWizardStep
+    class TSBFinalWizardStep : TSBFormWizardStep
     {
-        TSBWizardStepFormElementList FormElements;
     }
 }

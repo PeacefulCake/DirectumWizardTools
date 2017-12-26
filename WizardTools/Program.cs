@@ -46,20 +46,28 @@ namespace WizardTools
             Console.WriteLine(srcString);
             Console.WriteLine();
             Console.WriteLine(WizardUTFEncoder.EncodeText(srcString, "         "));*/
+            TSBWizardEvent ev = new TSBWizardEvent();
 
             TSBWizard w = new TSBWizard()
             {
                 Code = new WizardString(),
                 ID = 12345,
-                Title = new WizardString()
+                Title = new WizardString(),
+                Events = new TSBWizardEvent[] { ev }
             };
 
+            ev.EventType = TWizardEventType.wetWizardBeforeSelection;
+            ev.ISBLText.LoadFromStringList(StringListUtils.GetListFromText(wizardStrangeText2));
 
             w.Code.DecodedValue = "WizardCode";
             // w.Title.DecodedValue = "ТестовыйМастер_bak 11.02.03";
-            w.Title.LoadFromStringList(StringListUtils.GetListFromText(wizardStrangeText2));
+            w.Title.LoadFromStringList(StringListUtils.GetListFromText(wizardStrangeText));
 
             Console.WriteLine(w.ToStructuredString());
+
+            TWizardEventType a = TWizardEventType.wetActionExecute;
+            string aa = a.ToString();
+            Console.WriteLine(aa);
 
             Console.ReadKey();
         }

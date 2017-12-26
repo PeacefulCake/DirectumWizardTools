@@ -22,6 +22,7 @@ namespace WizardTools.Utils
         public const string NameValueDelimiter = " = ";
         public const string StepListHeader = "object TSBWizardStepList";
         public const string StepHeader = "object TSBFormWizardStep";
+        public const string FinalStepHeader = "object TSBFinalWizardStep";
         public const string ActionListHeader = "object TSBWizardActionList";
         public const string ActionHeader = "object TSBWizardAction";
         public const string StepFormElementListHeader = "object TSBWizardStepFormElementList";
@@ -43,5 +44,15 @@ namespace WizardTools.Utils
         public const string DateTimeParamHeader = "object TSBDateTimeWizardParam";
         public const string NumericParamHeader = "object TSBNumericWizardParam";
         public const string UserParamHeader = "!!!TODO!!!";
+
+        public class EventTypes
+        {
+            public const string WizardBeforeSelection = "wetWizardBeforeSelection";
+            public const string WizardStart = "wetWizardStart";
+            public const string WizardFinish = "wetWizardFinish";
+            public const string StepStart = "wetStepStart";
+            public const string StepFinish = "wetStepFinish";
+            public const string ActionExecute = "wetActionExecute";
+        }
     }
 }

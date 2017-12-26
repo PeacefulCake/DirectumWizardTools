@@ -42,8 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\WizardTypesExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\TSBFinalWizardStep.cs" />
+    <Compile Include="Types\TSBWizardAction.cs" />
+    <Compile Include="Types\TSBWizardActionList.cs" />
+    <Compile Include="Types\TSBWizardStepFormElementList.cs" />
+    <Compile Include="Types\TWizardActionType.cs" />
+    <Compile Include="Types\TWizardEventType.cs" />
     <Compile Include="Utils\Const.cs" />
     <Compile Include="Types\IStringable.cs" />
     <Compile Include="Types\TSBFormWizardStep.cs" />
