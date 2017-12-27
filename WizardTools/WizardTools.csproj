@@ -45,9 +45,12 @@
     <Compile Include="Extensions\WizardTypesExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\TFormElementProperty.cs" />
+    <Compile Include="Types\TFormElementType.cs" />
     <Compile Include="Types\TSBFinalWizardStep.cs" />
     <Compile Include="Types\TSBWizardAction.cs" />
     <Compile Include="Types\TSBWizardActionList.cs" />
+    <Compile Include="Types\TSBWizardStepFormElement.cs" />
     <Compile Include="Types\TSBWizardStepFormElementList.cs" />
     <Compile Include="Types\TWizardActionType.cs" />
     <Compile Include="Types\TWizardEventType.cs" />
@@ -81,5 +84,6 @@
     <Content Include="WizardXML\Wizard_structured.xml" />
     <Content Include="WizardXML\Wizard_structured_short.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

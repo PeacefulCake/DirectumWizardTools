@@ -9,6 +9,11 @@ namespace WizardTools.Utils
 {
     public class Const
     {
+        static Const()
+        {
+            SeparatorArr = new string[] { Const.Separator };
+        }
+
         public const string CR = "\r\n";
 
         // Текстовая разметка
@@ -16,6 +21,8 @@ namespace WizardTools.Utils
         public const string End = "end";
         public const string ArrayStart = "<";
         public const string ArrayEnd = ">";
+        public const string Separator = " = ";
+        public static string[] SeparatorArr;
 
         public const string WizardHeader = "object TSBWizard";
 
@@ -31,10 +38,9 @@ namespace WizardTools.Utils
         public const string ParamListHeader = "object TSBWizardParamList";
         public const string ReferenceParamHeader = "object TSBReferenceRecordInfoWizardParam";
         public const string PickParamHeader = "object TSBPickWizardParam";
-        public const string PickParamStrings = "ValueList.Strings";
-        public const string PickParamStringsStart = "(";
-        public const string PickParamStringsEnd = ")";
-
+            public const string PickParamStrings = "ValueList.Strings";
+            public const string PickParamStringsStart = "(";
+            public const string PickParamStringsEnd = ")";
         public const string StringParamHeader = "object TSBStringWizardParam";
         public const string DocumentParamHeader = "object TSBEDocumentInfoWizardParam";
         public const string TextParamHeader = "object TSBTextWizardParam";

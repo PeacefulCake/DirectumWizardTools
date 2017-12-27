@@ -13,5 +13,26 @@ namespace WizardTools.Utils
             List<string> resultList = new List<string>(text.Split(new string[] { Const.CR }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.TrimStart()));
             return resultList;
         }
+
+        public static List<string> PickObject(List<string> sList)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static List<string> PickArray(List<string> sList)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static List<string> PickArrayElement(List<string> sList)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void GetFieldPair(string line, out string name, out string value)
+        {
+            name = line.Split(Const.SeparatorArr, StringSplitOptions.None).First();
+            value = line.Split(Const.SeparatorArr, StringSplitOptions.None).Last();
+        }
     }
 }

@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace WizardTools.Types
 {
-    class TSBWizardStepFormElementList : IStringable
+    class TSBWizardStepFormElement : IStringable
     {
-        TSBWizardStepFormElement[] FormElements;
+        WizardString Caption;
+        TFormElementType ElementType;
+
+        WizardString ParamName;
+        bool Required;
+
+        TFormElementProperty ElementProperty;        
+        WizardString Hint;
 
         public void LoadFromStringList(IList<string> data)
         {

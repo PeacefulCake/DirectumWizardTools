@@ -11,6 +11,23 @@ using WizardTools.Utils;
 
 namespace WizardTools
 {
+    class One
+    {
+        virtual public string GetValue()
+        {
+            return "One";
+        }
+    }
+
+    class Two : One
+    {
+        override public string GetValue()
+        {
+            return "Two";
+        }
+    }
+
+
     class Program
     {
         static void Main(string[] args)
@@ -68,6 +85,15 @@ namespace WizardTools
             TWizardEventType a = TWizardEventType.wetActionExecute;
             string aa = a.ToString();
             Console.WriteLine(aa);
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+            One o = new Two();
+
+            Console.WriteLine(o.GetValue());
 
             Console.ReadKey();
         }
