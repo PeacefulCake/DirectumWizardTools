@@ -17,7 +17,7 @@ namespace WizardTools.Types
         TFormElementProperty ElementProperty;        
         WizardString Hint;
 
-        public void LoadFromStringList(IList<string> data)
+        public void LoadFromStringList(List<String> data)
         {
             throw new NotImplementedException();
         }

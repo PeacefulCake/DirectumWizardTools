@@ -11,23 +11,6 @@ using WizardTools.Utils;
 
 namespace WizardTools
 {
-    class One
-    {
-        virtual public string GetValue()
-        {
-            return "One";
-        }
-    }
-
-    class Two : One
-    {
-        override public string GetValue()
-        {
-            return "Two";
-        }
-    }
-
-
     class Program
     {
         static void Main(string[] args)
@@ -63,7 +46,7 @@ namespace WizardTools
             Console.WriteLine(srcString);
             Console.WriteLine();
             Console.WriteLine(WizardUTFEncoder.EncodeText(srcString, "         "));*/
-            TSBWizardEvent ev = new TSBWizardEvent();
+            /*TSBWizardEvent ev = new TSBWizardEvent();
 
             TSBWizard w = new TSBWizard()
             {
@@ -84,16 +67,28 @@ namespace WizardTools
 
             TWizardEventType a = TWizardEventType.wetActionExecute;
             string aa = a.ToString();
-            Console.WriteLine(aa);
+            Console.WriteLine(aa);*/
+
+            string someObj = @"    object TSBHer
+      Value = 123
+    end
+    object TSBHer
+      Value = 123
+    end
+    object TSBHer
+      Value = 123
+    end>";
+
+            /*var linedObj = StringListUtils.GetListFromText(someObj);
+            var obj1 = StringListUtils.PickObject(linedObj, 0);
+            var obj2 = StringListUtils.PickObject(linedObj, 0);
+            var obj3 = StringListUtils.PickObject(linedObj, 0);*/
+
+            string a, b;
+
+            StringListUtils.GetFieldPair("Value = 123", out a, out b);
 
             Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-
-            One o = new Two();
-
-            Console.WriteLine(o.GetValue());
 
             Console.ReadKey();
         }

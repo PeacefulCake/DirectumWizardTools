@@ -10,7 +10,7 @@ namespace WizardTools.Types
     {
         TSBWizardAction[] Actions;
 
-        public void LoadFromStringList(IList<string> data)
+        public void LoadFromStringList(List<String> data)
         {
             throw new NotImplementedException();
         }

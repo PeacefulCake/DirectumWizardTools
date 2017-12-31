@@ -10,9 +10,10 @@ namespace WizardTools.Types
     {
         WizardString ParamName;
         WizardString Title;
+        bool Required;
         bool IsNull; // False, когда параметр заполне по умолчанию, или отсутствует вместе со значением
 
-        virtual public void LoadFromStringList(IList<string> data)
+        virtual public void LoadFromStringList(List<String> data)
         {
             throw new NotImplementedException();
         }

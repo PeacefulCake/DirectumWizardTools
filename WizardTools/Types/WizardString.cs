@@ -73,7 +73,7 @@ namespace WizardTools.Types
             else return EncodedValue;
         }
 
-        public void LoadFromStringList(IList<String> data)
+        public void LoadFromStringList(List<String> data)
         {
             EncodedValue = string.Join(Const.CR, data);
         }

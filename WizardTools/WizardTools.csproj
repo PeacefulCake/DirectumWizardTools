@@ -80,6 +80,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="WizardDataExamples\Wizard1.txt" />
+    <Content Include="WizardDataExamples\Wizard2.txt" />
+    <Content Include="WizardXML\Wizards2_raw.xml" />
+    <Content Include="WizardXML\Wizards2_structured.xml" />
     <Content Include="WizardXML\Wizard_raw.xml" />
     <Content Include="WizardXML\Wizard_structured.xml" />
     <Content Include="WizardXML\Wizard_structured_short.xml" />

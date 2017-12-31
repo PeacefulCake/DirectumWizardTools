@@ -21,8 +21,15 @@ namespace WizardTools.Utils
         public const string End = "end";
         public const string ArrayStart = "<";
         public const string ArrayEnd = ">";
+        public const string EmptyArray = "<>";
         public const string Separator = " = ";
         public static string[] SeparatorArr;
+
+        // "Простые" поля
+        public const string FieldID = "ID";
+        public const string FieldCode = "Code";
+        public const string FieldTitle = "Title";
+        public const string FieldEvents = "Events";
 
         public const string WizardHeader = "object TSBWizard";
 
