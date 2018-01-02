@@ -31,6 +31,11 @@ namespace WizardTools.Utils
         public const string FieldTitle = "Title";
         public const string FieldEvents = "Events";
 
+        public const string FieldParamName = "ParamName";
+        public const string FieldRequired = "Required";
+        public const string FieldIsNull = "IsNull";
+        public const string FieldValue = "Value";
+
         public const string WizardHeader = "object TSBWizard";
 
         public const string NameValueDelimiter = " = ";
@@ -56,7 +61,15 @@ namespace WizardTools.Utils
         public const string DateParamHeader = "object TSBDateWizardParam";
         public const string DateTimeParamHeader = "object TSBDateTimeWizardParam";
         public const string NumericParamHeader = "object TSBNumericWizardParam";
-        public const string UserParamHeader = "!!!TODO!!!";
+        public const string UserParamHeader = "object TSBUserWizardParam";
+        public const string TaskParamHeader = "object TSBTaskInfoWizardParam";
+        public const string ReferenceListParamHeader = "object TSBReferenceRecordInfoListWizardParam";
+        public const string UserListParamHeader = "object TSBUserListWizardParam";
+        public const string DocumentListParamHeader = "object TSBEDocumentInfoListWizardParam";
+        public const string FolderParamHeader = "object TSBFolderInfoWizardParam";
+        public const string FileParamHeader = "object TSBFileNameWizardParam";
+        public const string ContentsParamHeader = "object TSBContentsWizardParam";
+
 
         public class EventTypes
         {

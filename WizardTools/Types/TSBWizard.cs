@@ -43,20 +43,23 @@ namespace WizardTools.Types
 
             sb.AppendFormat("{0}Events = {1}{2}", currentIndent, Events.ToStructuredString(currentIndenLevel), Const.CR);
 
+            //sb.AppendLine(StepList.ToStructuredString(currentIndenLevel));
+
+            sb.AppendLine(ParamList.ToStructuredString(currentIndenLevel));
+
             sb.Append(Const.End);
             return sb.ToString();
         }
 
         public void LoadFromStringList(List<string> data)
         {
-            // TODO: нихера так низзя, нужно каждый раз равнивать Count, ибо есть уменьшение
-            foreach (int dataIndex in Enumerable.Range(0, data.Count))
+            int dataIndex = 1;
+            while(dataIndex < data.Count - 1)
             {
                 string line = data[dataIndex];
                 string trimmedLine = line.TrimStart();
-                string name, value;
 
-                if (StringListUtils.GetFieldPair(trimmedLine, out name, out value))
+                if (StringListUtils.GetFieldPair(trimmedLine, out string name, out string value))
                 {
                     switch (name)
                     {
@@ -64,9 +67,11 @@ namespace WizardTools.Types
                             this.ID = Convert.ToInt32(value);
                             break;
                         case Const.FieldCode:
+                            if (value == "") this.Code.LoadFromStringList(StringListUtils.PickWizardString(data, dataIndex + 1));
                             this.Code.EncodedValue = value;
                             break;
                         case Const.FieldTitle:
+                            if (value == "") this.Title.LoadFromStringList(StringListUtils.PickWizardString(data, dataIndex + 1));
                             this.Title.EncodedValue = value;
                             break;
                         case Const.FieldEvents:
@@ -78,23 +83,28 @@ namespace WizardTools.Types
                         default:
                             throw new FormatException("Неожиданное имя свойства: " + name);
                     }
+                    dataIndex++;
                 }
                 else
                 {
                     switch (trimmedLine)
                     {
                         case Const.StepListHeader:
+                            var tmpSteps = StringListUtils.PickObject(data, dataIndex);
                             break;
                         case Const.ParamListHeader:
+                            var tmpParams = StringListUtils.PickObject(data, dataIndex);
+                            this.ParamList.LoadFromStringList(tmpParams);
                             break;
                         default:
+                            throw new FormatException("Неожиданный объект: " + trimmedLine);
                             break;
                     }
                 }
             }
 
 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void LoadFromString(string dataString)

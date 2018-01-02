@@ -75,7 +75,9 @@ namespace WizardTools.Types
 
         public void LoadFromStringList(List<String> data)
         {
-            EncodedValue = string.Join(Const.CR, data);
+            var trimmedData = data.Select(l => l.TrimStart());
+
+            EncodedValue = string.Join(Const.CR, trimmedData);
         }
     }
 }

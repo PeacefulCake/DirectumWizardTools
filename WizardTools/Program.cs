@@ -84,11 +84,14 @@ namespace WizardTools
             var obj2 = StringListUtils.PickObject(linedObj, 0);
             var obj3 = StringListUtils.PickObject(linedObj, 0);*/
 
-            string a, b;
+            string wholeWizard = File.ReadAllText(@"D:\DevProjects\WorkFriendly\WizardTools\WizardTools\WizardDataExamples\Wizard22.txt");
 
-            StringListUtils.GetFieldPair("Value = 123", out a, out b);
+            TSBWizard Wizard = new TSBWizard();
 
-            Console.WriteLine();
+            Wizard.LoadFromString(wholeWizard);
+
+            Console.WriteLine(Wizard.ToStructuredString());
+
 
             Console.ReadKey();
         }

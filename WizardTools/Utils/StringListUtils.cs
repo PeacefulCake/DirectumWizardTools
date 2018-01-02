@@ -14,6 +14,26 @@ namespace WizardTools.Utils
             return resultList;
         }
 
+        public static List<string> PickWizardString(List<string> sList, int startIndex)
+        {
+            int linesCount = 0;
+            string current = sList[startIndex];
+
+            int indentsCount = current.Length - current.TrimStart().Length;
+            int currentIndentsCount;
+            do
+            {
+                linesCount++;
+                current = sList[startIndex + linesCount - 1];
+                currentIndentsCount = current.Length - current.TrimStart().Length;
+
+            } while (sList.Count > linesCount + startIndex && currentIndentsCount == indentsCount);
+            if (currentIndentsCount != indentsCount) linesCount--; // Ибо такой спотык будет на ненужной строке
+            List<string> result = sList.GetRange(startIndex, linesCount);
+            sList.RemoveRange(startIndex, linesCount);
+            return result;
+        }
+
         public static List<string> PickItem(List<string> sList, int startIndex, string endString)
         {
             int linesCount = 0;
@@ -39,7 +59,7 @@ namespace WizardTools.Utils
         public static List<string> PickArray(List<string> sList, int startIndex)
         {
             var result = PickItem(sList, startIndex, Const.End + Const.ArrayEnd);
-            // Грохнуть певую строчку, уйдет и крышки и ненужное имя массива
+            // Грохнуть певую строчку, уйдет и крышка и ненужное имя массива
             result.RemoveAt(startIndex);
             // Из последней строки убрать последний символ - закрывающую крышку
             string lastStr = result[result.Count - 1];
