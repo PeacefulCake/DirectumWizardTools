@@ -1,0 +1,2899 @@
+object TSBWizard
+  Code = 'EGRN1-18-1'
+  ID = 154012
+  Title = #1060#1043#1048#1057' '#1045#1043#1056#1053' 1.18.1'
+  Events = <
+    item
+      EventType = wetWizardBeforeSelection
+    end
+    item
+      ISBLText = '  SMEV3InitializeSIDWizard(Wizard)'
+      EventType = wetWizardStart
+    end
+    item
+      EventType = wetWizardFinish
+    end>
+  object TSBWizardStepList
+    object TSBFormWizardStep
+      StepName = 'ObjectInfo'
+      Title = #1054#1073#1097#1080#1077' '#1089#1074#1077#1076#1077#1085#1080#1103
+      Events = <
+        item
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      Description = 
+        #1057#1074#1077#1076#1077#1085#1080#1103' '#1086#1073' '#1086#1073#1098#1077#1082#1090#1077' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080' - '#1086#1073#1098#1077#1082#1090#1077' '#1085#1077#1079#1072#1074#1077#1088#1096#1077#1085#1085#1086#1075#1086' '#1089#1090#1088#1086#1080#1090 +
+        #1077#1083#1100#1089#1090#1074#1072
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089 +
+                #1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatPrev' +
+                'ious)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = False
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  '#13#10'  // '#1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1077' '#1085#1086#1084#1077#1088#1072#13#10'  SMEVChe' +
+                'ckWizardParamFormat(Params.ValueByName('#39'cad_number'#39'); '#39#1082#1072#1076#1085#1086#1084#1077#1088#39 +
+                ')'#13#10'  '#13#10'  if not VarIsNull(Params.ValueByName('#39'_AddCadLinks'#39').Val' +
+                'ue)'#13#10'    if Params.ValueByName('#39'_AddCadLinks'#39').Value '#13#10'      Wiz' +
+                'ard.NextStep = Wizard.Steps.ValueByName('#39'CadLinks'#39')'#13#10'    else'#13#10' ' +
+                '     Wizard.NextStep = Wizard.Steps.ValueByName('#39'Params'#39')'#13#10'    e' +
+                'ndif'#13#10'  else'#13#10'    Wizard.NextStep = Wizard.Steps.ValueByName('#39'Pa' +
+                'rams'#39')'#13#10'  endif  '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085 +
+                #1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompleti' +
+                'on(Wizard; wfatNext)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1044#1072#1090#1099' '#1075#1086#1089#1091#1076#1072#1088#1089#1090#1074#1077#1085#1085#1086#1081' '#1088#1077#1075#1080#1089#1090#1088#1072#1094#1080#1080
+          ElementType = 3
+          ElementProperty = 0
+          Hint = #1053#1077' '#1090#1088#1077#1073#1091#1077#1090#1089#1103
+        end
+        object TSBWizardStepFormElement
+          ElementType = 2
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1072#1090#1072' '#1087#1086#1089#1090#1072#1085#1086#1074#1082#1080' '#1085#1072' '#1091#1095#1077#1090'/ '#1088#1077#1075#1080#1089#1090#1088#1072#1094#1080#1080
+          ElementType = 0
+          ParamName = 'registration_date'
+          Required = True
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1072#1090#1072' '#1089#1085#1103#1090#1080#1103' '#1089' '#1091#1095#1077#1090#1072'/'#1088#1077#1075#1080#1089#1090#1088#1072#1094#1080#1080
+          ElementType = 0
+          ParamName = 'cancel_date'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1054#1073#1097#1080#1077' '#1089#1074#1077#1076#1077#1085#1080#1103' '#1086#1073' '#1086#1073#1098#1077#1082#1090#1077' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080
+          ElementType = 3
+          ElementProperty = 0
+          Hint = #1053#1077' '#1090#1088#1077#1073#1091#1077#1090#1089#1103
+        end
+        object TSBWizardStepFormElement
+          ElementType = 2
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1081' '#1085#1086#1084#1077#1088
+          ElementType = 0
+          ParamName = 'cad_number'
+          Required = True
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1086#1084#1077#1088' '#1082#1072#1076#1072#1089#1090#1088#1086#1074#1086#1075#1086' '#1082#1074#1072#1088#1090#1072#1083#1072
+          ElementType = 0
+          ParamName = 'quarter_cad_number'
+          Required = True
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1042#1080#1076' '#1086#1073#1098#1077#1082#1090#1072' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080
+          ElementType = 0
+          ParamName = 'TypesRealEstate'
+          Required = True
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1072#1103' '#1089#1090#1086#1080#1084#1086#1089#1090#1100' ('#1088#1091#1073'.)'
+          ElementType = 0
+          ParamName = 'Cost'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1054#1089#1086#1073#1099#1077' '#1086#1090#1084#1077#1090#1082#1080
+          ElementType = 0
+          ParamName = 'special_notes'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1074#1077#1076#1077#1085#1080#1103' '#1086#1073' '#1086#1073#1098#1077#1082#1090#1072#1093' ('#1089#1074#1103#1079#1100' '#1089' '#1082#1072#1076#1072#1089#1090#1088#1086#1074#1099#1084#1080' '#1085#1086#1084#1077#1088#1072#1084#1080')?'
+          ElementType = 0
+          ParamName = '_AddCadLinks'
+          ElementProperty = 7
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'CadLinks'
+      Title = #1057#1074#1077#1076#1077#1085#1080#1103' '#1086#1073' '#1086#1073#1098#1077#1082#1090#1072#1093' ('#1089#1074#1103#1079#1100' '#1089' '#1082#1072#1076#1072#1089#1090#1088#1086#1074#1099#1084#1080' '#1085#1086#1084#1077#1088#1072#1084#1080')'
+      Events = <
+        item
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089 +
+                #1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatPrev' +
+                'ious)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  '#13#10'  if Params.ValueByName('#39'_AddLandC' +
+                'adNumbers'#39').Value '#13#10'    Wizard.NextStep = Wizard.Steps.ValueByNa' +
+                'me('#39'LandCadNumbers'#39')'#13#10'  else'#13#10'    if Params.ValueByName('#39'_AddOld' +
+                'Numbers'#39').Value '#13#10'      Wizard.NextStep = Wizard.Steps.ValueByNa' +
+                'me('#39'OldNumbers'#39')'#13#10'    else'#13#10'      Wizard.NextStep = Wizard.Steps' +
+                '.ValueByName('#39'Params'#39')'#13#10'    endif'#13#10'  endif'#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089 +
+                #1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10' ' +
+                ' SMEV3ProcessStepCompletion(Wizard; wfatNext)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = 
+            #1044#1086#1073#1072#1074#1080#1090#1100' '#1082#1072#1076#1072#1089#1090#1088#1086#1074#1099#1077' '#1085#1086#1084#1077#1088#1072' '#1080#1085#1099#1093' '#1086#1073#1098#1077#1082#1090#1086#1074' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080' ('#1079#1077#1084#1077#1083#1100#1085#1099 +
+            #1093' '#1091#1095#1072#1089#1090#1082#1086#1074'), '#1074' '#1087#1088#1077#1076#1077#1083#1072#1093' '#1082#1086#1090#1086#1088#1099#1093' '#1088#1072#1089#1087#1086#1083#1086#1078#1077#1085' '#1086#1073#1098#1077#1082#1090' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080'?'
+          ElementType = 0
+          ParamName = '_AddLandCadNumbers'
+          Required = True
+          ElementProperty = 7
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1088#1072#1085#1077#1077' '#1087#1088#1080#1089#1074#1086#1077#1085#1085#1099#1077' '#1085#1086#1084#1077#1088#1072'?'
+          ElementType = 0
+          ParamName = '_AddOldNumbers'
+          Required = True
+          ElementProperty = 7
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'LandCadNumbers'
+      Title = 
+        #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1077' '#1085#1086#1084#1077#1088#1072' '#1080#1085#1099#1093' '#1086#1073#1098#1077#1082#1090#1086#1074' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080' ('#1079#1077#1084#1077#1083#1100#1085#1099#1093' '#1091#1095#1072#1089#1090#1082#1086 +
+        #1074'), '#1074' '#1087#1088#1077#1076#1077#1083#1072#1093' '#1082#1086#1090#1086#1088#1099#1093' '#1088#1072#1089#1087#1086#1083#1086#1078#1077#1085' '#1086#1073#1098#1077#1082#1090' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080
+      Events = <
+        item
+          ISBLText = 
+            '  Params = Wizard.Params'#13#10'  SMEVProcessMultiStepBegin(Wizard; ;'#13 +
+            #10'                            Params.ValueByName('#39'MLCadNumberCoun' +
+            't'#39');'#13#10'                            Params.ValueByName('#39'MLCadNumbe' +
+            'rPage'#39');'#13#10'                            Params.ValueByName('#39'_AddLa' +
+            'ndCadNumbers'#39');                          '#13#10'                     ' +
+            '       Params.ValueByName('#39'MLCadNumberData'#39');'#13#10'                 ' +
+            '           ArrayOf(Params.ValueByName('#39'CadNumber1'#39');'#13#10'          ' +
+            '                          Params.ValueByName('#39'CadNumber2'#39');'#13#10'   ' +
+            '                                 Params.ValueByName('#39'CadNumber3'#39 +
+            ');'#13#10'                                    Params.ValueByName('#39'CadN' +
+            'umber4'#39');'#13#10'                                    Params.ValueByNam' +
+            'e('#39'CadNumber5'#39'));'#13#10'                            TRUE)'
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  '#13#10'  SMEVProcessMultiStepEnd(Wizard; ' +
+                ';'#13#10'                          Params.ValueByName('#39'MLCadNumberCoun' +
+                't'#39');'#13#10'                          Params.ValueByName('#39'MLCadNumberP' +
+                'age'#39');'#13#10'                          Params.ValueByName('#39'_AddLandCa' +
+                'dNumbers'#39');                          '#13#10'                         ' +
+                ' Params.ValueByName('#39'MLCadNumberData'#39');'#13#10'                       ' +
+                '   ArrayOf(Params.ValueByName('#39'CadNumber1'#39');'#13#10'                  ' +
+                '                Params.ValueByName('#39'CadNumber2'#39');'#13#10'             ' +
+                '                     Params.ValueByName('#39'CadNumber3'#39');'#13#10'        ' +
+                '                          Params.ValueByName('#39'CadNumber4'#39');'#13#10'   ' +
+                '                               Params.ValueByName('#39'CadNumber5'#39'))' +
+                ';'#13#10'                          TRUE; wfatPrevious)'#13#10'              ' +
+                '             '#13#10'  Wizard.NextStep = Wizard.Steps.ValueByName('#39'Cad' +
+                'Links'#39')'#13#10'  '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074 +
+                #1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wiz' +
+                'ard; wfatPrevious)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  // '#1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1077' '#1085#1086#1084#1077#1088#1072#13#10'  SMEVCheckWi' +
+                'zardParamFormat(Params.ValueByName('#39'CadNumber1'#39'); '#39#1082#1072#1076#1085#1086#1084#1077#1088#39')'#13#10' ' +
+                ' if not VarIsNull(Params.ValueByName('#39'CadNumber2'#39'))'#13#10'    SMEVChe' +
+                'ckWizardParamFormat(Params.ValueByName('#39'CadNumber2'#39'); '#39#1082#1072#1076#1085#1086#1084#1077#1088#39 +
+                ')'#13#10'  endif'#13#10'  if not VarIsNull(Params.ValueByName('#39'CadNumber3'#39'))' +
+                #13#10'    SMEVCheckWizardParamFormat(Params.ValueByName('#39'CadNumber3'#39 +
+                '); '#39#1082#1072#1076#1085#1086#1084#1077#1088#39')'#13#10'  endif'#13#10'  if not VarIsNull(Params.ValueByName('#39 +
+                'CadNumber4'#39'))'#13#10'    SMEVCheckWizardParamFormat(Params.ValueByName' +
+                '('#39'CadNumber4'#39'); '#39#1082#1072#1076#1085#1086#1084#1077#1088#39')'#13#10'  endif'#13#10'  if not VarIsNull(Params.' +
+                'ValueByName('#39'CadNumber5'#39'))'#13#10'    SMEVCheckWizardParamFormat(Param' +
+                's.ValueByName('#39'CadNumber5'#39'); '#39#1082#1072#1076#1085#1086#1084#1077#1088#39')'#13#10'  endif'#13#10'  SMEVProcess' +
+                'MultiStepEnd(Wizard; ;'#13#10'                          Params.ValueBy' +
+                'Name('#39'MLCadNumberCount'#39');'#13#10'                          Params.Valu' +
+                'eByName('#39'MLCadNumberPage'#39');'#13#10'                          Params.Va' +
+                'lueByName('#39'_AddLandCadNumbers'#39');                          '#13#10'    ' +
+                '                      Params.ValueByName('#39'MLCadNumberData'#39');'#13#10'  ' +
+                '                        ArrayOf(Params.ValueByName('#39'CadNumber1'#39')' +
+                ';'#13#10'                                  Params.ValueByName('#39'CadNumb' +
+                'er2'#39');'#13#10'                                  Params.ValueByName('#39'Ca' +
+                'dNumber3'#39');'#13#10'                                  Params.ValueByNam' +
+                'e('#39'CadNumber4'#39');'#13#10'                                  Params.Value' +
+                'ByName('#39'CadNumber5'#39'));'#13#10'                          TRUE; wfatNext' +
+                ')'#13#10#13#10'  if Params.ValueByName('#39'_AddOldNumbers'#39').Value '#13#10'    Wizar' +
+                'd.NextStep = Wizard.Steps.ValueByName('#39'OldNumbers'#39')'#13#10'  else'#13#10'   ' +
+                ' Wizard.NextStep = Wizard.Steps.ValueByName('#39'Params'#39')'#13#10'  endif'#13#10 +
+                #13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080 +
+                #1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatNe' +
+                'xt)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1081' '#1085#1086#1084#1077#1088
+          ElementType = 0
+          ParamName = 'CadNumber1'
+          Required = True
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1081' '#1085#1086#1084#1077#1088
+          ElementType = 0
+          ParamName = 'CadNumber2'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1081' '#1085#1086#1084#1077#1088
+          ElementType = 0
+          ParamName = 'CadNumber3'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1081' '#1085#1086#1084#1077#1088
+          ElementType = 0
+          ParamName = 'CadNumber4'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1081' '#1085#1086#1084#1077#1088
+          ElementType = 0
+          ParamName = 'CadNumber5'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = 
+            #1044#1086#1073#1072#1074#1080#1090#1100' '#1082#1072#1076#1072#1089#1090#1088#1086#1074#1099#1077' '#1085#1086#1084#1077#1088#1072' '#1080#1085#1099#1093' '#1086#1073#1098#1077#1082#1090#1086#1074' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080' ('#1079#1077#1084#1077#1083#1100#1085#1099 +
+            #1093' '#1091#1095#1072#1089#1090#1082#1086#1074'), '#1074' '#1087#1088#1077#1076#1077#1083#1072#1093' '#1082#1086#1090#1086#1088#1099#1093' '#1088#1072#1089#1087#1086#1083#1086#1078#1077#1085' '#1086#1073#1098#1077#1082#1090' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080'?'
+          ElementType = 0
+          ParamName = '_AddLandCadNumbers'
+          ElementProperty = 7
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'OldNumbers'
+      Title = #1056#1072#1085#1077#1077' '#1087#1088#1080#1089#1074#1086#1077#1085#1085#1099#1077' '#1085#1086#1084#1077#1088#1072
+      Events = <
+        item
+          ISBLText = 
+            '  Params = Wizard.Params'#13#10'  SMEVProcessMultiStepBegin(Wizard; ;'#13 +
+            #10'                            Params.ValueByName('#39'MOldNumbersCoun' +
+            't'#39');'#13#10'                            Params.ValueByName('#39'MOldNumber' +
+            'sPage'#39');'#13#10'                            Params.ValueByName('#39'_AddOl' +
+            'dNumbers'#39');                          '#13#10'                         ' +
+            '   Params.ValueByName('#39'MOldNumbersData'#39');'#13#10'                     ' +
+            '       ArrayOf(Params.ValueByName('#39'number_type'#39');'#13#10'             ' +
+            '                       Params.ValueByName('#39'number_type_value'#39');'#13 +
+            #10'                                    Params.ValueByName('#39'number_' +
+            'type_code'#39');'#13#10'                                    Params.ValueBy' +
+            'Name('#39'Number'#39');'#13#10'                                    Params.Valu' +
+            'eByName('#39'Assignment_Date'#39');'#13#10'                                   ' +
+            ' Params.ValueByName('#39'assigner'#39'));'#13#10'                            F' +
+            'ALSE)'
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  SMEVProcessMultiStepEnd(Wizard; ;'#13#10' ' +
+                '                         Params.ValueByName('#39'MOldNumbersCount'#39');' +
+                #13#10'                          Params.ValueByName('#39'MOldNumbersPage'#39 +
+                ');'#13#10'                          Params.ValueByName('#39'_AddOldNumbers' +
+                #39');                          '#13#10'                          Params.' +
+                'ValueByName('#39'MOldNumbersData'#39');'#13#10'                          Array' +
+                'Of(Params.ValueByName('#39'number_type'#39');'#13#10'                         ' +
+                '         Params.ValueByName('#39'number_type_value'#39');'#13#10'             ' +
+                '                     Params.ValueByName('#39'number_type_code'#39');'#13#10'  ' +
+                '                                Params.ValueByName('#39'Number'#39');'#13#10' ' +
+                '                                 Params.ValueByName('#39'Assignment_' +
+                'Date'#39');'#13#10'                                  Params.ValueByName('#39'a' +
+                'ssigner'#39'));'#13#10'                          FALSE; wfatPrevious)'#13#10'  '#13 +
+                #10'  if Params.ValueByName('#39'_AddLandCadNumbers'#39').Value '#13#10'    Wizar' +
+                'd.NextStep = Wizard.Steps.ValueByName('#39'LandCadNumbers'#39')'#13#10'  else'#13 +
+                #10'    Wizard.NextStep = Wizard.Steps.ValueByName('#39'CadLinks'#39')'#13#10'  e' +
+                'ndif'#13#10'                          '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096 +
+                #1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3Proc' +
+                'essStepCompletion(Wizard; wfatPrevious)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  SMEVProcessMultiStepEnd(Wizard; ;'#13#10' ' +
+                '                         Params.ValueByName('#39'MOldNumbersCount'#39');' +
+                #13#10'                          Params.ValueByName('#39'MOldNumbersPage'#39 +
+                ');'#13#10'                          Params.ValueByName('#39'_AddOldNumbers' +
+                #39');                          '#13#10'                          Params.' +
+                'ValueByName('#39'MOldNumbersData'#39');'#13#10'                          Array' +
+                'Of(Params.ValueByName('#39'number_type'#39');'#13#10'                         ' +
+                '         Params.ValueByName('#39'number_type_value'#39');'#13#10'             ' +
+                '                     Params.ValueByName('#39'number_type_code'#39');'#13#10'  ' +
+                '                                Params.ValueByName('#39'Number'#39');'#13#10' ' +
+                '                                 Params.ValueByName('#39'Assignment_' +
+                'Date'#39');'#13#10'                                  Params.ValueByName('#39'a' +
+                'ssigner'#39'));'#13#10'                          FALSE; wfatNext)'#13#10'       ' +
+                '                   '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092 +
+                #1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepComple' +
+                'tion(Wizard; wfatNext)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1042#1080#1076' '#1085#1086#1084#1077#1088#1072
+          ElementType = 0
+          ParamName = 'number_type'
+          Required = True
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1086#1084#1077#1088
+          ElementType = 0
+          ParamName = 'Number'
+          Required = True
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1072#1090#1072' '#1087#1088#1080#1089#1074#1086#1077#1085#1080#1103
+          ElementType = 0
+          ParamName = 'Assignment_Date'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1054#1088#1075#1072#1085#1080#1079#1072#1094#1080#1103', '#1087#1088#1080#1089#1074#1086#1080#1074#1096#1072#1103' '#1085#1086#1084#1077#1088
+          ElementType = 0
+          ParamName = 'assigner'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1088#1072#1085#1077#1077' '#1087#1088#1080#1089#1074#1086#1077#1085#1085#1099#1077' '#1085#1086#1084#1077#1088#1072'?'
+          ElementType = 0
+          ParamName = '_AddOldNumbers'
+          ElementProperty = 7
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'Params'
+      Title = #1061#1072#1088#1072#1082#1090#1077#1088#1080#1089#1090#1080#1082#1080' '#1086#1073#1098#1077#1082#1090#1072' '#1085#1077#1079#1072#1074#1077#1088#1096#1077#1085#1085#1086#1075#1086' '#1089#1090#1088#1086#1080#1090#1077#1083#1100#1089#1090#1074#1072
+      Events = <
+        item
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      Description = 
+        #1061#1072#1088#1072#1082#1090#1077#1088#1080#1089#1090#1080#1082#1080' '#1086#1073#1098#1077#1082#1090#1072' '#1085#1077#1079#1072#1074#1077#1088#1096#1077#1085#1085#1086#1075#1086' '#1089#1090#1088#1086#1080#1090#1077#1083#1100#1089#1090#1074#1072' ('#1086#1089#1085#1086#1074#1085#1099#1077' '#1093#1072 +
+        #1088#1072#1082#1090#1077#1088#1080#1089#1090#1080#1082#1080', '#1085#1072#1079#1085#1072#1095#1077#1085#1080#1077', '#1089#1090#1077#1087#1077#1085#1100' '#1075#1086#1090#1086#1074#1085#1086#1089#1090#1080')'
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  if Params.ValueByName('#39'_AddCadLinks'#39 +
+                ').Value '#13#10'    if Params.ValueByName('#39'_AddOldNumbers'#39').Value '#13#10'  ' +
+                '    Wizard.NextStep = Wizard.Steps.ValueByName('#39'OldNumbers'#39')'#13#10'  ' +
+                '  else'#13#10'      if Params.ValueByName('#39'_AddLandCadNumbers'#39').Value ' +
+                #13#10'        Wizard.NextStep = Wizard.Steps.ValueByName('#39'LandCadNum' +
+                'bers'#39')'#13#10'      else  '#13#10'        Wizard.NextStep = Wizard.Steps.Val' +
+                'ueByName('#39'CadLinks'#39')'#13#10'      endif'#13#10'     endif    '#13#10'  else'#13#10'    W' +
+                'izard.NextStep = Wizard.Steps.ValueByName('#39'ObjectInfo'#39')'#13#10'  endif' +
+                '  '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072 +
+                #1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfat' +
+                'Previous)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  if not VarIsNull(Params.ValueByName(' +
+                #39'_AddBaseParameters'#39').Value)'#13#10'    if Params.ValueByName('#39'_AddBas' +
+                'eParameters'#39').Value '#13#10'      Wizard.NextStep = Wizard.Steps.Value' +
+                'ByName('#39'BaseParameters'#39')'#13#10'    else'#13#10'      Wizard.NextStep = Wiza' +
+                'rd.Steps.ValueByName('#39'AddressLocation'#39')'#13#10'    endif'#13#10'  else'#13#10'    ' +
+                'Wizard.NextStep = Wizard.Steps.ValueByName('#39'AddressLocation'#39')'#13#10' ' +
+                ' endif '#13#10'  '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074 +
+                #1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wiz' +
+                'ard; wfatNext)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = 
+            #1057#1090#1077#1087#1077#1085#1100' '#1075#1086#1090#1086#1074#1085#1086#1089#1090#1080' '#1086#1073#1098#1077#1082#1090#1072' '#1085#1077#1079#1072#1074#1077#1088#1096#1077#1085#1085#1086#1075#1086' '#1089#1090#1088#1086#1080#1090#1077#1083#1100#1089#1090#1074#1072' '#1074' '#1087#1088#1086#1094#1077#1085 +
+            #1090#1072#1093
+          ElementType = 0
+          ParamName = 'degree_readiness'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1055#1088#1086#1077#1082#1090#1080#1088#1091#1077#1084#1086#1077' '#1085#1072#1079#1085#1072#1095#1077#1085#1080#1077
+          ElementType = 0
+          ParamName = 'purpose'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1086#1089#1085#1086#1074#1085#1099#1077' '#1093#1072#1088#1072#1082#1090#1077#1088#1080#1089#1090#1080#1082#1080' '#1080' '#1080#1093' '#1087#1088#1086#1077#1082#1090#1080#1088#1091#1077#1084#1099#1077' '#1079#1085#1072#1095#1077#1085#1080#1103'?'
+          ElementType = 0
+          ParamName = '_AddBaseParameters'
+          ElementProperty = 7
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'BaseParameters'
+      Title = #1054#1089#1085#1086#1074#1085#1099#1077' '#1093#1072#1088#1072#1082#1090#1077#1088#1080#1089#1090#1080#1082#1080' '#1080' '#1080#1093' '#1087#1088#1086#1077#1082#1090#1080#1088#1091#1077#1084#1099#1077' '#1079#1085#1072#1095#1077#1085#1080#1103
+      Events = <
+        item
+          ISBLText = 
+            '  Params = Wizard.Params'#13#10'  SMEVProcessMultiStepBegin(Wizard; ;'#13 +
+            #10'                            Params.ValueByName('#39'MBaseParamsCoun' +
+            't'#39');'#13#10'                            Params.ValueByName('#39'MBaseParam' +
+            'sPage'#39');'#13#10'                            Params.ValueByName('#39'_AddBa' +
+            'seParameters'#39');                          '#13#10'                     ' +
+            '       Params.ValueByName('#39'MBaseParamsData'#39');'#13#10'                 ' +
+            '           ArrayOf(Params.ValueByName('#39'area'#39');'#13#10'                ' +
+            '                    Params.ValueByName('#39'built_up_area'#39');'#13#10'      ' +
+            '                              Params.ValueByName('#39'extension'#39');'#13#10 +
+            '                                    Params.ValueByName('#39'depth'#39');' +
+            #13#10'                                    Params.ValueByName('#39'occure' +
+            'nce_depth'#39');'#13#10'                                    Params.ValueBy' +
+            'Name('#39'volume'#39');'#13#10'                                    Params.Valu' +
+            'eByName('#39'height'#39'));'#13#10'                            FALSE)'
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      Description = 
+        #1061#1072#1088#1072#1082#1090#1077#1088#1080#1089#1090#1080#1082#1080' '#1086#1073#1098#1077#1082#1090#1072' '#1085#1077#1079#1072#1074#1077#1088#1096#1077#1085#1085#1086#1075#1086' '#1089#1090#1088#1086#1080#1090#1077#1083#1100#1089#1090#1074#1072' ('#1086#1089#1085#1086#1074#1085#1099#1077' '#1093#1072 +
+        #1088#1072#1082#1090#1077#1088#1080#1089#1090#1080#1082#1080', '#1085#1072#1079#1085#1072#1095#1077#1085#1080#1077', '#1089#1090#1077#1087#1077#1085#1100' '#1075#1086#1090#1086#1074#1085#1086#1089#1090#1080')'
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  SMEVProcessMultiStepEnd(Wizard; ;'#13#10' ' +
+                '                         Params.ValueByName('#39'MBaseParamsCount'#39');' +
+                #13#10'                          Params.ValueByName('#39'MBaseParamsPage'#39 +
+                ');'#13#10'                          Params.ValueByName('#39'_AddBaseParame' +
+                'ters'#39');                          '#13#10'                          Par' +
+                'ams.ValueByName('#39'MBaseParamsData'#39');'#13#10'                          A' +
+                'rrayOf(Params.ValueByName('#39'area'#39');'#13#10'                            ' +
+                '      Params.ValueByName('#39'built_up_area'#39');'#13#10'                    ' +
+                '              Params.ValueByName('#39'extension'#39');'#13#10'                ' +
+                '                  Params.ValueByName('#39'depth'#39');'#13#10'                ' +
+                '                  Params.ValueByName('#39'occurence_depth'#39');'#13#10'      ' +
+                '                            Params.ValueByName('#39'volume'#39');'#13#10'     ' +
+                '                             Params.ValueByName('#39'height'#39'));'#13#10'   ' +
+                '                       FALSE; wfatPrevious)'#13#10'                   ' +
+                '        '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075 +
+                #1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard' +
+                '; wfatPrevious)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  SMEVProcessMultiStepEnd(Wizard; ;'#13#10' ' +
+                '                         Params.ValueByName('#39'MBaseParamsCount'#39');' +
+                #13#10'                          Params.ValueByName('#39'MBaseParamsPage'#39 +
+                ');'#13#10'                          Params.ValueByName('#39'_AddBaseParame' +
+                'ters'#39');                          '#13#10'                          Par' +
+                'ams.ValueByName('#39'MBaseParamsData'#39');'#13#10'                          A' +
+                'rrayOf(Params.ValueByName('#39'area'#39');'#13#10'                            ' +
+                '      Params.ValueByName('#39'built_up_area'#39');'#13#10'                    ' +
+                '              Params.ValueByName('#39'extension'#39');'#13#10'                ' +
+                '                  Params.ValueByName('#39'depth'#39');'#13#10'                ' +
+                '                  Params.ValueByName('#39'occurence_depth'#39');'#13#10'      ' +
+                '                            Params.ValueByName('#39'volume'#39');'#13#10'     ' +
+                '                             Params.ValueByName('#39'height'#39'));'#13#10'   ' +
+                '                       FALSE; wfatNext)'#13#10'                       ' +
+                '   '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090 +
+                #1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfa' +
+                'tNext)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1055#1083#1086#1097#1072#1076#1100' '#1074' '#1082#1074'. '#1084#1077#1090#1088#1072#1093
+          ElementType = 0
+          ParamName = 'area'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = 
+            #1055#1083#1086#1097#1072#1076#1100' '#1079#1072#1089#1090#1088#1086#1081#1082#1080' '#1074' '#1082#1074#1072#1076#1088#1072#1090#1085#1099#1093' '#1084#1077#1090#1088#1072#1093' '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084#10#1076#1086' 0,1 '#1082#1074#1072#1076#1088 +
+            #1072#1090#1085#1086#1075#1086' '#1084#1077#1090#1088#1072
+          ElementType = 0
+          ParamName = 'built_up_area'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1055#1088#1086#1090#1103#1078#1077#1085#1085#1086#1089#1090#1100' '#1074' '#1084#1077#1090#1088#1072#1093' '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084' '#1076#1086' 1 '#1084#1077#1090#1088#1072
+          ElementType = 0
+          ParamName = 'extension'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1043#1083#1091#1073#1080#1085#1072' '#1074' '#1084#1077#1090#1088#1072#1093' '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084' '#1076#1086' 0,1 '#1084#1077#1090#1088#1072
+          ElementType = 0
+          ParamName = 'depth'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1043#1083#1091#1073#1080#1085#1072' '#1079#1072#1083#1077#1075#1072#1085#1080#1103' '#1074' '#1084#1077#1090#1088#1072#1093' '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084' '#1076#1086' 0,1 '#1084#1077#1090#1088#1072
+          ElementType = 0
+          ParamName = 'occurence_depth'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1054#1073#1098#1077#1084' '#1074' '#1082#1091#1073#1080#1095#1077#1089#1082#1080#1093' '#1084#1077#1090#1088#1072#1093' '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084' '#1076#1086' 1 '#1082#1091#1073#1080#1095#1077#1089#1082#1086#1075#1086' '#1084#1077#1090#1088#1072
+          ElementType = 0
+          ParamName = 'volume'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1042#1099#1089#1086#1090#1072' '#1074' '#1084#1077#1090#1088#1072#1093' '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084' '#1076#1086' 0,1 '#1084#1077#1090#1088#1072
+          ElementType = 0
+          ParamName = 'height'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1086#1089#1085#1086#1074#1085#1099#1077' '#1093#1072#1088#1072#1082#1090#1077#1088#1080#1089#1090#1080#1082#1080' '#1080' '#1080#1093' '#1087#1088#1086#1077#1082#1090#1080#1088#1091#1077#1084#1099#1077' '#1079#1085#1072#1095#1077#1085#1080#1103'?'
+          ElementType = 0
+          ParamName = '_AddBaseParameters'
+          ElementProperty = 7
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'AddressLocation'
+      Title = #1040#1076#1088#1077#1089' ('#1084#1077#1089#1090#1086#1087#1086#1088#1083#1086#1078#1077#1085#1080#1077')'
+      Events = <
+        item
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      Description = 
+        #1040#1076#1088#1077#1089' ('#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1077') '#1086#1073#1098#1077#1082#1090#1072' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080' - '#1089#1086#1086#1088#1091#1078#1077#1085#1080#1103', '#1086#1073#1098#1077#1082#1090 +
+        #1072' '#1085#1077#1079#1072#1074#1077#1088#1096#1077#1085#1085#1086#1075#1086' '#1089#1090#1088#1086#1080#1090#1077#1083#1100#1089#1090#1074#1072', '#1077#1076#1080#1085#1086#1075#1086' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1075#1086' '#1082#1086#1084#1087#1083#1077#1082#1089#1072
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  if not VarIsNull(Params.ValueByName(' +
+                #39'_AddBaseParameters'#39').Value)'#13#10'    if Params.ValueByName('#39'_AddBas' +
+                'eParameters'#39').Value '#13#10'      Wizard.NextStep = Wizard.Steps.Value' +
+                'ByName('#39'BaseParameters'#39')'#13#10'    else'#13#10'      Wizard.NextStep = Wiza' +
+                'rd.Steps.ValueByName('#39'Params'#39')'#13#10'    endif'#13#10'  else'#13#10'    Wizard.Ne' +
+                'xtStep = Wizard.Steps.ValueByName('#39'Params'#39')'#13#10'  endif '#13#10'  // '#1047#1072#1074#1077 +
+                #1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077 +
+                ' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatPrevious)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  if not VarIsNull(Params.ValueByName(' +
+                #39'_AddAddress'#39').Value)'#13#10'    if Params.ValueByName('#39'_AddAddress'#39').' +
+                'Value '#13#10'      Wizard.NextStep = Wizard.Steps.ValueByName('#39'Addres' +
+                'sFIAS'#39')'#13#10'    else'#13#10'      if Params.ValueByName('#39'_AddLocations'#39').' +
+                'Value '#13#10'        Wizard.NextStep = Wizard.Steps.ValueByName('#39'Loca' +
+                'tion'#39')'#13#10'      else'#13#10'        Wizard.NextStep = Wizard.Steps.Value' +
+                'ByName('#39'AddContours'#39')'#13#10'      endif'#13#10'    endif'#13#10'  else'#13#10'    if Pa' +
+                'rams.ValueByName('#39'_AddLocations'#39').Value '#13#10'      Wizard.NextStep ' +
+                '= Wizard.Steps.ValueByName('#39'Location'#39')'#13#10'    else'#13#10'      Wizard.N' +
+                'extStep = Wizard.Steps.ValueByName('#39'AddContours'#39')'#13#10'    endif'#13#10'  ' +
+                'endif '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072 +
+                ' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; ' +
+                'wfatNext)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = 
+            #1058#1080#1087' '#1072#1076#1088#1077#1089#1072' ('#1090#1077#1082#1089#1090#1086#1074#1086#1077' '#1079#1085#1072#1095#1077#1085#1080#1077', '#1089#1086#1086#1090#1074#1077#1090#1089#1074#1091#1102#1097#1077#1077' '#1082#1086#1076#1091' '#1089#1087#1088#1072#1074#1086#1095#1085#1080#1082#1072' ' +
+            #1053#1057#1048')'
+          ElementType = 0
+          ParamName = 'address_type_value'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1072#1076#1088#1077#1089#1072' ('#1082#1086#1076' '#1089#1087#1088#1072#1074#1086#1095#1085#1080#1082#1072' '#1053#1057#1048')'
+          ElementType = 0
+          ParamName = 'address_type_code'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1077#1092#1086#1088#1084#1072#1083#1080#1079#1086#1074#1072#1085#1085#1086#1077' '#1086#1087#1080#1089#1072#1085#1080#1077
+          ElementType = 0
+          ParamName = 'Note'
+          ElementProperty = 1
+        end
+        object TSBWizardStepFormElement
+          Caption = #1040#1076#1088#1077#1089' '#1074' '#1089#1086#1086#1090#1074#1077#1090#1089#1090#1074#1080#1080' '#1089' '#1060#1048#1040#1057' ('#1058#1077#1082#1089#1090')'
+          ElementType = 0
+          ParamName = 'readable_address'
+          ElementProperty = 1
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1072#1076#1088#1077#1089#1072' '#1087#1086' '#1089#1087#1088#1072#1074#1086#1095#1085#1080#1082#1091' '#1060#1048#1040#1057'?'
+          ElementType = 0
+          ParamName = '_AddAddress'
+          ElementProperty = 7
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1077'?'
+          ElementType = 0
+          ParamName = '_AddLocations'
+          ElementProperty = 7
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'AddressFIAS'
+      Title = #1040#1076#1088#1077#1089' ('#1060#1048#1040#1057')'
+      Events = <
+        item
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      Description = #1040#1076#1088#1077#1089' ('#1086#1087#1080#1089#1072#1085#1080#1077' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1103') '#1076#1086' '#1091#1088#1086#1074#1085#1103' '#1085#1072#1089#1077#1083#1105#1085#1085#1086#1075#1086' '#1087#1091#1085#1082#1090#1072
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089 +
+                #1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatPrev' +
+                'ious)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  '#13#10'  // '#1055#1088#1086#1074#1077#1088#1080#1090#1100' '#1092#1086#1088#1084#1072#1090#1099' '#1079#1085#1072#1095#1077#1085#1080#1081#13#10' ' +
+                ' // '#1055#1086#1095#1090#1086#1074#1099#1081' '#1080#1085#1076#1077#1082#1089#13#10'  SMEVCheckWizardParamFormat(Params.ValueBy' +
+                'Name('#39'ReqAddressPostalCode'#39'); '#39#1085#1086#1084#1077#1088#1076#1086#1082#39')'#13#10'  SMEVCheckWizardPara' +
+                'mFormat(Params.ValueByName('#39'ReqAddressPostalCode'#39'); '#39#1044#1083#1080#1085#1072#1057#1090#1088#1086#1082#1080 +
+                #39'; '#39'6'#39')'#13#10'  // '#1054#1050#1040#1058#1054#13#10'  SMEVCheckWizardParamFormat(Params.ValueBy' +
+                'Name('#39'ReqAddressOKATO'#39'); '#39'OKATOType'#39')'#13#10'  // '#1054#1050#1058#1052#1054#13#10'  SMEVCheckWi' +
+                'zardParamFormat(Params.ValueByName('#39'ReqAddressOKTMO'#39'); '#39#1054#1050#1058#1052#1054#39') ' +
+                ' '#13#10'  // '#1050#1051#1040#1044#1056#13#10'  SMEVCheckWizardParamFormat(Params.ValueByName('#39 +
+                'ReqAddressKLADR'#39'); '#39'RegExp'#39'; '#39'^\d{1,13}$'#39')  '#13#10'  // '#1060#1048#1040#1057' (GUID)'#13#10 +
+                '  SMEVCheckWizardParamFormat(Params.ValueByName('#39'ReqAddressFIASC' +
+                'ode'#39'); '#39'RegExp'#39';   '#13#10'  "^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){' +
+                '4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$"' +
+                ')    '#13#10'  '#13#10'  // '#1055#1088#1086#1074#1077#1088#1080#1090#1100' '#1079#1072#1087#1086#1083#1085#1077#1085#1085#1086#1089#1090#1100' '#1088#1077#1082#1074#1080#1079#1080#1090#1086#1074#13#10'  // '#1056#1072#1081#1086#1085#13#10 +
+                '  SMEVCheckWizardParamFullness(ArrayOf(Params.ValueByName('#39'ReqAd' +
+                'dressDistrictType'#39'); Params.ValueByName('#39'ReqAddressDistrictName'#39 +
+                ')); "AllIfOne")'#13#10'  // '#1052#1091#1085#1080#1094#1080#1087#1072#1083#1100#1085#1086#1077' '#1086#1073#1088#1072#1079#1086#1074#1072#1085#1080#1077#13#10'  SMEVCheckWiza' +
+                'rdParamFullness(ArrayOf(Params.ValueByName('#39'ReqAddressCityType'#39')' +
+                '; Params.ValueByName('#39'ReqAddressCityName'#39')); "AllIfOne")'#13#10'  // '#1043 +
+                #1086#1088#1086#1076#1089#1082#1086#1081' '#1088#1072#1081#1086#1085#13#10'  SMEVCheckWizardParamFullness(ArrayOf(Params.Va' +
+                'lueByName('#39'ReqAddressUrbanDistrictType'#39'); Params.ValueByName('#39'Re' +
+                'qAddressUrbanDistrictName'#39')); "AllIfOne")'#13#10'  // '#1057#1077#1083#1100#1089#1086#1074#1077#1090#13#10'  SME' +
+                'VCheckWizardParamFullness(ArrayOf(Params.ValueByName('#39'ReqAddress' +
+                'SovietVillageType'#39'); Params.ValueByName('#39'ReqAddressSovietVillage' +
+                'Name'#39')); "AllIfOne")'#13#10'  // '#1053#1072#1089#1077#1083#1077#1085#1085#1099#1081' '#1087#1091#1085#1082#1090#13#10'  SMEVCheckWizardPa' +
+                'ramFullness(ArrayOf(Params.ValueByName('#39'ReqAddressLocalityName'#39')' +
+                '; Params.ValueByName('#39'ReqAddressLocalityName'#39')); "AllIfOne") '#13#10' ' +
+                ' '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074 +
+                #1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatN' +
+                'ext)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1050#1086#1076' '#1060#1048#1040#1057
+          ElementType = 0
+          ParamName = 'ReqAddressFIASCode'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1054#1050#1040#1058#1054
+          ElementType = 0
+          ParamName = 'ReqAddressOKATO'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1050#1086#1076' '#1050#1051#1040#1044#1056
+          ElementType = 0
+          ParamName = 'ReqAddressKLADR'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1054#1050#1058#1052#1054
+          ElementType = 0
+          ParamName = 'ReqAddressOKTMO'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1055#1086#1095#1090#1086#1074#1099#1081' '#1080#1085#1076#1077#1082#1089
+          ElementType = 0
+          ParamName = 'ReqAddressPostalCode'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1056#1077#1075#1080#1086#1085
+          ElementType = 0
+          ParamName = 'ReqAddressRegion'
+          Required = True
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1088#1072#1081#1086#1085#1072
+          ElementType = 0
+          ParamName = 'ReqAddressDistrictType'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1088#1072#1081#1086#1085#1072
+          ElementType = 0
+          ParamName = 'ReqAddressDistrictName'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1084#1091#1085#1080#1094#1080#1087#1072#1083#1100#1085#1086#1075#1086' '#1086#1073#1088#1072#1079#1086#1074#1072#1085#1080#1103
+          ElementType = 0
+          ParamName = 'ReqAddressCityType'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1084#1091#1085#1080#1094#1080#1087#1072#1083#1100#1085#1086#1075#1086' '#1086#1073#1088#1072#1079#1086#1074#1072#1085#1080#1103
+          ElementType = 0
+          ParamName = 'ReqAddressCityName'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1075#1086#1088#1086#1076#1089#1082#1086#1075#1086' '#1088#1072#1081#1086#1085#1072
+          ElementType = 0
+          ParamName = 'ReqAddressUrbanDistrictType'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1075#1086#1088#1086#1076#1089#1082#1086#1075#1086' '#1088#1072#1081#1086#1085#1072
+          ElementType = 0
+          ParamName = 'ReqAddressUrbanDistrictName'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1089#1077#1083#1100#1089#1086#1074#1077#1090#1072
+          ElementType = 0
+          ParamName = 'ReqAddressSovietVillageType'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1089#1077#1083#1100#1089#1086#1074#1077#1090#1072
+          ElementType = 0
+          ParamName = 'ReqAddressSovietVillageName'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1085#1072#1089#1077#1083#1077#1085#1085#1086#1075#1086' '#1087#1091#1085#1082#1090#1072
+          ElementType = 0
+          ParamName = 'ReqAddressLocalityType'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1085#1072#1089#1077#1083#1077#1085#1085#1086#1075#1086' '#1087#1091#1085#1082#1090#1072
+          ElementType = 0
+          ParamName = 'ReqAddressLocalityName'
+          ElementProperty = 0
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'DetailedLevel'
+      Title = #1044#1077#1090#1072#1083#1080#1079#1080#1088#1086#1074#1072#1085#1085#1099#1081' '#1091#1088#1086#1074#1077#1085#1100
+      Events = <
+        item
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089 +
+                #1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatPrev' +
+                'ious)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10#13#10'  // '#1055#1088#1086#1074#1077#1088#1080#1090#1100' '#1079#1072#1087#1086#1083#1085#1077#1085#1085#1086#1089#1090#1100' '#1088#1077#1082#1074#1080#1079#1080 +
+                #1090#1086#1074#13#10'  // '#1059#1083#1080#1094#1072#13#10'  SMEVCheckWizardParamFullness(ArrayOf(Params.V' +
+                'alueByName('#39'type_street'#39'); Params.ValueByName('#39'type_street'#39')); "' +
+                'AllIfOne")'#13#10'  // '#1044#1086#1084#13#10'  SMEVCheckWizardParamFullness(ArrayOf(Par' +
+                'ams.ValueByName('#39'type_level1'#39'); Params.ValueByName('#39'name_level1'#39 +
+                ')); "AllIfOne")'#13#10'  // '#1050#1086#1088#1087#1091#1089#13#10'  SMEVCheckWizardParamFullness(Arr' +
+                'ayOf(Params.ValueByName('#39'type_level2'#39'); Params.ValueByName('#39'name' +
+                '_level2'#39')); "AllIfOne")'#13#10'  // '#1057#1090#1088#1086#1077#1085#1080#1077#13#10'  SMEVCheckWizardParamFu' +
+                'llness(ArrayOf(Params.ValueByName('#39'type_level3'#39'); Params.ValueBy' +
+                'Name('#39'name_level3'#39')); "AllIfOne")'#13#10'  // '#1050#1074#1072#1088#1090#1080#1088#1072#13#10'  SMEVCheckWiz' +
+                'ardParamFullness(ArrayOf(Params.ValueByName('#39'type_apartment'#39'); P' +
+                'arams.ValueByName('#39'name_apartment'#39')); "AllIfOne")'#13#10'  '#13#10'  if not ' +
+                'VarIsNull(Params.ValueByName('#39'_AddBaseParameters'#39').Value)'#13#10'    i' +
+                'f Params.ValueByName('#39'_AddLocations'#39').Value '#13#10'      Wizard.NextS' +
+                'tep = Wizard.Steps.ValueByName('#39'Location'#39')'#13#10'    else'#13#10'      Wiza' +
+                'rd.NextStep = Wizard.Steps.ValueByName('#39'AddContours'#39')'#13#10'    endif' +
+                #13#10'  else'#13#10'    Wizard.NextStep = Wizard.Steps.ValueByName('#39'AddCon' +
+                'tours'#39')'#13#10'  endif'#13#10'    '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072 +
+                #1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCom' +
+                'pletion(Wizard; wfatNext)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1091#1083#1080#1094#1099
+          ElementType = 0
+          ParamName = 'type_street'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1091#1083#1080#1094#1099
+          ElementType = 0
+          ParamName = 'name_street'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1076#1086#1084#1072
+          ElementType = 0
+          ParamName = 'type_level1'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1086#1084#1077#1088' '#1076#1086#1084#1072
+          ElementType = 0
+          ParamName = 'name_level1'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1082#1086#1088#1087#1091#1089#1072
+          ElementType = 0
+          ParamName = 'type_level2'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1086#1084#1077#1088' '#1082#1086#1088#1087#1091#1089#1072
+          ElementType = 0
+          ParamName = 'name_level2'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1089#1090#1088#1086#1077#1085#1080#1103
+          ElementType = 0
+          ParamName = 'type_level3'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1086#1084#1077#1088' '#1089#1090#1088#1086#1077#1085#1080#1103
+          ElementType = 0
+          ParamName = 'name_level3'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1082#1074#1072#1088#1090#1080#1088#1099
+          ElementType = 0
+          ParamName = 'type_apartment'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1086#1084#1077#1088' '#1082#1074#1072#1088#1090#1080#1088#1099
+          ElementType = 0
+          ParamName = 'name_apartment'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1048#1085#1086#1077' '#1086#1087#1080#1089#1072#1085#1080#1077' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1103
+          ElementType = 0
+          ParamName = 'Other'
+          ElementProperty = 0
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'Location'
+      Title = #1052#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1077
+      Events = <
+        item
+          ISBLText = 
+            '  Params = Wizard.Params'#13#10'  SMEVProcessMultiStepBegin(Wizard; ;'#13 +
+            #10'                            Params.ValueByName('#39'MLocationsCount' +
+            #39');'#13#10'                            Params.ValueByName('#39'MLocationsP' +
+            'age'#39');'#13#10'                            Params.ValueByName('#39'_AddLoca' +
+            'tions'#39');                          '#13#10'                            ' +
+            'Params.ValueByName('#39'MLocationsData'#39');'#13#10'                         ' +
+            '   ArrayOf(Params.ValueByName('#39'ReqLocationFIASCode'#39');'#13#10'         ' +
+            '                           Params.ValueByName('#39'ReqLocationOKATO'#39 +
+            ');'#13#10'                                    Params.ValueByName('#39'ReqL' +
+            'ocationKLADR'#39');'#13#10'                                    Params.Valu' +
+            'eByName('#39'ReqLocationOKTMO'#39');'#13#10'                                  ' +
+            '  Params.ValueByName('#39'ReqLocationPostalCode'#39');'#13#10'                ' +
+            '                    Params.ValueByName('#39'ReqLocationRegion'#39'); '#13#10' ' +
+            '                                   Params.ValueByName('#39'ReqLocati' +
+            'onRegionCode'#39'); '#13#10'                                    Params.Val' +
+            'ueByName('#39'ReqLocationRegionValue'#39'); '#13#10'                          ' +
+            '          Params.ValueByName('#39'ReqLocationDistrictType'#39');'#13#10'      ' +
+            '                              Params.ValueByName('#39'ReqLocationDis' +
+            'trictName'#39');'#13#10'                                    Params.ValueBy' +
+            'Name('#39'ReqLocationCityType'#39');'#13#10'                                  ' +
+            '  Params.ValueByName('#39'ReqLocationCityName'#39');'#13#10'                  ' +
+            '                  Params.ValueByName('#39'ReqLocationUrbanDistrictTy' +
+            'pe'#39');'#13#10'                                    Params.ValueByName('#39'R' +
+            'eqLocationUrbanDistrictName'#39'); '#13#10'                               ' +
+            '     Params.ValueByName('#39'ReqLocationSovietVillageType'#39');'#13#10'      ' +
+            '                              Params.ValueByName('#39'ReqLocationSov' +
+            'ietVillageName'#39'); '#13#10'                                    Params.V' +
+            'alueByName('#39'ReqLocationLocalityType'#39');'#13#10'                        ' +
+            '            Params.ValueByName('#39'ReqLocationLocalityName'#39');'#13#10'    ' +
+            '                                Params.ValueByName('#39'ReqLocationP' +
+            'ositionDescription'#39'));'#13#10'                            FALSE)'
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  SMEVProcessMultiStepEnd(Wizard; ;'#13#10' ' +
+                '                         Params.ValueByName('#39'MLocationsCount'#39');'#13 +
+                #10'                          Params.ValueByName('#39'MLocationsPage'#39');' +
+                #13#10'                          Params.ValueByName('#39'_AddLocations'#39');' +
+                '                          '#13#10'                          Params.Val' +
+                'ueByName('#39'MLocationsData'#39');'#13#10'                          ArrayOf(P' +
+                'arams.ValueByName('#39'ReqLocationFIASCode'#39');'#13#10'                     ' +
+                '             Params.ValueByName('#39'ReqLocationOKATO'#39');'#13#10'          ' +
+                '                        Params.ValueByName('#39'ReqLocationKLADR'#39');'#13 +
+                #10'                                  Params.ValueByName('#39'ReqLocati' +
+                'onOKTMO'#39');'#13#10'                                  Params.ValueByName' +
+                '('#39'ReqLocationPostalCode'#39');'#13#10'                                  Pa' +
+                'rams.ValueByName('#39'ReqLocationRegion'#39'); '#13#10'                       ' +
+                '           Params.ValueByName('#39'ReqLocationRegionCode'#39'); '#13#10'      ' +
+                '                            Params.ValueByName('#39'ReqLocationRegio' +
+                'nValue'#39'); '#13#10'                                  Params.ValueByName' +
+                '('#39'ReqLocationDistrictType'#39');'#13#10'                                  ' +
+                'Params.ValueByName('#39'ReqLocationDistrictName'#39');'#13#10'                ' +
+                '                  Params.ValueByName('#39'ReqLocationCityType'#39');'#13#10'  ' +
+                '                                Params.ValueByName('#39'ReqLocationC' +
+                'ityName'#39');'#13#10'                                  Params.ValueByName' +
+                '('#39'ReqLocationUrbanDistrictType'#39');'#13#10'                             ' +
+                '     Params.ValueByName('#39'ReqLocationUrbanDistrictName'#39'); '#13#10'     ' +
+                '                             Params.ValueByName('#39'ReqLocationSovi' +
+                'etVillageType'#39');'#13#10'                                  Params.Value' +
+                'ByName('#39'ReqLocationSovietVillageName'#39'); '#13#10'                      ' +
+                '            Params.ValueByName('#39'ReqLocationLocalityType'#39');'#13#10'    ' +
+                '                              Params.ValueByName('#39'ReqLocationLoc' +
+                'alityName'#39');'#13#10'                                  Params.ValueByNa' +
+                'me('#39'ReqLocationPositionDescription'#39'));'#13#10'                        ' +
+                '  FALSE; wfatPrevious)'#13#10'  '#13#10'  if not VarIsNull(Params.ValueByNam' +
+                'e('#39'_AddAddress'#39').Value)'#13#10'    if Params.ValueByName('#39'_AddAddress'#39 +
+                ').Value '#13#10'      Wizard.NextStep = Wizard.Steps.ValueByName('#39'Deta' +
+                'iledLevel'#39')'#13#10'    else'#13#10'      Wizard.NextStep = Wizard.Steps.Valu' +
+                'eByName('#39'AddressLocation'#39')'#13#10'    endif'#13#10'  else'#13#10'    Wizard.NextSt' +
+                'ep = Wizard.Steps.ValueByName('#39'AddressLocation'#39')'#13#10'  endif'#13#10'  '#13#10' ' +
+                ' // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103 +
+                ' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatPrevi' +
+                'ous)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  '#13#10'  // '#1055#1088#1086#1074#1077#1088#1080#1090#1100' '#1092#1086#1088#1084#1072#1090#1099' '#1079#1085#1072#1095#1077#1085#1080#1081#13#10' ' +
+                ' // '#1055#1086#1095#1090#1086#1074#1099#1081' '#1080#1085#1076#1077#1082#1089#13#10'  SMEVCheckWizardParamFormat(Params.ValueBy' +
+                'Name('#39'ReqLocationPostalCode'#39'); '#39#1085#1086#1084#1077#1088#1076#1086#1082#39')'#13#10'  SMEVCheckWizardPar' +
+                'amFormat(Params.ValueByName('#39'ReqLocationPostalCode'#39'); '#39#1044#1083#1080#1085#1072#1057#1090#1088#1086 +
+                #1082#1080#39'; '#39'6'#39')'#13#10'  // '#1054#1050#1040#1058#1054#13#10'  SMEVCheckWizardParamFormat(Params.Value' +
+                'ByName('#39'ReqLocationOKATO'#39'); '#39'OKATOType'#39')'#13#10'  // '#1054#1050#1058#1052#1054#13#10'  SMEVChec' +
+                'kWizardParamFormat(Params.ValueByName('#39'ReqLocationOKTMO'#39'); '#39#1054#1050#1058#1052 +
+                #1054#39')  '#13#10'  // '#1050#1051#1040#1044#1056#13#10'  SMEVCheckWizardParamFormat(Params.ValueByNa' +
+                'me('#39'ReqLocationKLADR'#39'); '#39'RegExp'#39'; '#39'^\d{1,13}$'#39')  '#13#10'  // '#1060#1048#1040#1057' (GU' +
+                'ID)'#13#10'  SMEVCheckWizardParamFormat(Params.ValueByName('#39'ReqLocatio' +
+                'nFIASCode'#39'); '#39'RegExp'#39';   '#13#10'  "^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-f' +
+                'A-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0' +
+                ',1})$")    '#13#10'  '#13#10'  // '#1055#1088#1086#1074#1077#1088#1080#1090#1100' '#1079#1072#1087#1086#1083#1085#1077#1085#1085#1086#1089#1090#1100' '#1088#1077#1082#1074#1080#1079#1080#1090#1086#1074#13#10'  // '#1056 +
+                #1072#1081#1086#1085#13#10'  SMEVCheckWizardParamFullness(ArrayOf(Params.ValueByName(' +
+                #39'ReqLocationDistrictType'#39'); Params.ValueByName('#39'ReqLocationDistr' +
+                'ictName'#39')); "AllIfOne")'#13#10'  // '#1052#1091#1085#1080#1094#1080#1087#1072#1083#1100#1085#1086#1077' '#1086#1073#1088#1072#1079#1086#1074#1072#1085#1080#1077#13#10'  SMEVC' +
+                'heckWizardParamFullness(ArrayOf(Params.ValueByName('#39'ReqLocationC' +
+                'ityType'#39'); Params.ValueByName('#39'ReqLocationCityName'#39')); "AllIfOne' +
+                '")'#13#10'  // '#1043#1086#1088#1086#1076#1089#1082#1086#1081' '#1088#1072#1081#1086#1085#13#10'  SMEVCheckWizardParamFullness(ArrayOf' +
+                '(Params.ValueByName('#39'ReqLocationUrbanDistrictType'#39'); Params.Valu' +
+                'eByName('#39'ReqLocationUrbanDistrictName'#39')); "AllIfOne")'#13#10'  // '#1057#1077#1083#1100 +
+                #1089#1086#1074#1077#1090#13#10'  SMEVCheckWizardParamFullness(ArrayOf(Params.ValueByName' +
+                '('#39'ReqLocationSovietVillageType'#39'); Params.ValueByName('#39'ReqLocatio' +
+                'nSovietVillageName'#39')); "AllIfOne")'#13#10'  // '#1053#1072#1089#1077#1083#1077#1085#1085#1099#1081' '#1087#1091#1085#1082#1090#13#10'  SME' +
+                'VCheckWizardParamFullness(ArrayOf(Params.ValueByName('#39'ReqLocatio' +
+                'nLocalityName'#39'); Params.ValueByName('#39'ReqLocationLocalityName'#39'));' +
+                ' "AllIfOne") '#13#10'  '#13#10'  if not VarIsNull(Params.FindItem('#39'ReqLocati' +
+                'onRegion'#39').Value) '#13#10'    Params.FindItem('#39'ReqLocationRegionCode'#39')' +
+                '.Value = Params.FindItem('#39'ReqLocationRegion'#39').Value.Code'#13#10'    Pa' +
+                'rams.FindItem('#39'ReqLocationRegionValue'#39').Value = Params.FindItem(' +
+                #39'ReqLocationRegion'#39').Value.Name '#13#10'  else'#13#10'    Params.FindItem('#39'R' +
+                'eqLocationRegionCode'#39').Value = '#39#39#13#10'    Params.FindItem('#39'ReqLocat' +
+                'ionRegionValue'#39').Value = '#39#39#13#10'  endif'#13#10'  SMEVProcessMultiStepEnd(' +
+                'Wizard; ;'#13#10'                          Params.ValueByName('#39'MLocati' +
+                'onsCount'#39');'#13#10'                          Params.ValueByName('#39'MLoca' +
+                'tionsPage'#39');'#13#10'                          Params.ValueByName('#39'_Add' +
+                'Locations'#39');                          '#13#10'                        ' +
+                '  Params.ValueByName('#39'MLocationsData'#39');'#13#10'                       ' +
+                '   ArrayOf(Params.ValueByName('#39'ReqLocationFIASCode'#39');'#13#10'         ' +
+                '                         Params.ValueByName('#39'ReqLocationOKATO'#39');' +
+                #13#10'                                  Params.ValueByName('#39'ReqLocat' +
+                'ionKLADR'#39');'#13#10'                                  Params.ValueByNam' +
+                'e('#39'ReqLocationOKTMO'#39');'#13#10'                                  Params' +
+                '.ValueByName('#39'ReqLocationPostalCode'#39');'#13#10'                        ' +
+                '          Params.ValueByName('#39'ReqLocationRegion'#39'); '#13#10'           ' +
+                '                       Params.ValueByName('#39'ReqLocationRegionCode' +
+                #39'); '#13#10'                                  Params.ValueByName('#39'ReqL' +
+                'ocationRegionValue'#39'); '#13#10'                                  Params' +
+                '.ValueByName('#39'ReqLocationDistrictType'#39');'#13#10'                      ' +
+                '            Params.ValueByName('#39'ReqLocationDistrictName'#39');'#13#10'    ' +
+                '                              Params.ValueByName('#39'ReqLocationCit' +
+                'yType'#39');'#13#10'                                  Params.ValueByName('#39 +
+                'ReqLocationCityName'#39');'#13#10'                                  Params' +
+                '.ValueByName('#39'ReqLocationUrbanDistrictType'#39');'#13#10'                 ' +
+                '                 Params.ValueByName('#39'ReqLocationUrbanDistrictNam' +
+                'e'#39'); '#13#10'                                  Params.ValueByName('#39'Req' +
+                'LocationSovietVillageType'#39');'#13#10'                                  ' +
+                'Params.ValueByName('#39'ReqLocationSovietVillageName'#39'); '#13#10'          ' +
+                '                        Params.ValueByName('#39'ReqLocationLocalityT' +
+                'ype'#39');'#13#10'                                  Params.ValueByName('#39'Re' +
+                'qLocationLocalityName'#39');'#13#10'                                  Para' +
+                'ms.ValueByName('#39'ReqLocationPositionDescription'#39'));'#13#10'            ' +
+                '              FALSE; wfatNext)'#13#10'                          '#13#10'  '#13#10 +
+                '  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089 +
+                #1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatNext' +
+                ')'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1050#1086#1076' '#1060#1048#1040#1057
+          ElementType = 0
+          ParamName = 'ReqLocationFIASCode'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1054#1050#1040#1058#1054
+          ElementType = 0
+          ParamName = 'ReqLocationOKATO'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1050#1086#1076' '#1050#1051#1040#1044#1056
+          ElementType = 0
+          ParamName = 'ReqLocationKLADR'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1054#1050#1058#1052#1054
+          ElementType = 0
+          ParamName = 'ReqLocationOKTMO'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1055#1086#1095#1090#1086#1074#1099#1081' '#1080#1085#1076#1077#1082#1089
+          ElementType = 0
+          ParamName = 'ReqLocationPostalCode'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1056#1077#1075#1080#1086#1085
+          ElementType = 0
+          ParamName = 'ReqLocationRegion'
+          Required = True
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1088#1072#1081#1086#1085#1072
+          ElementType = 0
+          ParamName = 'ReqLocationDistrictType'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1088#1072#1081#1086#1085#1072
+          ElementType = 0
+          ParamName = 'ReqLocationDistrictName'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1084#1091#1085#1080#1094#1080#1087#1072#1083#1100#1085#1086#1075#1086' '#1086#1073#1088#1072#1079#1086#1074#1072#1085#1080#1103
+          ElementType = 0
+          ParamName = 'ReqLocationCityType'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1084#1091#1085#1080#1094#1080#1087#1072#1083#1100#1085#1086#1075#1086' '#1086#1073#1088#1072#1079#1086#1074#1072#1085#1080#1103
+          ElementType = 0
+          ParamName = 'ReqLocationCityName'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1075#1086#1088#1086#1076#1089#1082#1086#1075#1086' '#1088#1072#1081#1086#1085#1072
+          ElementType = 0
+          ParamName = 'ReqLocationUrbanDistrictType'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1075#1086#1088#1086#1076#1089#1082#1086#1075#1086' '#1088#1072#1081#1086#1085#1072
+          ElementType = 0
+          ParamName = 'ReqLocationUrbanDistrictName'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1089#1077#1083#1100#1089#1086#1074#1077#1090#1072
+          ElementType = 0
+          ParamName = 'ReqLocationSovietVillageType'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1089#1077#1083#1100#1089#1086#1074#1077#1090#1072
+          ElementType = 0
+          ParamName = 'ReqLocationSovietVillageName'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1085#1072#1089#1077#1083#1077#1085#1085#1086#1075#1086' '#1087#1091#1085#1082#1090#1072
+          ElementType = 0
+          ParamName = 'ReqLocationLocalityType'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1085#1072#1089#1077#1083#1077#1085#1085#1086#1075#1086' '#1087#1091#1085#1082#1090#1072
+          ElementType = 0
+          ParamName = 'ReqLocationLocalityName'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1054#1087#1080#1089#1072#1085#1080#1077' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1103
+          ElementType = 0
+          ParamName = 'ReqLocationPositionDescription'
+          ElementProperty = 1
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1077'?'
+          ElementType = 0
+          ParamName = '_AddLocations'
+          ElementProperty = 7
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'AddContours'
+      Title = 
+        #1054#1087#1080#1089#1072#1085#1080#1077' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1103' '#1082#1086#1085#1090#1091#1088#1072' '#1086#1073#1098#1077#1082#1090#1072' '#1085#1077#1079#1072#1074#1077#1088#1096#1077#1085#1085#1086#1075#1086' '#1089#1090#1088#1086#1080#1090#1077#1083#1100 +
+        #1089#1090#1074#1072
+      Events = <
+        item
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  if not VarIsNull(Params.ValueByName(' +
+                #39'_AddAddress'#39').Value)'#13#10'    if Params.ValueByName('#39'_AddAddress'#39').' +
+                'Value '#13#10'      Wizard.NextStep = Wizard.Steps.ValueByName('#39'Addres' +
+                'sFIAS'#39')'#13#10'    else'#13#10'      if Params.ValueByName('#39'_AddLocations'#39').' +
+                'Value '#13#10'        Wizard.NextStep = Wizard.Steps.ValueByName('#39'Loca' +
+                'tion'#39')'#13#10'      else'#13#10'        Wizard.NextStep = Wizard.Steps.Value' +
+                'ByName('#39'AddressLocation'#39')'#13#10'      endif'#13#10'    endif'#13#10'  else'#13#10'    W' +
+                'izard.NextStep = Wizard.Steps.ValueByName('#39'AddressLocation'#39')'#13#10'  ' +
+                'endif'#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' ' +
+                #1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; w' +
+                'fatPrevious)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  if not VarIsNull(Params.ValueByName(' +
+                #39'_AddContours'#39').Value)'#13#10'    if Params.ValueByName('#39'_AddContours'#39 +
+                ').Value '#13#10'      Wizard.NextStep = Wizard.Steps.ValueByName('#39'Cont' +
+                'ours'#39')'#13#10'    else'#13#10'      Wizard.NextStep = Wizard.Steps.ValueByNa' +
+                'me('#39'CheckData'#39')'#13#10'    endif'#13#10'  else'#13#10'    Wizard.NextStep = Wizard' +
+                '.Steps.ValueByName('#39'CheckData'#39')'#13#10'  endif  '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089 +
+                #1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10' ' +
+                ' SMEV3ProcessStepCompletion(Wizard; wfatNext)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1086#1087#1080#1089#1072#1085#1080#1077' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1103' '#1082#1086#1085#1090#1091#1088#1072' '#1086#1073#1098#1077#1082#1090#1072'?'
+          ElementType = 0
+          ParamName = '_AddContours'
+          Required = True
+          ElementProperty = 7
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'Contours'
+      Title = #1054#1087#1080#1089#1072#1085#1080#1077' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1103' '#1082#1086#1085#1090#1091#1088#1072' '#1086#1073#1098#1077#1082#1090#1072
+      Events = <
+        item
+          ISBLText = 
+            '  Params = Wizard.Params  '#13#10'//  if Params.ValueByName('#39'Step'#39').Va' +
+            'lue = wfatPrevious and Wizard.PreviousStep.Name == '#39'Ordinate'#39#13#10'/' +
+            '/    StepName = '#39#39#13#10'//  else'#13#10'    StepName = '#39'Contours'#39#13#10'//  end' +
+            'if'#13#10'  // '#1050#1086#1085#1090#1091#1088#13#10'  SMEVProcessMultiStepBegin(Wizard; ;'#13#10'        ' +
+            '                    Params.ValueByName('#39'MContoursCount'#39');'#13#10'     ' +
+            '                       Params.ValueByName('#39'MContoursPage'#39');'#13#10'   ' +
+            '                         Params.ValueByName('#39'_AddContours'#39');    ' +
+            '                      '#13#10'                            Params.Value' +
+            'ByName('#39'MContoursData'#39');'#13#10'                            ArrayOf(Pa' +
+            'rams.ValueByName('#39'NumberPP'#39');'#13#10'                                 ' +
+            '   Params.ValueByName('#39'SkID'#39');'#13#10'                                ' +
+            '    Params.ValueByName('#39'MElementCount'#39');'#13#10'                      ' +
+            '              Params.ValueByName('#39'MElementPage'#39');'#13#10'             ' +
+            '                       Params.ValueByName('#39'MElementData'#39'));'#13#10'   ' +
+            '                         FALSE; StepName; 0)'#13#10' '
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      Description = 
+        #1054#1087#1080#1089#1072#1085#1080#1077' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1103' '#1082#1086#1085#1090#1091#1088#1072' '#1086#1073#1098#1077#1082#1090#1072' '#1085#1077#1079#1072#1074#1077#1088#1096#1077#1085#1085#1086#1075#1086' '#1089#1090#1088#1086#1080#1090#1077#1083#1100 +
+        #1089#1090#1074#1072
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params  '#13#10'  // '#1050#1086#1085#1090#1091#1088#13#10'  SMEVProcessMultiStepE' +
+                'nd(Wizard; ;'#13#10'                          Params.ValueByName('#39'MCon' +
+                'toursCount'#39');'#13#10'                          Params.ValueByName('#39'MCo' +
+                'ntoursPage'#39');'#13#10'                          Params.ValueByName('#39'_Ad' +
+                'dContours'#39');                          '#13#10'                        ' +
+                '  Params.ValueByName('#39'MContoursData'#39');'#13#10'                        ' +
+                '  ArrayOf(Params.ValueByName('#39'NumberPP'#39');'#13#10'                     ' +
+                '             Params.ValueByName('#39'SkID'#39');'#13#10'                      ' +
+                '            Params.ValueByName('#39'MElementCount'#39');'#13#10'              ' +
+                '                    Params.ValueByName('#39'MElementPage'#39');'#13#10'       ' +
+                '                           Params.ValueByName('#39'_AddElement'#39');   ' +
+                '                       '#13#10'                                  Param' +
+                's.ValueByName('#39'MElementData'#39'));'#13#10'                          FALSE' +
+                '; wfatPrevious; '#39'Contours'#39'; 0)  '#13#10#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072 +
+                ' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3Pr' +
+                'ocessStepCompletion(Wizard; wfatPrevious)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '    // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080 +
+                #1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatNe' +
+                'xt)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1053#1086#1084#1077#1088' '#1082#1086#1085#1090#1091#1088#1072
+          ElementType = 0
+          ParamName = 'NumberPP'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1057#1080#1089#1090#1077#1084#1072' '#1082#1086#1086#1088#1076#1080#1085#1072#1090
+          ElementType = 0
+          ParamName = 'SkID'
+          ElementProperty = 0
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'Element'
+      Title = #1069#1083#1077#1084#1077#1085#1090' '#1082#1086#1085#1090#1091#1088#1072
+      Events = <
+        item
+          ISBLText = 
+            '  Params = Wizard.Params'#13#10'//  if Params.ValueByName('#39'Step'#39').Valu' +
+            'e = wfatPrevious and Wizard.PreviousStep.Name == '#39'Ordinate'#39#13#10'// ' +
+            '   StepName = '#39#39#13#10'//  else'#13#10'    StepName = '#39'Element'#39#13#10'//  endif'#13 +
+            #10'  // '#1069#1083#1077#1084#1077#1085#1090' '#1082#1086#1085#1090#1091#1088#1072#13#10'  SMEVProcessMultiStepBegin(Wizard; ;'#13#10'  ' +
+            '                          Params.ValueByName('#39'MElementCount'#39');'#13#10 +
+            '                            Params.ValueByName('#39'MElementPage'#39');'#13 +
+            #10'                            Params.ValueByName('#39'_AddElement'#39'); ' +
+            '                         '#13#10'                            Params.Va' +
+            'lueByName('#39'MElementData'#39');'#13#10'                            ArrayOf(' +
+            'Params.ValueByName('#39'level_contour_code'#39');'#13#10'                     ' +
+            '               Params.ValueByName('#39'level_contour_value'#39');'#13#10'     ' +
+            '                               Params.ValueByName('#39'MOrdinatesCou' +
+            'nt'#39');'#13#10'                                    Params.ValueByName('#39'M' +
+            'OrdinatesPage'#39');'#13#10'                                    Params.Val' +
+            'ueByName('#39'MOrdinatesData'#39'));'#13#10'                            FALSE;' +
+            ' StepName; 1)'#13#10
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  // '#1069#1083#1077#1084#1077#1085#1090' '#1082#1086#1085#1090#1091#1088#1072#13#10'  SMEVProcessMul' +
+                'tiStepEnd(Wizard; ;'#13#10'                          Params.ValueByNam' +
+                'e('#39'MElementCount'#39');'#13#10'                          Params.ValueByNam' +
+                'e('#39'MElementPage'#39');'#13#10'                          Params.ValueByName' +
+                '('#39'_AddElement'#39');                          '#13#10'                    ' +
+                '      Params.ValueByName('#39'MElementData'#39');'#13#10'                     ' +
+                '     ArrayOf(Params.ValueByName('#39'level_contour_code'#39');'#13#10'        ' +
+                '                          Params.ValueByName('#39'level_contour_valu' +
+                'e'#39');'#13#10'                                  Params.ValueByName('#39'MOrd' +
+                'inatesCount'#39');'#13#10'                                  Params.ValueBy' +
+                'Name('#39'MOrdinatesPage'#39');'#13#10'                                  Param' +
+                's.ValueByName('#39'MOrdinatesData'#39'));'#13#10'                          FAL' +
+                'SE; wfatPrevious; '#39'Element'#39'; 1)    '#13#10'  '#13#10' '#13#10'                    ' +
+                '      '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072 +
+                ' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; ' +
+                'wfatPrevious)'#13#10'  '#13#10'  if Wizard.NextStep.Name <<>> '#39'Contours'#39' '#13#10' ' +
+                '   // '#1048#1084#1103' '#1087#1077#1088#1074#1086#1075#1086' '#1101#1090#1072#1087#1072' '#1074' '#1076#1072#1085#1085#1086#1084' '#1089#1083#1091#1095#1072#1077' '#1085#1077' '#1087#1077#1088#1077#1076#1072#1077#1090#1089#1103' '#1076#1083#1103' '#1090#1086#1075#1086', ' +
+                #1095#1090#1086#1073#1099' '#1092#1091#1085#1082#1094#1080#1103' '#13#10'    // '#1086#1090#1088#1072#1073#1086#1090#1072#1083#1072' '#1087#1086' '#1074#1077#1090#1082#1077' '#1074#1086#1089#1089#1090#1072#1085#1086#1074#1083#1077#1085#1080#1103' '#1076#1072#1085#1085#1099#1093 +
+                ' '#1080' '#1087#1088#1086#1080#1075#1085#1086#1088#1080#1088#1086#1074#1072#1083#1072' '#1085#1072#1087#1088#1072#1074#1083#1077#1085#1080#1077' '#1076#1074#1080#1078#1077#1085#1080#1103' '#1087#1086' '#1084#1072#1089#1090#1077#1088#1091'   '#13#10'    SMEVP' +
+                'rocessMultiStepBegin(Wizard; ;'#13#10'                              Pa' +
+                'rams.ValueByName('#39'MElementCount'#39');'#13#10'                            ' +
+                '  Params.ValueByName('#39'MElementPage'#39');'#13#10'                         ' +
+                '     Params.ValueByName('#39'_AddElement'#39');                         ' +
+                ' '#13#10'                              Params.ValueByName('#39'MElementDat' +
+                'a'#39');'#13#10'                              ArrayOf(Params.ValueByName('#39 +
+                'level_contour_code'#39');'#13#10'                                      Par' +
+                'ams.ValueByName('#39'level_contour_value'#39');'#13#10'                       ' +
+                '               Params.ValueByName('#39'MOrdinatesCount'#39');'#13#10'         ' +
+                '                             Params.ValueByName('#39'MOrdinatesPage'#39 +
+                ');'#13#10'                                      Params.ValueByName('#39'MO' +
+                'rdinatesData'#39'));'#13#10'                              FALSE; ; 1)'#13#10'  e' +
+                'ndif           '
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089 +
+                #1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatNext' +
+                ')'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1082#1086#1085#1090#1091#1088#1072' ('#1091#1088#1086#1074#1077#1085#1100' '#1088#1072#1089#1087#1086#1083#1086#1078#1077#1085#1080#1103') - '#1082#1086#1076' '#1053#1057#1048
+          ElementType = 0
+          ParamName = 'level_contour_code'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1058#1080#1087' '#1082#1086#1085#1090#1091#1088#1072' ('#1091#1088#1086#1074#1077#1085#1100' '#1088#1072#1089#1087#1086#1083#1086#1078#1077#1085#1080#1103') - '#1090#1077#1082#1089#1090#1086#1074#1086#1077' '#1079#1085#1072#1095#1077#1085#1080#1077
+          ElementType = 0
+          ParamName = 'level_contour_value'
+          ElementProperty = 0
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'Ordinate'
+      Title = #1050#1086#1086#1088#1076#1080#1085#1072#1090#1099
+      Events = <
+        item
+          ISBLText = 
+            '  Params = Wizard.Params                            '#13#10'  // '#1050#1086#1086#1088#1076 +
+            #1080#1085#1072#1090#1099#13#10'  SMEVProcessMultiStepBegin(Wizard; ;'#13#10'                  ' +
+            '          Params.ValueByName('#39'MOrdinatesCount'#39');'#13#10'              ' +
+            '              Params.ValueByName('#39'MOrdinatesPage'#39');'#13#10'           ' +
+            '                 Params.ValueByName('#39'_AddOrdinates'#39');           ' +
+            '               '#13#10'                            Params.ValueByName(' +
+            #39'MOrdinatesData'#39');'#13#10'                            ArrayOf(Params.V' +
+            'alueByName('#39'OrdinateX'#39');'#13#10'                                    Pa' +
+            'rams.ValueByName('#39'OrdinateY'#39');'#13#10'                                ' +
+            '    Params.ValueByName('#39'OrdinateZ'#39');'#13#10'                          ' +
+            '          Params.ValueByName('#39'ord_nmb'#39');'#13#10'                      ' +
+            '              Params.ValueByName('#39'num_geopoint'#39');'#13#10'             ' +
+            '                       Params.ValueByName('#39'delta_geopoint'#39');'#13#10'  ' +
+            '                                  Params.ValueByName('#39'Radius'#39'));' +
+            #13#10'                            FALSE;;2)   '
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  // '#1050#1086#1086#1088#1076#1080#1085#1072#1090#1099#13#10'  SMEVProcessMultiSte' +
+                'pEnd(Wizard; ;'#13#10'                          Params.ValueByName('#39'MO' +
+                'rdinatesCount'#39');'#13#10'                          Params.ValueByName('#39 +
+                'MOrdinatesPage'#39');'#13#10'                          Params.ValueByName(' +
+                #39'_AddOrdinates'#39');                          '#13#10'                   ' +
+                '       Params.ValueByName('#39'MOrdinatesData'#39');'#13#10'                  ' +
+                '        ArrayOf(Params.ValueByName('#39'OrdinateX'#39');'#13#10'              ' +
+                '                    Params.ValueByName('#39'OrdinateY'#39');'#13#10'          ' +
+                '                        Params.ValueByName('#39'OrdinateZ'#39');'#13#10'      ' +
+                '                            Params.ValueByName('#39'ord_nmb'#39');'#13#10'    ' +
+                '                              Params.ValueByName('#39'num_geopoint'#39')' +
+                ';'#13#10'                                  Params.ValueByName('#39'delta_g' +
+                'eopoint'#39');'#13#10'                                  Params.ValueByName' +
+                '('#39'Radius'#39'));'#13#10'                          FALSE; wfatPrevious;;2)'#13 +
+                #10' '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072 +
+                #1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfat' +
+                'Previous)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  '#13#10'  // '#1052#1086#1078#1077#1090' '#1073#1099#1090#1100' '#1091#1089#1090#1072#1085#1086#1074#1083#1077#1085#1072' '#1090#1086#1083#1100#1082#1086 +
+                ' 1 '#1075#1072#1083#1086#1095#1082#1072' '#1080#1079' 3'#13#10'  if (Params.FindItem('#39'_AddOrdinates'#39').Value an' +
+                'd Params.FindItem('#39'_AddElement'#39').Value) '#13#10'   or (Params.FindItem' +
+                '('#39'_AddOrdinates'#39').Value and Params.FindItem('#39'_AddContours'#39').Valu' +
+                'e) '#13#10'   or (Params.FindItem('#39'_AddElement'#39').Value and Params.Find' +
+                'Item('#39'_AddContours'#39').Value)'#13#10'    Raise(CreateException('#39'EDIRInva' +
+                'lidUserAction'#39'; '#39#1053#1077#1083#1100#1079#1103' '#1076#1086#1073#1072#1074#1083#1103#1090#1100' '#1086#1076#1085#1086#1074#1088#1077#1084#1077#1085#1085#1086' '#1082#1086#1085#1090#1091#1088' '#1086#1073#1098#1077#1082#1090#1072', '#1101 +
+                #1083#1077#1084#1077#1085#1090' '#1082#1086#1085#1090#1091#1088#1072' '#1080' '#1082#1086#1086#1088#1076#1080#1085#1072#1090#1099#39'; ecWarning))'#13#10'  endif'#13#10'  '#13#10'  // '#1050#1086#1086 +
+                #1088#1076#1080#1085#1072#1090#1099#13#10'  SMEVProcessMultiStepEnd(Wizard; ;'#13#10'                  ' +
+                '        Params.ValueByName('#39'MOrdinatesCount'#39');'#13#10'                ' +
+                '          Params.ValueByName('#39'MOrdinatesPage'#39');'#13#10'               ' +
+                '           Params.ValueByName('#39'_AddOrdinates'#39');                 ' +
+                '         '#13#10'                          Params.ValueByName('#39'MOrdina' +
+                'tesData'#39');'#13#10'                          ArrayOf(Params.ValueByName' +
+                '('#39'OrdinateX'#39');'#13#10'                                  Params.ValueBy' +
+                'Name('#39'OrdinateY'#39');'#13#10'                                  Params.Val' +
+                'ueByName('#39'OrdinateZ'#39');'#13#10'                                  Params' +
+                '.ValueByName('#39'ord_nmb'#39');'#13#10'                                  Para' +
+                'ms.ValueByName('#39'num_geopoint'#39');'#13#10'                               ' +
+                '   Params.ValueByName('#39'delta_geopoint'#39');'#13#10'                      ' +
+                '            Params.ValueByName('#39'Radius'#39'));'#13#10'                    ' +
+                '      FALSE; wfatNext;;2)'#13#10'                          '#13#10'  if not ' +
+                'Params.FindItem('#39'_AddOrdinates'#39').Value'#13#10'    // '#1069#1083#1077#1084#1077#1085#1090' '#1082#1086#1085#1090#1091#1088#1072#13#10 +
+                '    SMEVProcessMultiStepEnd(Wizard; ;'#13#10'                         ' +
+                '   Params.ValueByName('#39'MElementCount'#39');'#13#10'                       ' +
+                '     Params.ValueByName('#39'MElementPage'#39');'#13#10'                      ' +
+                '      Params.ValueByName('#39'_AddElement'#39');                        ' +
+                '  '#13#10'                            Params.ValueByName('#39'MElementData' +
+                #39');'#13#10'                            ArrayOf(Params.ValueByName('#39'lev' +
+                'el_contour_code'#39');'#13#10'                                    Params.V' +
+                'alueByName('#39'level_contour_value'#39');'#13#10'                            ' +
+                '        Params.ValueByName('#39'MOrdinatesCount'#39');'#13#10'                ' +
+                '                    Params.ValueByName('#39'MOrdinatesPage'#39');'#13#10'     ' +
+                '                               Params.ValueByName('#39'MOrdinatesDat' +
+                'a'#39'));'#13#10'                            FALSE; wfatNext; '#39'Element'#39';1)' +
+                #13#10'    '#13#10'    // '#1050#1086#1085#1090#1091#1088#13#10'    SMEVProcessMultiStepEnd(Wizard; ;'#13#10'  ' +
+                '                          Params.ValueByName('#39'MContoursCount'#39');'#13 +
+                #10'                            Params.ValueByName('#39'MContoursPage'#39')' +
+                ';'#13#10'                            Params.ValueByName('#39'_AddContours'#39 +
+                ');                          '#13#10'                            Params' +
+                '.ValueByName('#39'MContoursData'#39');'#13#10'                            Arra' +
+                'yOf(Params.ValueByName('#39'NumberPP'#39');'#13#10'                           ' +
+                '         Params.ValueByName('#39'SkID'#39');'#13#10'                          ' +
+                '          Params.ValueByName('#39'MElementCount'#39');'#13#10'                ' +
+                '                    Params.ValueByName('#39'MElementPage'#39');'#13#10'       ' +
+                '                             Params.ValueByName('#39'MElementData'#39'))' +
+                ';'#13#10'                            FALSE; wfatNext; '#39'Contours'#39';0)'#13#10' ' +
+                ' endif'#13#10'  '#13#10'  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089 +
+                #1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089#1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wiza' +
+                'rd; wfatNext)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = False
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1050#1086#1086#1088#1076#1080#1085#1072#1090#1072' X'
+          ElementType = 0
+          ParamName = 'OrdinateX'
+          Required = True
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1050#1086#1086#1088#1076#1080#1085#1072#1090#1072' Y'
+          ElementType = 0
+          ParamName = 'OrdinateY'
+          Required = True
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1050#1086#1086#1088#1076#1080#1085#1072#1090#1072' Z'
+          ElementType = 0
+          ParamName = 'OrdinateZ'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1086#1084#1077#1088' '#1090#1086#1095#1082#1080' ('#1087#1086#1088#1103#1076#1086#1082' '#1086#1073#1093#1086#1076#1072')'
+          ElementType = 0
+          ParamName = 'ord_nmb'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1053#1086#1084#1077#1088' '#1090#1086#1095#1082#1080
+          ElementType = 0
+          ParamName = 'num_geopoint'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1055#1086#1075#1088#1077#1096#1085#1086#1089#1090#1100
+          ElementType = 0
+          ParamName = 'delta_geopoint'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1056#1072#1076#1080#1091#1089
+          ElementType = 0
+          ParamName = 'Radius'
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1082#1086#1086#1088#1076#1080#1085#1072#1090#1091'?'
+          ElementType = 0
+          ParamName = '_AddOrdinates'
+          ElementProperty = 7
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1101#1083#1077#1084#1077#1085#1090' '#1082#1086#1085#1090#1091#1088#1072'?'
+          ElementType = 0
+          ParamName = '_AddElement'
+          ElementProperty = 7
+        end
+        object TSBWizardStepFormElement
+          Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1086#1087#1080#1089#1072#1085#1080#1077' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1103' '#1082#1086#1085#1090#1091#1088#1072' '#1086#1073#1098#1077#1082#1090#1072'?'
+          ElementType = 0
+          ParamName = '_AddContours'
+          ElementProperty = 7
+        end
+      end
+    end
+    object TSBFormWizardStep
+      StepName = 'CheckData'
+      Title = #1055#1088#1086#1074#1077#1088#1082#1072' '#1076#1072#1085#1085#1099#1093' '#1087#1077#1088#1077#1076' '#1086#1090#1087#1088#1072#1074#1082#1086#1081' '#1079#1072#1087#1088#1086#1089#1072
+      Events = <
+        item
+          ISBLText = '  SMEV3BeginWizardCheckDataStep(Wizard)'
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      Description = #1055#1088#1086#1074#1077#1088#1100#1090#1077' '#1076#1072#1085#1085#1099#1077', '#1074#1074#1077#1076#1077#1085#1085#1099#1077' '#1085#1072' '#1087#1088#1077#1076#1099#1076#1091#1097#1080#1093' '#1092#1086#1088#1084#1072#1093
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'Previous'
+          Title = '< '#1053#1072#1079#1072#1076
+          Events = <
+            item
+              ISBLText = 
+                '  // '#1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1095#1080#1089#1083#1077#1085#1080#1103' '#1085#1072' '#1096#1072#1075#1077', '#1076#1072#1085#1085#1072#1103' '#1092#1091#1085#1082#1094#1080#1103' '#1074#1089#1077#1075#1076#1072' '#1089#1090#1072#1074#1080#1090#1089 +
+                #1103' '#1074' '#1082#1086#1085#1094#1077' '#1089#1086#1073#1099#1090#1080#1103#13#10'  SMEV3ProcessStepCompletion(Wizard; wfatPrev' +
+                'ious)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 0
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Next'
+          Title = #1044#1072#1083#1077#1077' >'
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 1
+          Enabled = False
+        end
+        object TSBWizardAction
+          ActionName = 'Cancel'
+          Title = #1054#1090#1084#1077#1085#1072
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 2
+          Enabled = True
+        end
+        object TSBWizardAction
+          ActionName = 'Finish'
+          Title = #1043#1086#1090#1086#1074#1086
+          Events = <
+            item
+              ISBLText = 
+                '  Params = Wizard.Params'#13#10'  //'#1057#1092#1086#1088#1084#1080#1088#1086#1074#1072#1090#1100' xml '#1079#1072#1087#1088#1086#1089#1072#13#10'  DataNo' +
+                'de = SMEV3CreateXMLWithRule(Params; Params.ValueByName("XMLCreat' +
+                'eRule").Value)'#13#10'  SMEV3BuildRequestXML(Wizard; DataNode)    '#13#10'  ' +
+                'SMEV3FinalizeSIDWizard(Wizard)'
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = True
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1047#1072#1076#1072#1085#1086' '#1074' '#1087#1072#1088#1072#1084#1077#1090#1088#1077
+          ElementType = 1
+          ParamName = 'EndText'
+          ReadOnly = True
+          ElementProperty = 1
+          Hint = #1053#1077' '#1090#1088#1077#1073#1091#1077#1090#1089#1103
+        end
+        object TSBWizardStepFormElement
+          ElementType = 2
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = #1047#1072#1076#1072#1085#1086' '#1074' '#1087#1072#1088#1072#1084#1077#1090#1088#1077
+          ElementType = 1
+          ParamName = 'CheckText'
+          ReadOnly = True
+          ElementProperty = 3
+          Hint = #1053#1077' '#1090#1088#1077#1073#1091#1077#1090#1089#1103
+        end
+        object TSBWizardStepFormElement
+          ElementType = 2
+          ElementProperty = 0
+        end
+        object TSBWizardStepFormElement
+          Caption = 
+            #1045#1089#1083#1080' '#1074#1099' '#1093#1086#1090#1080#1090#1077' '#1080#1079#1084#1077#1085#1080#1090#1100' '#1074#1074#1077#1076#1077#1085#1085#1099#1077' '#1076#1072#1085#1085#1099#1077', '#1085#1072#1078#1084#1080#1090#1077' '#1082#1085#1086#1087#1082#1091' "'#1053#1072#1079#1072#1076'"' +
+            '.'#13#10#1044#1083#1103' '#1090#1086#1075#1086' '#1095#1090#1086#1073#1099' '#1086#1090#1087#1088#1072#1074#1080#1090#1100' '#1079#1072#1087#1088#1086#1089' '#1089' '#1091#1082#1072#1079#1072#1085#1085#1099#1084#1080' '#1076#1072#1085#1085#1099#1084#1080' '#1085#1072#1078#1084#1080#1090#1077' ' +
+            #1082#1085#1086#1087#1082#1091' "'#1043#1086#1090#1086#1074#1086'".'
+          ElementType = 1
+          ReadOnly = True
+          ElementProperty = 1
+          Hint = #1053#1077' '#1090#1088#1077#1073#1091#1077#1090#1089#1103
+        end
+        object TSBWizardStepFormElement
+          Caption = 
+            #1055#1056#1048#1052#1045#1063#1040#1053#1048#1045': '#1060#1086#1088#1084#1072#1090' '#1076#1072#1085#1085#1086#1075#1086' '#1089#1077#1088#1074#1080#1089#1072' '#1090#1088#1077#1073#1091#1077#1090' '#1087#1086#1076#1087#1080#1089#1072#1085#1080#1103' '#1079#1072#1087#1088#1086#1089#1072' '#1083#1080 +
+            #1095#1085#1086#1081' '#1101#1083#1077#1082#1090#1088#1086#1085#1085#1086#1081' '#1087#1086#1076#1087#1080#1089#1100#1102' '#1089#1087#1077#1094#1080#1072#1083#1080#1089#1090#1072'.'#13#10#1055#1086#1089#1083#1077' '#1085#1072#1078#1072#1090#1080#1103' '#1082#1085#1086#1087#1082#1080' "'#1043#1086 +
+            #1090#1086#1074#1086'" '#1089#1080#1089#1090#1077#1084#1072' '#1087#1088#1077#1076#1083#1086#1078#1080#1090' '#1074#1099#1073#1088#1072#1090#1100' '#1089#1077#1088#1090#1080#1092#1080#1082#1072#1090', '#1082#1086#1090#1086#1088#1099#1084' '#1073#1091#1076#1077#1090' '#1087#1086#1076#1087#1080#1089 +
+            #1072#1085' '#1079#1072#1087#1088#1086#1089'.'
+          ElementType = 1
+          ReadOnly = True
+          ElementProperty = 1
+          Hint = #1053#1077' '#1090#1088#1077#1073#1091#1077#1090#1089#1103
+        end
+      end
+    end
+    object TSBFinalWizardStep
+      StepName = 'End'
+      Title = #1052#1072#1089#1090#1077#1088' '#1079#1072#1074#1077#1088#1096#1080#1083' '#1089#1074#1086#1102' '#1088#1072#1073#1086#1090#1091
+      Events = <
+        item
+          EventType = wetStepStart
+        end
+        item
+          EventType = wetStepFinish
+        end>
+      object TSBWizardActionList
+        object TSBWizardAction
+          ActionName = 'OK'
+          Title = 'OK'
+          Events = <
+            item
+              EventType = wetActionExecute
+            end>
+          ActionType = 3
+          Enabled = True
+        end
+      end
+      object TSBWizardStepFormElementList
+        object TSBWizardStepFormElement
+          Caption = #1042' '#1088#1077#1079#1091#1083#1100#1090#1072#1090#1077' '#1088#1072#1073#1086#1090#1099' '#1084#1072#1089#1090#1077#1088#1072' '#1086#1090#1087#1088#1072#1074#1083#1077#1085' '#1079#1072#1087#1088#1086#1089':'
+          ElementType = 3
+          ElementProperty = 0
+          Hint = #1053#1077' '#1090#1088#1077#1073#1091#1077#1090#1089#1103
+        end
+        object TSBWizardStepFormElement
+          Caption = #1047#1072#1076#1072#1085#1086' '#1074' '#1087#1072#1088#1072#1084#1077#1090#1088#1077
+          ElementType = 1
+          ParamName = 'TaskLink'
+          ReadOnly = True
+          ElementProperty = 1
+          Hint = #1053#1077' '#1090#1088#1077#1073#1091#1077#1090#1089#1103
+        end
+      end
+    end
+  end
+  object TSBWizardParamList
+    object TSBReferenceRecordInfoWizardParam
+      ParamName = 'SMEVService'
+      Title = #1057#1077#1088#1074#1080#1089' '#1057#1052#1069#1042
+      IsNull = False
+      Value = 153975
+      ComponentCode = 'SMEVServices'
+    end
+    object TSBPickWizardParam
+      ParamName = 'RequestType'
+      Title = #1058#1080#1087' '#1079#1072#1087#1088#1086#1089#1072
+      ValueList.Strings = (
+        #1055#1088#1086#1089#1090#1086#1081' '#1074#1080#1076' '#1089#1074#1077#1076#1077#1085#1080#1081
+        #1057' '#1074#1074#1086#1076#1086#1084' '#1084#1085#1086#1078#1077#1089#1090#1074#1077#1085#1085#1099#1093' '#1076#1072#1085#1085#1099#1093)
+    end
+    object TSBStringWizardParam
+      ParamName = 'RequestTypeCode'
+      Title = #1050#1086#1076' '#1090#1080#1087#1072' '#1079#1072#1087#1088#1086#1089#1072
+    end
+    object TSBEDocumentInfoWizardParam
+      ParamName = 'XMLCreateRule'
+      Title = #1060#1086#1088#1084#1072#1090' XML '#1076#1083#1103' '#1089#1086#1079#1076#1072#1085#1080#1103' '#1079#1072#1087#1088#1086#1089#1072
+      IsNull = False
+      Value = 153976
+    end
+    object TSBReferenceRecordInfoWizardParam
+      ParamName = 'SMEVRequest'
+      Title = #1047#1072#1087#1088#1086#1089' '#1057#1052#1069#1042
+      Value = 0
+      ComponentCode = 'SMEVRequests'
+    end
+    object TSBTextWizardParam
+      ParamName = 'BeginText'
+      Title = 'BeginText'
+      IsNull = False
+      Value = 
+        #1057#1077#1088#1074#1080#1089' '#1087#1088#1077#1076#1085#1072#1079#1085#1072#1095#1077#1085' '#1076#1083#1103' ['#1086#1087#1080#1089#1072#1085#1080#1077' '#1089#1077#1088#1074#1080#1089#1072']. '#1055#1086#1076#1088#1086#1073#1085#1086#1077' '#1086#1087#1080#1089#1072#1085#1080#1077' '#1088 +
+        #1072#1073#1086#1090#1099' '#1089' '#1089#1077#1088#1074#1080#1089#1086#1084' '#1089#1084'. '#1074' ['#1089#1089#1099#1083#1082#1072' '#1085#1072' '#1080#1085#1089#1090#1088#1091#1082#1094#1080#1102']'#13#10
+    end
+    object TSBTextWizardParam
+      ParamName = 'EndText'
+      Title = 'CheckDataUpText'
+      IsNull = False
+      Value = 
+        #1052#1072'c'#1090#1077#1088' '#1075#1086#1090#1086#1074' '#1082' '#1092#1086#1088#1084#1080#1088#1086#1074#1072#1085#1080#1102' '#1079#1072#1087#1088#1086#1089#1072' '#1082' '#1089#1077#1088#1074#1080#1089#1091' ['#1085#1072#1079#1074#1072#1085#1080#1077' '#1089#1077#1088#1074#1080#1089#1072']' +
+        '.'
+    end
+    object TSBTextWizardParam
+      ParamName = 'DelimitedCheckText'
+      Title = 'DelimitedCheckText'
+    end
+    object TSBTextWizardParam
+      ParamName = 'ManualStepCheckText'
+      Title = 'ManualStepCheckText'
+    end
+    object TSBTextWizardParam
+      ParamName = 'CheckText'
+      Title = 'CheckText'
+      IsNull = False
+      Value = #13#10#13#10#13#10#13#10#13#10#13#10#13#10#13#10#13#10#13#10
+    end
+    object TSBStringWizardParam
+      ParamName = 'SubjectBase'
+      Title = 'SubjectBase'
+    end
+    object TSBTextWizardParam
+      ParamName = 'SignInWebAccessHyperLink'
+      Title = 'SignInWebAccessHyperLink'
+    end
+    object TSBTextWizardParam
+      ParamName = 'TaskLink'
+      Title = 'TaskLink'
+    end
+    object TSBTextWizardParam
+      ParamName = 'SignedFiles'
+      Title = #1055#1086#1076#1087#1080#1089#1099#1074#1072#1077#1084#1099#1077' '#1092#1072#1081#1083#1099
+    end
+    object TSBTextWizardParam
+      ParamName = '_UserCertificate'
+      Title = '_UserCertificate'
+    end
+    object TSBTextWizardParam
+      ParamName = '_SignedData'
+      Title = '_SignedData'
+    end
+    object TSBTextWizardParam
+      ParamName = '_DataToSign'
+      Title = '_DataToSign'
+    end
+    object TSBTextWizardParam
+      ParamName = 'SignedRequestData'
+      Title = 'SignedRequestData'
+    end
+    object TSBReferenceRecordInfoWizardParam
+      ParamName = 'MessageSender'
+      Title = #1042#1077#1076#1086#1084#1089#1090#1074#1086'-'#1086#1090#1087#1088#1072#1074#1080#1090#1077#1083#1100
+      Value = 0
+      ComponentCode = 'SIRGovernmentAgencies'
+    end
+    object TSBReferenceRecordInfoWizardParam
+      ParamName = 'MessageOriginator'
+      Title = #1042#1077#1076#1086#1084#1089#1090#1074#1086'-'#1086#1085#1080#1094#1080#1072#1090#1086#1088
+      Value = 0
+      ComponentCode = 'SIRGovernmentAgencies'
+    end
+    object TSBReferenceRecordInfoWizardParam
+      ParamName = 'MessageRecipient'
+      Title = #1042#1077#1076#1086#1084#1089#1090#1074#1086'-'#1087#1086#1083#1091#1095#1072#1090#1077#1083#1100
+      Value = 0
+      ComponentCode = 'SIRGovernmentAgencies'
+    end
+    object TSBReferenceRecordInfoWizardParam
+      ParamName = 'MessageEmployee'
+      Title = #1056#1072#1073#1086#1090#1085#1080#1082'-'#1086#1090#1087#1088#1072#1074#1080#1090#1077#1083#1100
+      Value = 0
+      ComponentCode = #1056#1040#1041
+    end
+    object TSBBooleanWizardParam
+      ParamName = 'TestMessage'
+      Title = #1054#1090#1087#1088#1072#1074#1082#1072' '#1090#1077#1089#1090#1086#1074#1086#1075#1086' '#1089#1086#1086#1073#1097#1077#1085#1080#1103
+      IsNull = False
+      Value = False
+    end
+    object TSBPickWizardParam
+      ParamName = 'Environment'
+      Title = #1050#1086#1085#1090#1091#1088' '#1057#1052#1069#1042' 3'
+      IsNull = False
+      Value = 'DEV'
+      ValueList.Strings = (
+        'PROD'
+        'TEST'
+        'DEV')
+    end
+    object TSBTextWizardParam
+      ParamName = 'StepsBackStack'
+      Title = 'StepsBackStack'
+    end
+    object TSBBooleanWizardParam
+      ParamName = '_AddOldNumbers'
+      Title = #1044#1086#1073#1072#1074#1080#1090#1100' '#1088#1072#1085#1077#1077' '#1087#1088#1080#1089#1074#1086#1077#1085#1085#1099#1077' '#1085#1086#1084#1077#1088#1072'?'
+      IsNull = False
+      Value = False
+    end
+    object TSBTextWizardParam
+      ParamName = 'MOldNumbersData'
+      Title = 'MOldNumbersData'
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MOldNumbersPage'
+      Title = 'MOldNumbersPage'
+      Value = 0
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MOldNumbersCount'
+      Title = 'MOldNumbersCount'
+      Value = 0
+    end
+    object TSBDateTimeWizardParam
+      ParamName = 'registration_date'
+      Title = #1044#1072#1090#1072' '#1087#1086#1089#1090#1072#1085#1086#1074#1082#1080' '#1085#1072' '#1091#1095#1077#1090'/ '#1088#1077#1075#1080#1089#1090#1088#1072#1094#1080#1080
+    end
+    object TSBDateTimeWizardParam
+      ParamName = 'cancel_date'
+      Title = #1044#1072#1090#1072' '#1089#1085#1103#1090#1080#1103' '#1089' '#1091#1095#1077#1090#1072'/'#1088#1077#1075#1080#1089#1090#1088#1072#1094#1080#1080
+    end
+    object TSBStringWizardParam
+      ParamName = 'cad_number'
+      Title = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1081' '#1085#1086#1084#1077#1088
+      IsNull = False
+      Value = '11:11:1111111:11'
+    end
+    object TSBStringWizardParam
+      ParamName = 'quarter_cad_number'
+      Title = #1053#1086#1084#1077#1088' '#1082#1072#1076#1072#1089#1090#1088#1086#1074#1086#1075#1086' '#1082#1074#1072#1088#1090#1072#1083#1072
+    end
+    object TSBReferenceRecordInfoWizardParam
+      ParamName = 'TypesRealEstate'
+      Title = #1042#1080#1076' '#1086#1073#1098#1077#1082#1090#1072' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080
+      Value = 0
+      ComponentCode = 'SMEV_TypesRealEstate'
+    end
+    object TSBBooleanWizardParam
+      ParamName = '_AddCadLinks'
+      Title = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1074#1077#1076#1077#1085#1080#1103' '#1086#1073' '#1086#1073#1098#1077#1082#1090#1072#1093' ('#1089#1074#1103#1079#1100' '#1089' '#1082#1072#1076#1072#1089#1090#1088#1086#1074#1099#1084#1080' '#1085#1086#1084#1077#1088#1072#1084#1080')?'
+      IsNull = False
+      Value = False
+    end
+    object TSBStringWizardParam
+      ParamName = 'CadNumber1'
+      Title = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1081' '#1085#1086#1084#1077#1088
+    end
+    object TSBStringWizardParam
+      ParamName = 'CadNumber2'
+      Title = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1081' '#1085#1086#1084#1077#1088
+    end
+    object TSBStringWizardParam
+      ParamName = 'CadNumber3'
+      Title = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1081' '#1085#1086#1084#1077#1088
+    end
+    object TSBStringWizardParam
+      ParamName = 'CadNumber4'
+      Title = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1081' '#1085#1086#1084#1077#1088
+    end
+    object TSBStringWizardParam
+      ParamName = 'CadNumber5'
+      Title = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1099#1081' '#1085#1086#1084#1077#1088
+    end
+    object TSBBooleanWizardParam
+      ParamName = '_AddLandCadNumbers'
+      Title = 
+        #1044#1086#1073#1072#1074#1080#1090#1100' '#1082#1072#1076#1072#1089#1090#1088#1086#1074#1099#1077' '#1085#1086#1084#1077#1088#1072' '#1080#1085#1099#1093' '#1086#1073#1098#1077#1082#1090#1086#1074' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080' ('#1079#1077#1084#1077#1083#1100#1085#1099 +
+        #1093' '#1091#1095#1072#1089#1090#1082#1086#1074'), '#1074' '#1087#1088#1077#1076#1077#1083#1072#1093' '#1082#1086#1090#1086#1088#1099#1093' '#1088#1072#1089#1087#1086#1083#1086#1078#1077#1085' '#1086#1073#1098#1077#1082#1090' '#1085#1077#1076#1074#1080#1078#1080#1084#1086#1089#1090#1080'?'
+      IsNull = False
+      Value = False
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MLCadNumberPage'
+      Title = 'MLCadNumberPage'
+      IsNull = False
+      Value = 1
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MLCadNumberCount'
+      Title = 'MLCadNumberCount'
+      IsNull = False
+      Value = 0
+    end
+    object TSBStringWizardParam
+      ParamName = 'MLCadNumberData'
+      Title = 'MLCadNumberData'
+    end
+    object TSBStringWizardParam
+      ParamName = 'Number'
+      Title = #1053#1086#1084#1077#1088
+    end
+    object TSBDateWizardParam
+      ParamName = 'Assignment_Date'
+      Title = #1044#1072#1090#1072' '#1087#1088#1080#1089#1074#1086#1077#1085#1080#1103
+    end
+    object TSBStringWizardParam
+      ParamName = 'assigner'
+      Title = #1054#1088#1075#1072#1085#1080#1079#1072#1094#1080#1103', '#1087#1088#1080#1089#1074#1086#1080#1074#1096#1072#1103' '#1085#1086#1084#1077#1088
+    end
+    object TSBStringWizardParam
+      ParamName = 'degree_readiness'
+      Title = 
+        #1057#1090#1077#1087#1077#1085#1100' '#1075#1086#1090#1086#1074#1085#1086#1089#1090#1080' '#1086#1073#1098#1077#1082#1090#1072' '#1085#1077#1079#1072#1074#1077#1088#1096#1077#1085#1085#1086#1075#1086' '#1089#1090#1088#1086#1080#1090#1077#1083#1100#1089#1090#1074#1072' '#1074' '#1087#1088#1086#1094#1077#1085 +
+        #1090#1072#1093
+    end
+    object TSBStringWizardParam
+      ParamName = 'purpose'
+      Title = #1055#1088#1086#1077#1082#1090#1080#1088#1091#1077#1084#1086#1077' '#1085#1072#1079#1085#1072#1095#1077#1085#1080#1077
+    end
+    object TSBBooleanWizardParam
+      ParamName = '_AddBaseParameters'
+      Title = #1044#1086#1073#1072#1074#1080#1090#1100' '#1086#1089#1085#1086#1074#1085#1099#1077' '#1093#1072#1088#1072#1082#1090#1077#1088#1080#1089#1090#1080#1082#1080' '#1080' '#1080#1093' '#1087#1088#1086#1077#1082#1090#1080#1088#1091#1077#1084#1099#1077' '#1079#1085#1072#1095#1077#1085#1080#1103'?'
+      IsNull = False
+      Value = False
+    end
+    object TSBReferenceRecordInfoWizardParam
+      ParamName = 'number_type'
+      Title = #1042#1080#1076' '#1085#1086#1084#1077#1088#1072
+      Value = 0
+      ComponentCode = 'SMEV_NumberType'
+    end
+    object TSBStringWizardParam
+      ParamName = 'number_type_value'
+      Title = #1042#1080#1076' '#1085#1086#1084#1077#1088#1072' ('#1079#1085#1072#1095#1077#1085#1080#1077')'
+    end
+    object TSBStringWizardParam
+      ParamName = 'number_type_code'
+      Title = #1050#1086#1076' '#1074#1080#1076#1072' '#1085#1086#1084#1077#1088#1072' '
+    end
+    object TSBNumericWizardParam
+      ParamName = 'area'
+      Title = #1055#1083#1086#1097#1072#1076#1100' '#1074' '#1082#1074'. '#1084#1077#1090#1088#1072#1093
+    end
+    object TSBNumericWizardParam
+      ParamName = 'built_up_area'
+      Title = 
+        #1055#1083#1086#1097#1072#1076#1100' '#1079#1072#1089#1090#1088#1086#1081#1082#1080' '#1074' '#1082#1074#1072#1076#1088#1072#1090#1085#1099#1093' '#1084#1077#1090#1088#1072#1093' '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084#10#1076#1086' 0,1 '#1082#1074#1072#1076#1088 +
+        #1072#1090#1085#1086#1075#1086' '#1084#1077#1090#1088#1072
+    end
+    object TSBNumericWizardParam
+      ParamName = 'extension'
+      Title = #1055#1088#1086#1090#1103#1078#1077#1085#1085#1086#1089#1090#1100' '#1074' '#1084#1077#1090#1088#1072#1093' '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084' '#1076#1086' 1 '#1084#1077#1090#1088#1072
+    end
+    object TSBNumericWizardParam
+      ParamName = 'depth'
+      Title = #1043#1083#1091#1073#1080#1085#1072' '#1074' '#1084#1077#1090#1088#1072#1093' '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084' '#1076#1086' 0,1 '#1084#1077#1090#1088#1072
+    end
+    object TSBNumericWizardParam
+      ParamName = 'occurence_depth'
+      Title = #1043#1083#1091#1073#1080#1085#1072' '#1079#1072#1083#1077#1075#1072#1085#1080#1103' '#1074' '#1084#1077#1090#1088#1072#1093' '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084' '#1076#1086' 0,1 '#1084#1077#1090#1088#1072
+    end
+    object TSBNumericWizardParam
+      ParamName = 'volume'
+      Title = #1054#1073#1098#1077#1084' '#1074' '#1082#1091#1073#1080#1095#1077#1089#1082#1080#1093' '#1084#1077#1090#1088#1072#1093' '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084' '#1076#1086' 1 '#1082#1091#1073#1080#1095#1077#1089#1082#1086#1075#1086' '#1084#1077#1090#1088#1072
+    end
+    object TSBNumericWizardParam
+      ParamName = 'height'
+      Title = #1042#1099#1089#1086#1090#1072' '#1074' '#1084#1077#1090#1088#1072#1093' '#1089' '#1086#1082#1088#1091#1075#1083#1077#1085#1080#1077#1084' '#1076#1086' 0,1 '#1084#1077#1090#1088#1072
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MBaseParamsPage'
+      Title = 'MBaseParamsPage'
+      IsNull = False
+      Value = 1
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MBaseParamsCount'
+      Title = 'MBaseParamsCount'
+      IsNull = False
+      Value = 0
+    end
+    object TSBStringWizardParam
+      ParamName = 'MBaseParamsData'
+      Title = 'MBaseParamsData'
+    end
+    object TSBStringWizardParam
+      ParamName = 'address_type_value'
+      Title = 
+        #1058#1080#1087' '#1072#1076#1088#1077#1089#1072' ('#1090#1077#1082#1089#1090#1086#1074#1086#1077' '#1079#1085#1072#1095#1077#1085#1080#1077', '#1089#1086#1086#1090#1074#1077#1090#1089#1074#1091#1102#1097#1077#1077' '#1082#1086#1076#1091' '#1089#1087#1088#1072#1074#1086#1095#1085#1080#1082#1072' ' +
+        #1053#1057#1048')'
+    end
+    object TSBStringWizardParam
+      ParamName = 'address_type_code'
+      Title = #1058#1080#1087' '#1072#1076#1088#1077#1089#1072' ('#1082#1086#1076' '#1089#1087#1088#1072#1074#1086#1095#1085#1080#1082#1072' '#1053#1057#1048')'
+    end
+    object TSBBooleanWizardParam
+      ParamName = '_AddAddress'
+      Title = #1044#1086#1073#1072#1074#1080#1090#1100' '#1072#1076#1088#1077#1089#1072' '#1087#1086' '#1089#1087#1088#1072#1074#1086#1095#1085#1080#1082#1091' '#1060#1048#1040#1057'?'
+      IsNull = False
+      Value = False
+    end
+    object TSBBooleanWizardParam
+      ParamName = '_AddLocations'
+      Title = #1044#1086#1073#1072#1074#1080#1090#1100' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1077'?'
+      IsNull = False
+      Value = False
+    end
+    object TSBTextWizardParam
+      ParamName = 'Note'
+      Title = #1053#1077#1092#1086#1088#1084#1072#1083#1080#1079#1086#1074#1072#1085#1085#1086#1077' '#1086#1087#1080#1089#1072#1085#1080#1077
+    end
+    object TSBTextWizardParam
+      ParamName = 'readable_address'
+      Title = #1040#1076#1088#1077#1089' '#1074' '#1089#1086#1086#1090#1074#1077#1090#1089#1090#1074#1080#1080' '#1089' '#1060#1048#1040#1057' ('#1058#1077#1082#1089#1090')'
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressFIASCode'
+      Title = #1050#1086#1076' '#1060#1048#1040#1057
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressOKATO'
+      Title = #1054#1050#1040#1058#1054
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressKLADR'
+      Title = #1050#1051#1040#1044#1056
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressOKTMO'
+      Title = #1054#1050#1058#1052#1054
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressPostalCode'
+      Title = #1055#1086#1095#1090#1086#1074#1099#1081' '#1080#1085#1076#1077#1082#1089
+    end
+    object TSBReferenceRecordInfoWizardParam
+      ParamName = 'ReqAddressRegion'
+      Title = #1056#1077#1075#1080#1086#1085
+      Value = 0
+      ComponentCode = #1057#1052#1069#1042#1057#1091#1073#1098#1077#1082#1090#1099#1056#1060
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressDistrictType'
+      Title = #1058#1080#1087' '#1088#1072#1081#1086#1085#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressDistrictName'
+      Title = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1088#1072#1081#1086#1085#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressCityType'
+      Title = #1058#1080#1087' '#1084#1091#1085#1080#1094#1080#1087#1072#1083#1100#1085#1086#1075#1086' '#1086#1073#1088#1072#1079#1086#1074#1072#1085#1080#1103
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressCityName'
+      Title = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1084#1091#1085#1080#1094#1080#1087#1072#1083#1100#1085#1086#1075#1086' '#1086#1073#1088#1072#1079#1086#1074#1072#1085#1080#1103
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressUrbanDistrictType'
+      Title = #1058#1080#1087' '#1075#1086#1088#1086#1076#1089#1082#1086#1075#1086' '#1088#1072#1081#1086#1085#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressUrbanDistrictName'
+      Title = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1075#1086#1088#1086#1076#1089#1082#1086#1075#1086' '#1088#1072#1081#1086#1085#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressSovietVillageType'
+      Title = #1058#1080#1087' '#1089#1077#1083#1100#1089#1086#1074#1077#1090#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressSovietVillageName'
+      Title = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1089#1077#1083#1100#1089#1086#1074#1077#1090#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressLocalityType'
+      Title = #1058#1080#1087' '#1085#1072#1089#1077#1083#1077#1085#1085#1086#1075#1086' '#1087#1091#1085#1082#1090#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqAddressLocalityName'
+      Title = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1085#1072#1089#1077#1083#1077#1085#1085#1086#1075#1086' '#1087#1091#1085#1082#1090#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'type_street'
+      Title = #1058#1080#1087' '#1091#1083#1080#1094#1099
+    end
+    object TSBStringWizardParam
+      ParamName = 'name_street'
+      Title = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1091#1083#1080#1094#1099
+    end
+    object TSBStringWizardParam
+      ParamName = 'type_level1'
+      Title = #1058#1080#1087' '#1076#1086#1084#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'name_level1'
+      Title = #1053#1086#1084#1077#1088' '#1076#1086#1084#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'type_level2'
+      Title = #1058#1080#1087' '#1082#1086#1088#1087#1091#1089#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'name_level2'
+      Title = #1053#1086#1084#1077#1088' '#1082#1086#1088#1087#1091#1089#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'type_level3'
+      Title = #1058#1080#1087' '#1089#1090#1088#1086#1077#1085#1080#1103
+    end
+    object TSBStringWizardParam
+      ParamName = 'name_level3'
+      Title = #1053#1086#1084#1077#1088' '#1089#1090#1088#1086#1077#1085#1080#1103
+    end
+    object TSBStringWizardParam
+      ParamName = 'type_apartment'
+      Title = #1058#1080#1087' '#1082#1074#1072#1088#1090#1080#1088#1099
+    end
+    object TSBStringWizardParam
+      ParamName = 'name_apartment'
+      Title = #1053#1086#1084#1077#1088' '#1082#1074#1072#1088#1090#1080#1088#1099
+    end
+    object TSBStringWizardParam
+      ParamName = 'Other'
+      Title = #1048#1085#1086#1077' '#1086#1087#1080#1089#1072#1085#1080#1077' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1103
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationFIASCode'
+      Title = #1050#1086#1076' '#1060#1048#1040#1057
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationOKATO'
+      Title = #1054#1050#1040#1058#1054
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationKLADR'
+      Title = #1050#1051#1040#1044#1056
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationOKTMO'
+      Title = #1054#1050#1058#1052#1054
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationPostalCode'
+      Title = #1055#1086#1095#1090#1086#1074#1099#1081' '#1080#1085#1076#1077#1082#1089
+    end
+    object TSBReferenceRecordInfoWizardParam
+      ParamName = 'ReqLocationRegion'
+      Title = #1056#1077#1075#1080#1086#1085
+      Value = 0
+      ComponentCode = #1057#1052#1069#1042#1057#1091#1073#1098#1077#1082#1090#1099#1056#1060
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationRegionCode'
+      Title = #1056#1077#1075#1080#1086#1085'. '#1050#1086#1076
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationRegionValue'
+      Title = #1056#1077#1075#1080#1086#1085'. '#1047#1085#1072#1095#1077#1085#1080#1077
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationDistrictType'
+      Title = #1058#1080#1087' '#1088#1072#1081#1086#1085#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationDistrictName'
+      Title = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1088#1072#1081#1086#1085#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationCityType'
+      Title = #1058#1080#1087' '#1084#1091#1085#1080#1094#1080#1087#1072#1083#1100#1085#1086#1075#1086' '#1086#1073#1088#1072#1079#1086#1074#1072#1085#1080#1103
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationCityName'
+      Title = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1084#1091#1085#1080#1094#1080#1087#1072#1083#1100#1085#1086#1075#1086' '#1086#1073#1088#1072#1079#1086#1074#1072#1085#1080#1103
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationUrbanDistrictType'
+      Title = #1058#1080#1087' '#1075#1086#1088#1086#1076#1089#1082#1086#1075#1086' '#1088#1072#1081#1086#1085#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationUrbanDistrictName'
+      Title = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1075#1086#1088#1086#1076#1089#1082#1086#1075#1086' '#1088#1072#1081#1086#1085#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationSovietVillageType'
+      Title = #1058#1080#1087' '#1089#1077#1083#1100#1089#1086#1074#1077#1090#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationSovietVillageName'
+      Title = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1089#1077#1083#1100#1089#1086#1074#1077#1090#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationLocalityType'
+      Title = #1058#1080#1087' '#1085#1072#1089#1077#1083#1077#1085#1085#1086#1075#1086' '#1087#1091#1085#1082#1090#1072
+    end
+    object TSBStringWizardParam
+      ParamName = 'ReqLocationLocalityName'
+      Title = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1085#1072#1089#1077#1083#1077#1085#1085#1086#1075#1086' '#1087#1091#1085#1082#1090#1072
+    end
+    object TSBTextWizardParam
+      ParamName = 'ReqLocationPositionDescription'
+      Title = #1054#1087#1080#1089#1072#1085#1080#1077' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1103
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MLocationsCount'
+      Title = 'MLocationsCount'
+      IsNull = False
+      Value = 0
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MLocationsPage'
+      Title = 'MLocationsPage'
+      IsNull = False
+      Value = 1
+    end
+    object TSBStringWizardParam
+      ParamName = 'MLocationsData'
+      Title = 'MLocationsData'
+    end
+    object TSBBooleanWizardParam
+      ParamName = '_AddContours'
+      Title = #1044#1086#1073#1072#1074#1080#1090#1100' '#1086#1087#1080#1089#1072#1085#1080#1077' '#1084#1077#1089#1090#1086#1087#1086#1083#1086#1078#1077#1085#1080#1103' '#1082#1086#1085#1090#1091#1088#1072' '#1086#1073#1098#1077#1082#1090#1072'?'
+      IsNull = False
+      Value = False
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'NumberPP'
+      Title = #1053#1086#1084#1077#1088' '#1082#1086#1085#1090#1091#1088#1072
+      Value = 0
+    end
+    object TSBStringWizardParam
+      ParamName = 'SkID'
+      Title = #1057#1080#1089#1090#1077#1084#1072' '#1082#1086#1086#1088#1076#1080#1085#1072#1090
+    end
+    object TSBBooleanWizardParam
+      ParamName = '_AddElement'
+      Title = #1044#1086#1073#1072#1074#1080#1090#1100' '#1101#1083#1077#1084#1077#1085#1090' '#1082#1086#1085#1090#1091#1088#1072'?'
+      IsNull = False
+      Value = False
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MContoursCount'
+      Title = 'MContoursCount'
+      IsNull = False
+      Value = 0
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MContoursPage'
+      Title = 'MContoursPage'
+      IsNull = False
+      Value = 1
+    end
+    object TSBStringWizardParam
+      ParamName = 'MContoursData'
+      Title = 'MContoursData'
+    end
+    object TSBNumericWizardParam
+      ParamName = 'Cost'
+      Title = #1050#1072#1076#1072#1089#1090#1088#1086#1074#1072#1103' '#1089#1090#1086#1080#1084#1086#1089#1090#1100' ('#1088#1091#1073'.)'
+    end
+    object TSBStringWizardParam
+      ParamName = 'special_notes'
+      Title = #1054#1089#1086#1073#1099#1077' '#1086#1090#1084#1077#1090#1082#1080
+    end
+    object TSBStringWizardParam
+      ParamName = 'level_contour_code'
+      Title = #1058#1080#1087' '#1082#1086#1085#1090#1091#1088#1072' ('#1091#1088#1086#1074#1077#1085#1100' '#1088#1072#1089#1087#1086#1083#1086#1078#1077#1085#1080#1103') - '#1082#1086#1076' '#1053#1057#1048
+    end
+    object TSBStringWizardParam
+      ParamName = 'level_contour_value'
+      Title = #1058#1080#1087' '#1082#1086#1085#1090#1091#1088#1072' ('#1091#1088#1086#1074#1077#1085#1100' '#1088#1072#1089#1087#1086#1083#1086#1078#1077#1085#1080#1103') - '#1090#1077#1082#1089#1090#1086#1074#1086#1077' '#1079#1085#1072#1095#1077#1085#1080#1077
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MElementCount'
+      Title = 'MElementCount'
+      IsNull = False
+      Value = 0
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MElementPage'
+      Title = 'MElementPage'
+      IsNull = False
+      Value = 1
+    end
+    object TSBStringWizardParam
+      ParamName = 'MElementData'
+      Title = 'MElementData'
+    end
+    object TSBBooleanWizardParam
+      ParamName = '_AddOrdinates'
+      Title = #1044#1086#1073#1072#1074#1080#1090#1100' '#1082#1086#1086#1088#1076#1080#1085#1072#1090#1091'?'
+      IsNull = False
+      Value = False
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MOrdinatesCount'
+      Title = 'MOrdinatesCount'
+      IsNull = False
+      Value = 0
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'MOrdinatesPage'
+      Title = 'OrdinatesPage'
+      IsNull = False
+      Value = 1
+    end
+    object TSBStringWizardParam
+      ParamName = 'MOrdinatesData'
+      Title = 'MOrdinatesData'
+    end
+    object TSBNumericWizardParam
+      ParamName = 'OrdinateX'
+      Title = #1050#1086#1086#1088#1076#1080#1085#1072#1090#1072' X'
+    end
+    object TSBNumericWizardParam
+      ParamName = 'OrdinateY'
+      Title = #1050#1086#1086#1088#1076#1080#1085#1072#1090#1072' Y'
+    end
+    object TSBNumericWizardParam
+      ParamName = 'OrdinateZ'
+      Title = #1050#1086#1086#1088#1076#1080#1085#1072#1090#1072' Z'
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'ord_nmb'
+      Title = #1053#1086#1084#1077#1088' '#1090#1086#1095#1082#1080' ('#1087#1086#1088#1103#1076#1086#1082' '#1086#1073#1093#1086#1076#1072')'
+      Value = 0
+    end
+    object TSBStringWizardParam
+      ParamName = 'num_geopoint'
+      Title = #1053#1086#1084#1077#1088' '#1090#1086#1095#1082#1080
+    end
+    object TSBNumericWizardParam
+      ParamName = 'delta_geopoint'
+      Title = #1055#1086#1075#1088#1077#1096#1085#1086#1089#1090#1100
+    end
+    object TSBNumericWizardParam
+      ParamName = 'Radius'
+      Title = #1056#1072#1076#1080#1091#1089
+    end
+    object TSBIntegerWizardParam
+      ParamName = 'Step'
+      Title = #1044#1083#1103' '#1084#1085#1086#1078#1077#1089#1090#1074#1077#1085#1085#1099#1093' '#1101#1090#1072#1087#1086#1074' (0 - Prev, 1 - Next)'
+      Value = 0
+    end
+  end
+end
