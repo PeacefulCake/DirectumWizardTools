@@ -59,7 +59,7 @@ namespace FAA.Utils
             public const string StepFormElement = "object TSBWizardStepFormElement";
 
             // Параметры
-            public const string ParamLis = "object TSBWizardParamList";
+            public const string ParamList = "object TSBWizardParamList";
             public class Params
             {
                 public const string Reference = "object TSBReferenceRecordInfoWizardParam";

@@ -19,12 +19,21 @@ namespace FAA.WizardTools.Types
 
         public bool PasedSuccessfully;
 
+        public List<string> RawData {
+            get
+            {
+                UpdateRawData();
+                return rawData;
+            }
+        }
         protected List<string> rawData;
         protected List<string> innerData;
-        protected int innerIndents;
+        protected List<string> workInnerData;
+        protected const int innerIndents = 2;
 
         abstract public void UpdateInnerDataList();
         abstract public void ExtractUsableData();
+        //abstract public bool CheckData(); // Метод для рекурсивной проверки
 
         public void LoadFromDataList(List<string> data)
         {
@@ -34,9 +43,14 @@ namespace FAA.WizardTools.Types
             }
 
             rawData = data;
-            innerIndents = rawData[1].IndentsCount();
+            int trueInnerIndents = rawData[1].IndentsCount();
+            if (trueInnerIndents != innerIndents)
+            {
+                throw new Exception("С отступами что-то не так");
+            }
 
             innerData = rawData.GetRange(1, rawData.Count - 2).Select(s => s.Substring(innerIndents)).ToList();
+            workInnerData = new List<string>(innerData);
 
             objectName = rawData[0].TrimStart();
 
@@ -58,9 +72,7 @@ namespace FAA.WizardTools.Types
 
         public string ExportToString()
         {
-            UpdateRawData();
-
-            return string.Join(WSConstants.CR, rawData);
+            return string.Join(WSConstants.CR, RawData);
         }
     }
 }

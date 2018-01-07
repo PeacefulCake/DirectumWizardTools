@@ -43,6 +43,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\AWizardObject.cs" />
     <Compile Include="Types\Wizard.cs" />
+    <Compile Include="Types\WizardParam.cs" />
+    <Compile Include="Types\WizardParamList.cs" />
+    <Compile Include="Types\WizardStepList.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FAA.Utils\FAA.Utils.csproj">
