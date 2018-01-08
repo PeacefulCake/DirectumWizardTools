@@ -20,7 +20,7 @@ namespace FAA.WizardTools.Types
         {
             WizardParam param;
             int dataIndex = 0;
-            while (dataIndex < workInnerData.Count - 1)
+            while (dataIndex < workInnerData.Count)
             {
                 param = new WizardParam();
                 param.LoadFromDataList(StringUtils.PickObject(workInnerData, dataIndex));

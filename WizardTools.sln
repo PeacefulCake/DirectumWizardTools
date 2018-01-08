@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAA.Utils", "FAA.Utils\FAA.Utils.csproj", "{BB9580F2-AE9A-4BD4-AFAE-FF4C4DA34FA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAA.WizardConsole", "FAA.WizardConsole\FAA.WizardConsole.csproj", "{01C72B5A-8D1B-4F80-844E-B5A3A16DEFDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{BB9580F2-AE9A-4BD4-AFAE-FF4C4DA34FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB9580F2-AE9A-4BD4-AFAE-FF4C4DA34FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB9580F2-AE9A-4BD4-AFAE-FF4C4DA34FA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C72B5A-8D1B-4F80-844E-B5A3A16DEFDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C72B5A-8D1B-4F80-844E-B5A3A16DEFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C72B5A-8D1B-4F80-844E-B5A3A16DEFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C72B5A-8D1B-4F80-844E-B5A3A16DEFDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

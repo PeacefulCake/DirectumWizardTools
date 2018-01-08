@@ -17,7 +17,11 @@ namespace FAA.WizardTools.Types
         }
         protected string objectName;
 
-        public bool PasedSuccessfully;
+        protected bool loaded = false;
+        public bool Loaded
+        {
+            get { return Loaded; }
+        }
 
         public List<string> RawData {
             get
@@ -55,6 +59,8 @@ namespace FAA.WizardTools.Types
             objectName = rawData[0].TrimStart();
 
             ExtractUsableData();
+
+            loaded = true;
         }
 
         public void UpdateRawData()

@@ -18,7 +18,7 @@ namespace FAA.WizardTools.Types
         public override void ExtractUsableData()
         {
             int dataIndex = 0;
-            while (dataIndex < workInnerData.Count - 1)
+            while (dataIndex < workInnerData.Count)
             {
                 string line = workInnerData[dataIndex];
                 switch (line)
@@ -34,9 +34,9 @@ namespace FAA.WizardTools.Types
                         workInnerData.Insert(dataIndex, stepsPositionMark);
                         break;
                     default:
-                        dataIndex++;
                         break;
                 }
+                dataIndex++;
             }
         }
 

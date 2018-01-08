@@ -1,5 +1,6 @@
 ﻿using FAA.Utils;
 using FAA.WizardTools.Types;
+using FAA.WizardTools.CommandLine;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,16 +14,20 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine(StringUtils.AddIndents("123", 5));
-
-
             string wholeWizard = File.ReadAllText(@"D:\DevProjects\WorkFriendly\WizardTools\Test\TestWizardData\Wizard22.txt");
 
             Wizard w = new Wizard();
 
             w.LoadFromDataList(StringUtils.GetListFromText(wholeWizard));
 
-            Console.Write(w.ExportToString());
+            //Console.Write(w.ExportToString());
+
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
 
 
             Console.ReadKey();
