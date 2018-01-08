@@ -39,6 +39,8 @@ namespace FAA.Utils
             public const string Events = "Events";
 
             public const string ParamName = "ParamName";
+            public const string StepName = "StepName";
+
             public const string Required = "Required";
             public const string IsNull = "IsNull";
             public const string Value = "Value";

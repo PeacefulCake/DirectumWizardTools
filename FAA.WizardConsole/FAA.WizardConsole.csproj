@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="CommandLine\BaseCommand.cs" />
     <Compile Include="CommandLine\CommandsProcessor.cs" />
+    <Compile Include="CommandLine\Commands\CopyStep.cs" />
     <Compile Include="CommandLine\Commands\CopyParam.cs" />
     <Compile Include="CommandLine\Commands\ExitCommand.cs" />
     <Compile Include="CommandLine\Commands\HelpCommand.cs" />

@@ -26,7 +26,7 @@ namespace FAA.WizardConsole
 
             //Console.WriteLine(WizardInstanceManager.GetWizard.ExportToString());
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }

@@ -8,7 +8,7 @@ using FAA.Utils;
 
 namespace FAA.WizardTools.Types
 {
-    class WizardString
+    public class WizardString
     {
         private const int innerIndents = 2;
 

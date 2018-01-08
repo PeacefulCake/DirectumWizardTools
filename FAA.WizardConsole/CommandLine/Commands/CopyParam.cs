@@ -24,12 +24,23 @@ namespace FAA.WizardConsole.CommandLine.Commands
                 return;
             }
 
+            if (commandLine.Length < 3)
+            {
+                Console.WriteLine("Неверный формат параметров команды");
+                return;
+            }
+
             string originalParamName = commandLine[1];
             string newParamName = commandLine[2];
 
-            WizardInstanceManager.GetWizard.Params.CopyParam(originalParamName, newParamName);
-
-            Console.WriteLine("Параметр успешно скопирован.");
+            if (WizardInstanceManager.GetWizard.Params.CopyParam(originalParamName, newParamName))
+            {
+                Console.WriteLine("Параметр успешно скопирован.");
+            }
+            else
+            {
+                Console.WriteLine("Неудачное копирование. Исходный параметр не найден, или параметр с новым именем уже существует.");
+            }
         }
     }
 }
