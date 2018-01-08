@@ -13,7 +13,7 @@ namespace FAA.WizardConsole
         static void Main(string[] args)
         {
             string userLine;
-            do //действия при кожде exit - спросить хочу ли я, спрашивать ридкеем, пока не появится символ известный
+            do
             {
                 Console.Write(@"WT>");
                 userLine = Console.ReadLine();
@@ -22,7 +22,9 @@ namespace FAA.WizardConsole
             } while (!CommandsProcessor.exitFlag);
             Console.WriteLine("Выход из приложения. Всего доброго!");
 
-            //Console.ReadKey();
+            //Console.WriteLine(WizardInstanceManager.GetWizard.ExportToString());
+
+            Console.ReadKey();
         }
     }
 }

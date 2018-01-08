@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FAA.WizardTools.Types
 {
-    class WizardStepList : AWizardObject
+    public class WizardStepList : AWizardObject
     {
         public override void ExtractUsableData()
         {

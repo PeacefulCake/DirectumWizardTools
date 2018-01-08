@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FAA.WizardTools.Types
 {
-    class WizardParamList : AWizardObject
+    public class WizardParamList : AWizardObject
     {
         private List<WizardParam> paramList;
 
@@ -36,6 +36,17 @@ namespace FAA.WizardTools.Types
             {
                 innerData.AddRange(param.RawData);
             }
+        }
+
+        public bool CopyParam(string param, string newParamName)
+        {
+            WizardParam originalParam = paramList.Where(p => p.Name.DecodedValue == param).FirstOrDefault();
+            if (originalParam == null) return false;
+            WizardParam newParam = paramList.Where(p => p.Name.DecodedValue == newParamName).FirstOrDefault();
+            if (newParam != null) return false;
+            newParam = originalParam.CreateCopy(newParamName);
+            paramList.Add(newParam);
+            return true;
         }
     }
 }

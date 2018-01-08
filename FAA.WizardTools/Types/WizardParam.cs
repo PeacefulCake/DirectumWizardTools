@@ -64,5 +64,13 @@ namespace FAA.WizardTools.Types
                 innerData[titleIndex] = string.Format("Title = {0}", innerData[titleIndex]);
             }
         }
+
+        public WizardParam CreateCopy(string newName)
+        {
+            WizardParam res = new WizardParam();
+            res.LoadFromDataList(RawData);
+            res.Name.DecodedValue = newName;
+            return res;
+        }
     }
 }

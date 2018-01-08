@@ -12,8 +12,8 @@ namespace FAA.WizardTools.Types
         private const string paramsPositionMark = "{WizardParams}";
         private const string stepsPositionMark = "{WizardSteps}";
 
-        private WizardParamList Params;
-        private WizardStepList Steps;
+        public WizardParamList Params;
+        public WizardStepList Steps;
 
         public override void ExtractUsableData()
         {
