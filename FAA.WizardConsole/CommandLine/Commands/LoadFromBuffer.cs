@@ -11,7 +11,7 @@ namespace FAA.WizardConsole.CommandLine.Commands
     {
         public LoadFromBuffer() : base()
         {
-            name = "lfb";
+            name = "paste";
             commandFormat = "";
             help = "Загрузить МД из буфера";
             helpDetails = "";
@@ -21,7 +21,11 @@ namespace FAA.WizardConsole.CommandLine.Commands
         {
             if (Clipboard.ContainsText())
             {
-                if (!WizardInstanceManager.LoadFromString(Clipboard.GetText()))
+                if (WizardInstanceManager.LoadFromString(Clipboard.GetText()))
+                {
+                    Console.WriteLine("МД успешно загружен из буфера.");
+                }
+                else
                     Console.WriteLine("Содержимое буфера ну совсем не похоже на МД =(");
 
             }

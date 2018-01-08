@@ -48,6 +48,7 @@
     <Compile Include="CommandLine\Commands\CopyParam.cs" />
     <Compile Include="CommandLine\Commands\ExitCommand.cs" />
     <Compile Include="CommandLine\Commands\HelpCommand.cs" />
+    <Compile Include="CommandLine\Commands\ExportToBuffer.cs" />
     <Compile Include="CommandLine\Commands\LoadFromBuffer.cs" />
     <Compile Include="CommandLine\Commands\OpenFile.cs" />
     <Compile Include="Program.cs" />

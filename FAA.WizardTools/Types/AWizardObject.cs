@@ -20,7 +20,7 @@ namespace FAA.WizardTools.Types
         protected bool loaded = false;
         public bool Loaded
         {
-            get { return Loaded; }
+            get { return loaded; }
         }
 
         public List<string> RawData {

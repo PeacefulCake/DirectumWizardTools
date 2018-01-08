@@ -12,6 +12,8 @@ namespace FAA.WizardConsole
         [STAThread]
         static void Main(string[] args)
         {
+            Console.WriteLine("Добро пожаловать в WizardToolsConsole!");
+            Console.WriteLine("Для вывода справки по командам - введи help");
             string userLine;
             do
             {
