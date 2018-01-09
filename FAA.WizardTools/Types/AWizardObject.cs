@@ -41,21 +41,29 @@ namespace FAA.WizardTools.Types
 
         public void LoadFromDataList(List<string> data)
         {
-            if (data == null || data.Count < 3)
+            if (data == null)
             {
                 throw new ArgumentNullException("data");
             }
 
             rawData = data;
-            int trueInnerIndents = rawData[1].IndentsCount();
-            if (trueInnerIndents != innerIndents)
+            if (data.Count >= 3)
             {
-                throw new Exception("С отступами что-то не так");
+                int trueInnerIndents = rawData[1].IndentsCount();
+                if (trueInnerIndents != innerIndents)
+                {
+                    throw new Exception("С отступами что-то не так");
+                }
+
+                innerData = rawData.GetRange(1, rawData.Count - 2).Select(s => s.Substring(innerIndents)).ToList();
+                workInnerData = new List<string>(innerData);
             }
-
-            innerData = rawData.GetRange(1, rawData.Count - 2).Select(s => s.Substring(innerIndents)).ToList();
-            workInnerData = new List<string>(innerData);
-
+            else
+            {
+                innerData = new List<string>();
+                workInnerData = new List<string>();
+            }
+            
             objectName = rawData[0].TrimStart();
 
             ExtractUsableData();

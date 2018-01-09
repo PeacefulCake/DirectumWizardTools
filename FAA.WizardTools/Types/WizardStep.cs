@@ -30,8 +30,8 @@ namespace FAA.WizardTools.Types
             while (dataIndex < workInnerData.Count)
             {
                 string line = workInnerData[dataIndex];
-
-                if (StringUtils.GetFieldPair(line, out string name, out string value))
+                string name, value;
+                if (StringUtils.GetFieldPair(line, out name, out value))
                 {
                     switch (name)
                     {
