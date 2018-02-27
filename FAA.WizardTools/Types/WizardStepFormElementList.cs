@@ -42,5 +42,15 @@ namespace FAA.WizardTools.Types
         {
             return formElementsList.Where(fe => fe.IsParamAssigned).ToList();
         }
+
+        public override void LoadFromFolder(string folderPath)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SaveToFolder(string folderPath)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -38,6 +38,7 @@ namespace FAA.WizardTools.Types
         abstract public void UpdateInnerDataList();
         abstract public void ExtractUsableData();
         //abstract public bool CheckData(); // Метод для рекурсивной проверки
+        // TODO: проверить насколько вообще нужно считать количество отступов
 
         public void LoadFromDataList(List<string> data)
         {
@@ -88,5 +89,8 @@ namespace FAA.WizardTools.Types
         {
             return string.Join(WSConstants.CR, RawData);
         }
+
+        abstract public void LoadFromFolder(string folderPath);
+        abstract public void SaveToFolder(string folderPath);
     }
 }

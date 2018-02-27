@@ -9,6 +9,9 @@ namespace FAA.WizardTools.Types
 {
     public class WizardParamList : AWizardObject
     {
+        private const string paramsFolderName = "Params";
+        private const string wizardParamsOrderFileName = "ParamsOrder.xml";
+
         private List<WizardParam> paramList;
 
         public WizardParamList()
@@ -47,6 +50,16 @@ namespace FAA.WizardTools.Types
             newParam = originalParam.CreateCopy(newParamName);
             paramList.Add(newParam);
             return true;
+        }
+
+        public override void LoadFromFolder(string folderPath)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SaveToFolder(string folderPath)
+        {
+            throw new NotImplementedException();
         }
     }
 }

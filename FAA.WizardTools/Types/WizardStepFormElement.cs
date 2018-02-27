@@ -60,5 +60,15 @@ namespace FAA.WizardTools.Types
 
             }
         }
+
+        public override void LoadFromFolder(string folderPath)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SaveToFolder(string folderPath)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

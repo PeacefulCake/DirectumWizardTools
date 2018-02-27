@@ -1,6 +1,5 @@
 ﻿using FAA.Utils;
 using FAA.WizardTools.Types;
-using FAA.WizardTools.CommandLine;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,14 +19,9 @@ namespace Test
 
             w.LoadFromDataList(StringUtils.GetListFromText(wholeWizard));
 
-            //Console.Write(w.ExportToString());
+            w.SaveToFolder(@"D:\DevProjects\WorkFriendly\WizardTools\Test\TestWizardData\Wizard22\");
 
-            Console.ReadLine();
-            Console.ReadLine();
-            Console.ReadLine();
-            Console.ReadLine();
-            Console.ReadLine();
-            Console.ReadLine();
+            //Console.Write(w.ExportToString());
 
 
             Console.ReadKey();

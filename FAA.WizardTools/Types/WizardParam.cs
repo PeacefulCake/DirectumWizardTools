@@ -72,5 +72,15 @@ namespace FAA.WizardTools.Types
             res.Name.DecodedValue = newName;
             return res;
         }
+
+        public override void LoadFromFolder(string folderPath)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SaveToFolder(string folderPath)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

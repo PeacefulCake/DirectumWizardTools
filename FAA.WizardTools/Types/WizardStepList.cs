@@ -9,6 +9,9 @@ namespace FAA.WizardTools.Types
 {
     public class WizardStepList : AWizardObject
     {
+        private const string stepsFolderName = "Steps";
+        private const string wizardStepsOrderFileName = "StepsOrder.xml";
+
         private List<WizardStep> stepList;
 
         public WizardStepList()
@@ -52,6 +55,16 @@ namespace FAA.WizardTools.Types
         public WizardStep GetStep(string stepName)
         {
             return stepList.Where(s => s.Name.DecodedValue == stepName).FirstOrDefault();
+        }
+
+        public override void LoadFromFolder(string folderPath)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SaveToFolder(string folderPath)
+        {
+            throw new NotImplementedException();
         }
     }
 }
