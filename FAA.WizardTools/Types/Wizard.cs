@@ -65,6 +65,19 @@ namespace FAA.WizardTools.Types
             }
         }
 
+        public override void UpdateInnerDataList()
+        {
+            innerData = new List<string>(workInnerData);
+
+            int stepsIndex = innerData.IndexOf(stepsPositionMark);
+            innerData.RemoveAt(stepsIndex);
+            innerData.InsertRange(stepsIndex, Steps.RawData);
+
+            int paramsIndex = innerData.IndexOf(paramsPositionMark);
+            innerData.RemoveAt(paramsIndex);
+            innerData.InsertRange(paramsIndex, Params.RawData);
+        }
+
         public override void LoadFromFolder(string folderPath)
         {
             throw new NotImplementedException();
@@ -81,6 +94,7 @@ namespace FAA.WizardTools.Types
         public override void SaveToFolder(string folderPath)
         {
             string wizardFolder = Path.Combine(folderPath, Code.DecodedValue);
+            if(Directory.Exists(wizardFolder)) Directory.Delete(wizardFolder, true);
             Directory.CreateDirectory(wizardFolder);
 
             // TODO: xml с реквизитами, когда-нибудь... а надо ли?
@@ -89,19 +103,6 @@ namespace FAA.WizardTools.Types
 
             Params.SaveToFolder(wizardFolder);
             Steps.SaveToFolder(wizardFolder);
-        }
-
-        public override void UpdateInnerDataList()
-        {
-            innerData = new List<string>(workInnerData);
-
-            int stepsIndex = innerData.IndexOf(stepsPositionMark);
-            innerData.RemoveAt(stepsIndex);
-            innerData.InsertRange(stepsIndex, Steps.RawData);
-
-            int paramsIndex = innerData.IndexOf(paramsPositionMark);
-            innerData.RemoveAt(paramsIndex);
-            innerData.InsertRange(paramsIndex, Params.RawData);
         }
     }
 }

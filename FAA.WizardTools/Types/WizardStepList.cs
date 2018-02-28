@@ -10,7 +10,7 @@ namespace FAA.WizardTools.Types
     public class WizardStepList : AWizardObject
     {
         private const string stepsFolderName = "Steps";
-        private const string wizardStepsOrderFileName = "StepsOrder.xml";
+        private const string wizardStepsOrderFileName = "StepsOrder.dwi";
 
         private List<WizardStep> stepList;
 

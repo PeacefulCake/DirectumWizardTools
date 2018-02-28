@@ -1,6 +1,7 @@
 ﻿using FAA.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,12 +76,16 @@ namespace FAA.WizardTools.Types
 
         public override void LoadFromFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            string paramName = Path.GetFileName(folderPath);
+            string paramFilePath = folderPath + ".dwc";
+            this.LoadFromDataList(File.ReadAllLines(paramFilePath).ToList());
+            this.Name.DecodedValue = paramName; // Использовать новое имя параметра
         }
 
         public override void SaveToFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            string paramFilePath = Path.Combine(folderPath, Name.DecodedValue + ".dwc");
+            File.WriteAllLines(paramFilePath, RawData);
         }
     }
 }

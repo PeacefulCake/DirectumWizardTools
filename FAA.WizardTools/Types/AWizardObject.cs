@@ -15,7 +15,16 @@ namespace FAA.WizardTools.Types
                 return objectName;
             }
         }
-        protected string objectName;
+        protected string objectName = "";
+
+        public string ObjectEnding
+        {
+            get
+            {
+                return objectEnding;
+            }
+        }
+        protected string objectEnding = "";
 
         protected bool loaded = false;
         public bool Loaded
@@ -64,8 +73,9 @@ namespace FAA.WizardTools.Types
                 innerData = new List<string>();
                 workInnerData = new List<string>();
             }
-            
-            objectName = rawData[0].TrimStart();
+
+            objectName = rawData.First().TrimStart();
+            objectEnding = rawData.Last().TrimStart();
 
             ExtractUsableData();
 
@@ -77,10 +87,11 @@ namespace FAA.WizardTools.Types
             UpdateInnerDataList();
 
             List<string> newRawData = new List<string>();
-            newRawData.Add(rawData.First());
+            newRawData.Add(objectName);
             newRawData.AddRange(innerData.Select(s => s.AddIndents(innerIndents)));
-
-            newRawData.Add(rawData.Last());
+            // TODO : Для пустых Events не сработает (относительно старого варианта, сейчас все еще не торт)
+            // TODO : Для них по уму нужен отдельный класс, тут у нас заточка именно под объекты
+            newRawData.Add(objectEnding);
 
             rawData = newRawData;
         }

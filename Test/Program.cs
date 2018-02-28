@@ -19,7 +19,11 @@ namespace Test
 
             w.LoadFromDataList(StringUtils.GetListFromText(wholeWizard));
 
-            w.SaveToFolder(@"D:\DevProjects\WorkFriendly\WizardTools\Test\TestWizardData\Wizard22\");
+
+            //w.SaveToFolder(@"D:\DevProjects\WorkFriendly\WizardTools\Test\TestWizardData\Wizard22\");
+
+            WizardParamList wpl = new WizardParamList();
+            wpl.LoadFromFolder(@"D:\DevProjects\WorkFriendly\WizardTools\Test\TestWizardData\Wizard22\SWDWTD\");
 
             //Console.Write(w.ExportToString());
 

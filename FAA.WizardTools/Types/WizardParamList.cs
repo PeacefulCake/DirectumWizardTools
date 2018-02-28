@@ -1,6 +1,7 @@
 ﻿using FAA.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace FAA.WizardTools.Types
     public class WizardParamList : AWizardObject
     {
         private const string paramsFolderName = "Params";
-        private const string wizardParamsOrderFileName = "ParamsOrder.xml";
+        private const string wizardParamsOrderFileName = "ParamsOrder.dwi";
 
         private List<WizardParam> paramList;
 
@@ -54,12 +55,50 @@ namespace FAA.WizardTools.Types
 
         public override void LoadFromFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            objectName = WSConstants.Objects.ParamList;
+            objectEnding = WSConstants.Markup.End;
+
+            string paramsFolder = Path.Combine(folderPath, paramsFolderName);
+            string paramsOrderFilePath = Path.Combine(paramsFolder, wizardParamsOrderFileName);
+
+            List<string> fileList = Directory.GetFiles(paramsFolder).ToList();
+
+            List<string> paramsOrder = File.ReadAllLines(paramsOrderFilePath).ToList();
+
+            // Добавить в конец списка новые параметры
+            foreach (var filePath in fileList)
+            {
+                string fileName = Path.GetFileName(filePath);
+                string fileNameWE = Path.GetFileNameWithoutExtension(filePath);
+                if (wizardParamsOrderFileName != fileName && !paramsOrder.Contains(fileNameWE))
+                {
+                    paramsOrder.Add(fileNameWE);
+                }
+            }
+
+            // Загрузить все параметры
+            WizardParam param;
+            foreach (var paramName in paramsOrder)
+            {
+                string paramFilePath = Path.Combine(paramsFolder, paramName);
+                param = new WizardParam();
+                param.LoadFromFolder(paramFilePath);
+                paramList.Add(param);
+            }
         }
 
         public override void SaveToFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            string paramsFolder = Path.Combine(folderPath, paramsFolderName);
+            Directory.CreateDirectory(paramsFolder);
+
+            string paramsOrderFilePath = Path.Combine(paramsFolder, wizardParamsOrderFileName);
+            File.WriteAllLines(paramsOrderFilePath, paramList.Select(p => p.Name.DecodedValue).ToList());
+
+            foreach (var param in paramList)
+            {
+                param.SaveToFolder(paramsFolder);
+            }
         }
     }
 }
