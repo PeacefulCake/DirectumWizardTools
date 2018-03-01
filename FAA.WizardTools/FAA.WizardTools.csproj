@@ -43,6 +43,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\AWizardObject.cs" />
     <Compile Include="Types\Wizard.cs" />
+    <Compile Include="Types\WizardEvent.cs" />
     <Compile Include="Types\WizardStep.cs" />
     <Compile Include="Types\WizardParam.cs" />
     <Compile Include="Types\WizardParamList.cs" />

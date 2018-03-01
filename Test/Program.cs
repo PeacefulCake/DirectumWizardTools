@@ -24,7 +24,7 @@ namespace Test
 
             WizardParamList wpl = new WizardParamList();
             wpl.LoadFromFolder(@"D:\DevProjects\WorkFriendly\WizardTools\Test\TestWizardData\Wizard22\SWDWTD\");
-
+            var v = wpl.ExportToString();
             //Console.Write(w.ExportToString());
 
 

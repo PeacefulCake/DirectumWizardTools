@@ -65,24 +65,64 @@ namespace FAA.WizardTools.Types
 
             List<string> paramsOrder = File.ReadAllLines(paramsOrderFilePath).ToList();
 
-            // Добавить в конец списка новые параметры
+            Dictionary<string, WizardParam> namedParams = new Dictionary<string, WizardParam>();
+            // Загрузить параметры из папки
             foreach (var filePath in fileList)
             {
-                string fileName = Path.GetFileName(filePath);
-                string fileNameWE = Path.GetFileNameWithoutExtension(filePath);
-                if (wizardParamsOrderFileName != fileName && !paramsOrder.Contains(fileNameWE))
+                if (paramsOrderFilePath != filePath)
                 {
-                    paramsOrder.Add(fileNameWE);
+                    string newParamName = Path.GetFileNameWithoutExtension(filePath);
+                    WizardParam createdParam = new WizardParam();
+                    createdParam.LoadFromFolder(filePath);
+                    namedParams.Add(newParamName, createdParam); 
                 }
             }
 
-            // Загрузить все параметры
-            WizardParam param;
-            foreach (var paramName in paramsOrder)
+            // 1. Искать по новому имени затем по старому (для переименованных)
+            WizardParam param; string dictName;
+            foreach (string paramName in paramsOrder)
             {
-                string paramFilePath = Path.Combine(paramsFolder, paramName);
-                param = new WizardParam();
-                param.LoadFromFolder(paramFilePath);
+                dictName = paramName;
+                if (!namedParams.TryGetValue(paramName, out param))
+                {
+                    // Не лучшая идея одновременно переименовать и сделать копию, возьмется полуслучайно, на свой страх и риск кароч
+                    var paramd = namedParams.Where(p => p.Value.Name.DecodedValue == paramName).FirstOrDefault();
+                    dictName = paramd.Key;
+                    param = paramd.Value;
+                }
+                if (param != null)
+                {
+                    param.Name.DecodedValue = dictName;
+                    paramList.Add(param);
+                    namedParams.Remove(dictName);
+                }
+            }
+
+            // 2. Второй заход, ищет по старому имени для того чтобы вставить параметры в порядке хоть немного похожем на первоначальный
+            foreach (string paramName in paramsOrder)
+            {
+                List<string> remParamNames = new List<string>();
+                foreach (var paramd in namedParams.Where(p => p.Value.Name.DecodedValue == paramName))
+                {
+                    param = paramd.Value;
+                    dictName = paramd.Key;
+                    param.Name.DecodedValue = dictName;
+                    paramList.Add(param);
+                    remParamNames.Add(dictName);
+                }
+                foreach (string dn in remParamNames)
+                {
+                    namedParams.Remove(dn);
+                }
+
+            }
+
+            // 3. Добавить оставшиеся (ну совсем новые) параметры в самый конец
+            foreach (var paramd in namedParams)
+            {
+                param = paramd.Value;
+                dictName = paramd.Key;
+                param.Name.DecodedValue = dictName;
                 paramList.Add(param);
             }
         }

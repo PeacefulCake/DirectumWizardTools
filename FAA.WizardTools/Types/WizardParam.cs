@@ -74,12 +74,10 @@ namespace FAA.WizardTools.Types
             return res;
         }
 
-        public override void LoadFromFolder(string folderPath)
+        public override void LoadFromFolder(string folderPath) // В этом случае - это полный путь
         {
             string paramName = Path.GetFileName(folderPath);
-            string paramFilePath = folderPath + ".dwc";
-            this.LoadFromDataList(File.ReadAllLines(paramFilePath).ToList());
-            this.Name.DecodedValue = paramName; // Использовать новое имя параметра
+            this.LoadFromDataList(File.ReadAllLines(folderPath).ToList());
         }
 
         public override void SaveToFolder(string folderPath)

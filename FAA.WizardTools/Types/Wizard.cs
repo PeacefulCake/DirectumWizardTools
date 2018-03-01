@@ -18,6 +18,8 @@ namespace FAA.WizardTools.Types
         public WizardParamList Params;
         public WizardStepList Steps;
 
+        public WizardEvent[] Events; // TODO : Проверить методы работы с массивом
+
         public WizardString Code;
 
         public Wizard()

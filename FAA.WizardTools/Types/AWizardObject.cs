@@ -89,8 +89,6 @@ namespace FAA.WizardTools.Types
             List<string> newRawData = new List<string>();
             newRawData.Add(objectName);
             newRawData.AddRange(innerData.Select(s => s.AddIndents(innerIndents)));
-            // TODO : Для пустых Events не сработает (относительно старого варианта, сейчас все еще не торт)
-            // TODO : Для них по уму нужен отдельный класс, тут у нас заточка именно под объекты
             newRawData.Add(objectEnding);
 
             rawData = newRawData;
