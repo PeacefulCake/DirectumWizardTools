@@ -14,14 +14,18 @@ namespace FAA.WizardTools.Types
 
         public WizardStepFormElementList FormElements;
 
+        public WizardEventArray Events;
+
         private const string stepNameMark = "{StepName}";
         private const string stepTitleMark = "{StepTitle}";
         private const string formElementsMark = "{FormElements}";
+        private const string eventsPositionMark = "{StepEvents}";
 
         public WizardStep()
         {
             Name = new WizardString();
             Title = new WizardString();
+            Events = new WizardEventArray();
         }
 
         public override void ExtractUsableData()
@@ -42,6 +46,10 @@ namespace FAA.WizardTools.Types
                         case WSConstants.Fields.Title:
                             this.Title.PowerLoad(value, workInnerData, dataIndex);
                             workInnerData[dataIndex] = stepTitleMark;
+                            break;
+                        case WSConstants.Fields.Events:
+                            this.Events.PowerLoad(value, workInnerData, dataIndex);
+                            workInnerData[dataIndex] = eventsPositionMark;
                             break;
                         default:
                             break;
@@ -82,6 +90,11 @@ namespace FAA.WizardTools.Types
                 int formElementsIndex = innerData.IndexOf(formElementsMark);
                 innerData.RemoveAt(formElementsIndex);
                 innerData.InsertRange(formElementsIndex, FormElements.RawData);
+
+                int eventsIndex = innerData.IndexOf(eventsPositionMark);
+                innerData.RemoveAt(eventsIndex);
+                innerData.InsertRange(eventsIndex, Events.RawData);
+                innerData[eventsIndex] = string.Format("{0} = {1}", WSConstants.Fields.Events, innerData[eventsIndex]);
             }
         }
 

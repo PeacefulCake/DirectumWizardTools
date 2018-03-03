@@ -88,12 +88,11 @@ namespace FAA.WizardTools.Types
             int eventsIndex = innerData.IndexOf(eventsPositionMark);
             innerData.RemoveAt(eventsIndex);
             innerData.InsertRange(eventsIndex, Events.RawData);
-            innerData[eventsIndex] = string.Format("Events = {0}", innerData[eventsIndex]);
+            innerData[eventsIndex] = string.Format("{0} = {1}", WSConstants.Fields.Events, innerData[eventsIndex]);
         }
 
         public override void LoadFromFolder(string folderPath)
         {
-            throw new NotImplementedException();
             var di = new DirectoryInfo(folderPath);
             Code.DecodedValue = di.Name;
 

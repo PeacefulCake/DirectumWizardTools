@@ -41,6 +41,7 @@ namespace FAA.WizardConsole.CommandLine
 
         public static void ExecuteLine(string line)
         {
+            if (line == null) return;
             var parsedLine = line.Split(splitArray, StringSplitOptions.RemoveEmptyEntries);
             if (parsedLine.Length > 0)
             {

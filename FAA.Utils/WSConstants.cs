@@ -43,6 +43,8 @@ namespace FAA.Utils
 
             public const string ParamName = "ParamName";
             public const string StepName = "StepName";
+            public const string ActionName = "ActionName";
+            public const string ActionType = "ActionType";
 
             public const string Required = "Required";
             public const string IsNull = "IsNull";

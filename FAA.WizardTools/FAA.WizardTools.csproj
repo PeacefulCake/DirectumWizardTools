@@ -48,7 +48,9 @@
     <Compile Include="Types\WizardStep.cs" />
     <Compile Include="Types\WizardParam.cs" />
     <Compile Include="Types\WizardParamList.cs" />
+    <Compile Include="Types\WizardAction.cs" />
     <Compile Include="Types\WizardStepFormElement.cs" />
+    <Compile Include="Types\WizardActionList.cs" />
     <Compile Include="Types\WizardStepFormElementList.cs" />
     <Compile Include="Types\WizardStepList.cs" />
     <Compile Include="Types\WizardString.cs" />
