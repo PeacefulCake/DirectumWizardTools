@@ -19,6 +19,8 @@ namespace FAA.WizardTools.Types
         public WizardEvent()
         {
             ISBLText = new WizardString();
+            objectName = WSConstants.Markup.Item;
+            objectEnding = WSConstants.Markup.End;
         }
 
         public override void ExtractUsableData()
@@ -52,7 +54,7 @@ namespace FAA.WizardTools.Types
 
         public override void UpdateInnerDataList()
         {
-            innerData = new List<string>(workInnerData);
+            innerData = new List<string>();
 
             if (ISBLText.EncodedValue != "")
             {

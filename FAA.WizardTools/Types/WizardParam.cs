@@ -76,8 +76,9 @@ namespace FAA.WizardTools.Types
 
         public override void LoadFromFolder(string folderPath) // В этом случае - это полный путь
         {
-            string paramName = Path.GetFileName(folderPath);
+            //string paramName = Path.GetFileNameWithoutExtension(folderPath);
             this.LoadFromDataList(File.ReadAllLines(folderPath).ToList());
+            // TODO : Немного логичнее, но чуть менее удобно будет поступить как с шагами - параметр = папка, внутри ParamCard. Тогда специфичные параметры можно будет гибче сохранять...
         }
 
         public override void SaveToFolder(string folderPath)

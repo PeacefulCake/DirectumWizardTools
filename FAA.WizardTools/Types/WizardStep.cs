@@ -1,6 +1,7 @@
 ﻿using FAA.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,19 +14,24 @@ namespace FAA.WizardTools.Types
         public WizardString Title;
 
         public WizardStepFormElementList FormElements;
+        public WizardActionList ActionList;
 
         public WizardEventArray Events;
 
         private const string stepNameMark = "{StepName}";
         private const string stepTitleMark = "{StepTitle}";
         private const string formElementsMark = "{FormElements}";
+        private const string actionsMark = "{Actions}";
         private const string eventsPositionMark = "{StepEvents}";
+
+        private const string stepCardFileName = "StepCard.dwc";
 
         public WizardStep()
         {
             Name = new WizardString();
             Title = new WizardString();
             Events = new WizardEventArray();
+            ActionList = new WizardActionList();
         }
 
         public override void ExtractUsableData()
@@ -64,6 +70,11 @@ namespace FAA.WizardTools.Types
                             FormElements.LoadFromDataList(StringUtils.PickObject(workInnerData, dataIndex));
                             workInnerData.Insert(dataIndex, formElementsMark);
                             break;
+                        case WSConstants.Objects.ActionList:
+                            ActionList = new WizardActionList();
+                            ActionList.LoadFromDataList(StringUtils.PickObject(workInnerData, dataIndex));
+                            workInnerData.Insert(dataIndex, actionsMark);
+                            break;
                         default:
                             break;
                     }
@@ -88,8 +99,15 @@ namespace FAA.WizardTools.Types
                 innerData[titleIndex] = string.Format("{0} = {1}", WSConstants.Fields.Title, innerData[titleIndex]);
 
                 int formElementsIndex = innerData.IndexOf(formElementsMark);
-                innerData.RemoveAt(formElementsIndex);
-                innerData.InsertRange(formElementsIndex, FormElements.RawData);
+                if (formElementsIndex >= 0)
+                {
+                    innerData.RemoveAt(formElementsIndex);
+                    innerData.InsertRange(formElementsIndex, FormElements.RawData);
+                }
+
+                int actionsIndex = innerData.IndexOf(actionsMark);
+                innerData.RemoveAt(actionsIndex);
+                innerData.InsertRange(actionsIndex, ActionList.RawData);
 
                 int eventsIndex = innerData.IndexOf(eventsPositionMark);
                 innerData.RemoveAt(eventsIndex);
@@ -108,12 +126,49 @@ namespace FAA.WizardTools.Types
 
         public override void LoadFromFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            string stepName = Path.GetDirectoryName(folderPath);
+            string cardFilePath = Path.Combine(folderPath, stepCardFileName);
+            this.LoadFromDataList(File.ReadAllLines(cardFilePath).ToList());
+
+            Events.SaveToFolder(folderPath);
+            ActionList.LoadFromFolder(folderPath);
+
+            if (innerData.Contains(formElementsMark))
+            {
+                FormElements = new WizardStepFormElementList();
+                FormElements.LoadFromFolder(folderPath);
+            }
         }
 
         public override void SaveToFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            // Вот так вот нахимичить для сохранения чисто карточки
+            // TODO : Тянет на метод подготовки данных для сохранения, если браться за рефакторинг
+            List<string>  savedData = new List<string>(workInnerData);
+
+            int nameIndex = savedData.IndexOf(stepNameMark);
+            savedData.RemoveAt(nameIndex);
+            savedData.InsertRange(nameIndex, Name.RawData);
+            savedData[nameIndex] = string.Format("{0} = {1}", WSConstants.Fields.StepName, savedData[nameIndex]);
+
+            int titleIndex = savedData.IndexOf(stepTitleMark);
+            savedData.RemoveAt(titleIndex);
+            savedData.InsertRange(titleIndex, Title.RawData);
+            savedData[titleIndex] = string.Format("{0} = {1}", WSConstants.Fields.Title, savedData[titleIndex]);
+
+            savedData.Insert(0, objectName);
+            savedData.Add(objectEnding);
+
+            // А вот только теперь сохранение
+            string stepFolder = Path.Combine(folderPath, Name.DecodedValue);
+            Directory.CreateDirectory(stepFolder);
+
+            string cardFilePath = Path.Combine(stepFolder, stepCardFileName);
+            File.WriteAllLines(cardFilePath, savedData);
+
+            Events.SaveToFolder(stepFolder);
+            ActionList.SaveToFolder(stepFolder);
+            if (FormElements != null) FormElements.SaveToFolder(stepFolder);
         }
     }
 }

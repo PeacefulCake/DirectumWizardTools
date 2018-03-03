@@ -1,6 +1,7 @@
 ﻿using FAA.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,18 @@ namespace FAA.WizardTools.Types
             {
                 this.LoadFromDataList(StringUtils.PickArray(data, index + 1).Select(s => s.Substring(innerIndents)).ToList());
             }
+        }
+
+        public void LoadFromFolder(string folderPath)
+        {
+            throw new NotImplementedException();
+            // TODO : тут есть контроль порядка, если что-то нашлось в количестве больше одного
+            List<string> fileList = Directory.GetFiles(folderPath, "*.isbl", SearchOption.TopDirectoryOnly).ToList();
+        }
+
+        public void SaveToFolder(string folderPath)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using FAA.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,12 +60,87 @@ namespace FAA.WizardTools.Types
 
         public override void LoadFromFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            objectName = WSConstants.Objects.StepList;
+            objectEnding = WSConstants.Markup.End;
+
+            string stepsFolder = Path.Combine(folderPath, stepsFolderName);
+            string stepsOrderFilePath = Path.Combine(stepsFolder, wizardStepsOrderFileName);
+
+            List<string> folderList = Directory.GetDirectories(stepsFolder).ToList();
+
+            List<string> stepsOrder = File.ReadAllLines(stepsOrderFilePath).ToList();
+
+            Dictionary<string, WizardStep> namedSteps = new Dictionary<string, WizardStep>();
+            // Загрузить шаги из папки
+            foreach (var fPath in folderList)
+            {
+                string newStepName = Path.GetDirectoryName(fPath);
+                WizardStep createdStep = new WizardStep();
+                createdStep.LoadFromFolder(fPath);
+                namedSteps.Add(newStepName, createdStep);
+            }
+
+            // 1. Искать по новому имени затем по старому (для переименованных)
+            WizardStep step; string dictName;
+            foreach (string stepName in stepsOrder)
+            {
+                dictName = stepName;
+                if (!namedSteps.TryGetValue(stepName, out step))
+                {
+                    // Не лучшая идея одновременно переименовать и сделать копию, возьмется полуслучайно, на свой страх и риск кароч
+                    var stepd = namedSteps.Where(p => p.Value.Name.DecodedValue == stepName).FirstOrDefault();
+                    dictName = stepd.Key;
+                    step = stepd.Value;
+                }
+                if (step != null)
+                {
+                    step.Name.DecodedValue = dictName;
+                    stepList.Add(step);
+                    namedSteps.Remove(dictName);
+                }
+            }
+
+            // 2. Второй заход, ищет по старому имени для того чтобы вставить параметры в порядке хоть немного похожем на первоначальный
+            foreach (string stepName in stepsOrder)
+            {
+                List<string> remStepNames = new List<string>();
+                foreach (var stepd in namedSteps.Where(p => p.Value.Name.DecodedValue == stepName))
+                {
+                    step = stepd.Value;
+                    dictName = stepd.Key;
+                    step.Name.DecodedValue = dictName;
+                    stepList.Add(step);
+                    remStepNames.Add(dictName);
+                }
+                foreach (string dn in remStepNames)
+                {
+                    namedSteps.Remove(dn);
+                }
+
+            }
+
+            // 3. Добавить оставшиеся (ну совсем новые) параметры в самый конец
+            foreach (var stepd in namedSteps)
+            {
+                step = stepd.Value;
+                dictName = stepd.Key;
+                step.Name.DecodedValue = dictName;
+                stepList.Add(step);
+            }
         }
 
         public override void SaveToFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            string stepsFolder = Path.Combine(folderPath, stepsFolderName);
+            Directory.CreateDirectory(stepsFolder);
+
+            string stepsOrderFilePath = Path.Combine(stepsFolder, wizardStepsOrderFileName);
+            File.WriteAllLines(stepsOrderFilePath, stepList.Select(p => p.Name.DecodedValue).ToList());
+
+            foreach (var step in stepList)
+            {
+                step.SaveToFolder(stepsFolder);
+            }
         }
     }
 }

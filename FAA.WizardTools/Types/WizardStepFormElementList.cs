@@ -1,6 +1,7 @@
 ﻿using FAA.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,8 @@ namespace FAA.WizardTools.Types
 {
     public class WizardStepFormElementList : AWizardObject
     {
+        private const string stepFormFileName = "StepForm.dwc";
+
         private List<WizardStepFormElement> formElementsList;
 
         public WizardStepFormElementList()
@@ -45,12 +48,14 @@ namespace FAA.WizardTools.Types
 
         public override void LoadFromFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            string cardFilePath = Path.Combine(folderPath, stepFormFileName);
+            this.LoadFromDataList(File.ReadAllLines(cardFilePath).ToList());
         }
 
         public override void SaveToFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            string cardFilePath = Path.Combine(folderPath, stepFormFileName);
+            File.WriteAllLines(cardFilePath, RawData);
         }
     }
 }
