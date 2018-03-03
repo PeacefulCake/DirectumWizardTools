@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardToolsOverpowered", "WizardToolsOverpowered\WizardToolsOverpowered.csproj", "{5478E07D-83A9-470B-B75F-6AEF590A146F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAA.WizardEncoding", "FAA.WizardEncoding\FAA.WizardEncoding.csproj", "{0FA67E40-5498-4C1E-88EA-48C558EAD3E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextDecoder", "TextDecoder\TextDecoder.csproj", "{56DB0EFF-54FB-411A-BA3F-BC0719EFC995}"
@@ -17,16 +15,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAA.Utils", "FAA.Utils\FAA.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAA.WizardConsole", "FAA.WizardConsole\FAA.WizardConsole.csproj", "{01C72B5A-8D1B-4F80-844E-B5A3A16DEFDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAA.WizardEditor", "FAA.WizardEditor\FAA.WizardEditor.csproj", "{282454D5-5225-491A-83F8-E2CA19B37A83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5478E07D-83A9-470B-B75F-6AEF590A146F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5478E07D-83A9-470B-B75F-6AEF590A146F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5478E07D-83A9-470B-B75F-6AEF590A146F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5478E07D-83A9-470B-B75F-6AEF590A146F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0FA67E40-5498-4C1E-88EA-48C558EAD3E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FA67E40-5498-4C1E-88EA-48C558EAD3E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FA67E40-5498-4C1E-88EA-48C558EAD3E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{01C72B5A-8D1B-4F80-844E-B5A3A16DEFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01C72B5A-8D1B-4F80-844E-B5A3A16DEFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01C72B5A-8D1B-4F80-844E-B5A3A16DEFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{282454D5-5225-491A-83F8-E2CA19B37A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{282454D5-5225-491A-83F8-E2CA19B37A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{282454D5-5225-491A-83F8-E2CA19B37A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{282454D5-5225-491A-83F8-E2CA19B37A83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

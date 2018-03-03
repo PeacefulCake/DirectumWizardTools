@@ -12,13 +12,14 @@ namespace FAA.WizardTools.Types
     {
         private const string paramsPositionMark = "{WizardParams}";
         private const string stepsPositionMark = "{WizardSteps}";
+        private const string eventsPositionMark = "{WizardEvents}";
 
         private const string wizardCardFileName = "WizardCard.dwc";
 
         public WizardParamList Params;
         public WizardStepList Steps;
 
-        public WizardEvent[] Events; // TODO : Проверить методы работы с массивом
+        public WizardEventArray Events;
 
         public WizardString Code;
 
@@ -27,6 +28,7 @@ namespace FAA.WizardTools.Types
             Params = new WizardParamList();
             Steps = new WizardStepList();
             Code = new WizardString();
+            Events = new WizardEventArray();
         }
 
         public override void ExtractUsableData()
@@ -42,6 +44,10 @@ namespace FAA.WizardTools.Types
                     {
                         case WSConstants.Fields.Code:
                             this.Code.PowerLoad(value, workInnerData, dataIndex);
+                            break;
+                        case WSConstants.Fields.Events:
+                            this.Events.PowerLoad(value, workInnerData, dataIndex);
+                            workInnerData[dataIndex] = eventsPositionMark;
                             break;
                         default:
                             break;
@@ -78,6 +84,11 @@ namespace FAA.WizardTools.Types
             int paramsIndex = innerData.IndexOf(paramsPositionMark);
             innerData.RemoveAt(paramsIndex);
             innerData.InsertRange(paramsIndex, Params.RawData);
+
+            int eventsIndex = innerData.IndexOf(eventsPositionMark);
+            innerData.RemoveAt(eventsIndex);
+            innerData.InsertRange(eventsIndex, Events.RawData);
+            innerData[eventsIndex] = string.Format("Events = {0}", innerData[eventsIndex]);
         }
 
         public override void LoadFromFolder(string folderPath)
@@ -99,7 +110,6 @@ namespace FAA.WizardTools.Types
             if(Directory.Exists(wizardFolder)) Directory.Delete(wizardFolder, true);
             Directory.CreateDirectory(wizardFolder);
 
-            // TODO: xml с реквизитами, когда-нибудь... а надо ли?
             string cardFilePath = Path.Combine(wizardFolder, wizardCardFileName);
             File.WriteAllLines(cardFilePath, workInnerData);
 

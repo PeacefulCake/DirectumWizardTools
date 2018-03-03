@@ -72,12 +72,12 @@ namespace FAA.WizardTools.Types
                 int nameIndex = innerData.IndexOf(stepNameMark);
                 innerData.RemoveAt(nameIndex);
                 innerData.InsertRange(nameIndex, Name.RawData);
-                innerData[nameIndex] = string.Format("StepName = {0}", innerData[nameIndex]);
+                innerData[nameIndex] = string.Format("{0} = {1}", WSConstants.Fields.StepName, innerData[nameIndex]);
 
                 int titleIndex = innerData.IndexOf(stepTitleMark);
                 innerData.RemoveAt(titleIndex);
                 innerData.InsertRange(titleIndex, Title.RawData);
-                innerData[titleIndex] = string.Format("Title = {0}", innerData[titleIndex]);
+                innerData[titleIndex] = string.Format("{0} = {1}", WSConstants.Fields.Title, innerData[titleIndex]);
 
                 int formElementsIndex = innerData.IndexOf(formElementsMark);
                 innerData.RemoveAt(formElementsIndex);

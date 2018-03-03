@@ -69,8 +69,6 @@ namespace FAA.Utils
         public static List<string> PickArray(List<string> sList, int startIndex)
         {
             var result = PickItem(sList, startIndex, WSConstants.Markup.End + WSConstants.Markup.ArrayEnd);
-            // Грохнуть певую строчку, уйдет и крышка и ненужное имя массива
-            result.RemoveAt(startIndex);
             // Из последней строки убрать последний символ - закрывающую крышку
             string lastStr = result[result.Count - 1];
             result[result.Count - 1] = lastStr.Substring(0, lastStr.Length - 1);

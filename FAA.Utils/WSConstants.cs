@@ -38,6 +38,9 @@ namespace FAA.Utils
             public const string Title = "Title";
             public const string Events = "Events";
 
+            public const string ISBLText = "ISBLText";
+            public const string EventType = "EventType";
+
             public const string ParamName = "ParamName";
             public const string StepName = "StepName";
 
