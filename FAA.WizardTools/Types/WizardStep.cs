@@ -130,7 +130,7 @@ namespace FAA.WizardTools.Types
             string cardFilePath = Path.Combine(folderPath, stepCardFileName);
             this.LoadFromDataList(File.ReadAllLines(cardFilePath).ToList());
 
-            Events.SaveToFolder(folderPath);
+            Events.LoadFromFolder(folderPath);
             ActionList.LoadFromFolder(folderPath);
 
             if (innerData.Contains(formElementsMark))
@@ -144,7 +144,7 @@ namespace FAA.WizardTools.Types
         {
             // Вот так вот нахимичить для сохранения чисто карточки
             // TODO : Тянет на метод подготовки данных для сохранения, если браться за рефакторинг
-            List<string>  savedData = new List<string>(workInnerData);
+            List<string> savedData = new List<string>(workInnerData);
 
             int nameIndex = savedData.IndexOf(stepNameMark);
             savedData.RemoveAt(nameIndex);
@@ -155,6 +155,8 @@ namespace FAA.WizardTools.Types
             savedData.RemoveAt(titleIndex);
             savedData.InsertRange(titleIndex, Title.RawData);
             savedData[titleIndex] = string.Format("{0} = {1}", WSConstants.Fields.Title, savedData[titleIndex]);
+
+            savedData = savedData.Select(id => id.AddIndents(innerIndents)).ToList();
 
             savedData.Insert(0, objectName);
             savedData.Add(objectEnding);

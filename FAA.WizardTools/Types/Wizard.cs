@@ -95,7 +95,8 @@ namespace FAA.WizardTools.Types
         {
             objectName = WSConstants.Objects.Wizard;
             objectEnding = WSConstants.Markup.End;
-            //Code.DecodedValue = Path.GetDirectoryName(folderPath);
+            // var di = new DirectoryInfo(fPath);
+            // Code.DecodedValue = di.Name;
 
             string cardFilePath = Path.Combine(folderPath, wizardCardFileName);
             workInnerData = File.ReadAllLines(cardFilePath).ToList();
@@ -103,6 +104,8 @@ namespace FAA.WizardTools.Types
             Params.LoadFromFolder(folderPath);
             Steps.LoadFromFolder(folderPath);
             Events.LoadFromFolder(folderPath);
+
+            loaded = true;
         }
 
         public override void SaveToFolder(string folderPath)
@@ -116,7 +119,7 @@ namespace FAA.WizardTools.Types
 
             Params.SaveToFolder(wizardFolder);
             Steps.SaveToFolder(wizardFolder);
-            Events.SaveToFolder(folderPath);
+            Events.SaveToFolder(wizardFolder);
         }
     }
 }

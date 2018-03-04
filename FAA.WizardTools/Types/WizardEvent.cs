@@ -13,8 +13,8 @@ namespace FAA.WizardTools.Types
         private const string eventISBLCodeMark = "{EventISBLCode}";
         private const string eventTypeMark = "{EventType}";
 
-        string EventType;
-        WizardString ISBLText;
+        public string EventType;
+        public WizardString ISBLText;
 
         public WizardEvent()
         {
@@ -67,12 +67,14 @@ namespace FAA.WizardTools.Types
 
         public override void LoadFromFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            string isblCodeFilePath = Path.Combine(folderPath, EventType + ".isbl");
+            this.ISBLText.DecodedValue = File.ReadAllText(isblCodeFilePath);
         }
 
         public override void SaveToFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            string isblCodeFilePath = Path.Combine(folderPath, EventType + ".isbl");
+            File.WriteAllText(isblCodeFilePath, this.ISBLText.DecodedValue);
         }
     }
 }

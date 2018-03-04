@@ -9,6 +9,8 @@ namespace FAA.WizardTools.Types
 {
     public class WizardActionList : AWizardObject
     {
+        private const string actionsFolderName = "Actions";
+
         private List<WizardAction> actions;
 
         public WizardActionList()
@@ -40,12 +42,28 @@ namespace FAA.WizardTools.Types
 
         public override void LoadFromFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            this.objectName = WSConstants.Objects.ActionList;
+            this.objectEnding = WSConstants.Markup.End;
+
+            for (int i = 0; i < 4; i++)
+            {
+                WizardAction action = new WizardAction();
+                action.ActionType = i.ToString();
+                action.LoadFromFolder(folderPath);
+                if (action.Events != null)
+                {
+                    actions.Add(action);
+                }
+            }
+
         }
 
         public override void SaveToFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            foreach (var action in actions)
+            {
+                action.SaveToFolder(folderPath);
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using FAA.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,9 +10,41 @@ namespace FAA.WizardTools.Types
 {
     public class WizardAction : AWizardObject
     {
-        private const string eventsPositionMark = "{StepEvents}";
+        private const string eventsPositionMark = "{ActionEvents}";
 
-        public string ActionType; // 0 - Previous, 1 - Next, 2 - Cancel, 3 - Finish
+        private const string actionCardFileName = "ActionCard.dwc";
+
+        public string ActionType
+        {
+            get
+            {
+                return actionType;
+            }
+            set
+            {
+                actionType = value;
+                switch (actionType)
+                {
+                    case "0":
+                        ActionTypeName = "Previous";
+                        break;
+                    case "1":
+                        ActionTypeName = "Next";
+                        break;
+                    case "2":
+                        ActionTypeName = "Cancel";
+                        break;
+                    case "3":
+                        ActionTypeName = "Finish";
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        private string actionType;
+        public string ActionTypeName;
+
         public WizardEventArray Events;
 
         public WizardAction()
@@ -59,12 +92,32 @@ namespace FAA.WizardTools.Types
 
         public override void LoadFromFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            this.objectName = WSConstants.Objects.Action;
+            this.objectEnding = WSConstants.Markup.End;
+
+            string actionFolder = Path.Combine(folderPath, ActionTypeName);
+            if (Directory.Exists(actionFolder))
+            {
+                string actionCardFilePath = Path.Combine(actionFolder, actionCardFileName);
+                workInnerData = File.ReadAllLines(actionCardFilePath).ToList();
+
+                Events.LoadFromFolder(actionFolder);
+            }
+            else
+            {
+                Events = null;
+            }
         }
 
         public override void SaveToFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            string actionFolder = Path.Combine(folderPath, ActionTypeName);
+            Directory.CreateDirectory(actionFolder);
+
+            string actionCardFilePath = Path.Combine(actionFolder, actionCardFileName);
+            File.WriteAllLines(actionCardFilePath, workInnerData);
+
+            Events.SaveToFolder(actionFolder);
         }
     }
 }

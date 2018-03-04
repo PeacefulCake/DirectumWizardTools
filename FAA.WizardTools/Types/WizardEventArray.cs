@@ -11,12 +11,22 @@ namespace FAA.WizardTools.Types
     public class WizardEventArray
     {
         private List<WizardEvent> events;
+        private List<string> eventsOrder;
 
         private const int innerIndents = 2;
 
         public WizardEventArray()
         {
             this.events = new List<WizardEvent>();
+            eventsOrder = new List<string>();
+            eventsOrder.Add("wetWizardBeforeSelection");
+            eventsOrder.Add("wetWizardStart");
+            eventsOrder.Add("wetWizardFinish");
+
+            eventsOrder.Add("wetStepStart");
+            eventsOrder.Add("wetStepFinish");
+
+            eventsOrder.Add("wetActionExecute");
         }
 
         public List<string> RawData
@@ -64,14 +74,34 @@ namespace FAA.WizardTools.Types
 
         public void LoadFromFolder(string folderPath)
         {
-            throw new NotImplementedException();
-            // TODO : тут есть контроль порядка, если что-то нашлось в количестве больше одного
             List<string> fileList = Directory.GetFiles(folderPath, "*.isbl", SearchOption.TopDirectoryOnly).ToList();
+            Dictionary<string, WizardEvent> namedEvents = new Dictionary<string, WizardEvent>();
+
+            foreach (var file in fileList)
+            {
+                string eventType = Path.GetFileNameWithoutExtension(file);
+                WizardEvent wEvent = new WizardEvent();
+                wEvent.EventType = eventType;
+                wEvent.LoadFromFolder(folderPath);
+                namedEvents.Add(eventType, wEvent);
+            }
+
+            WizardEvent wizardEvent;
+            foreach (string eventType in eventsOrder)
+            {
+                if (namedEvents.TryGetValue(eventType, out wizardEvent))
+                {
+                    events.Add(wizardEvent);
+                }
+            }
         }
 
         public void SaveToFolder(string folderPath)
         {
-            throw new NotImplementedException();
+            foreach (var wEvent in events)
+            {
+                wEvent.SaveToFolder(folderPath);
+            }
         }
     }
 }

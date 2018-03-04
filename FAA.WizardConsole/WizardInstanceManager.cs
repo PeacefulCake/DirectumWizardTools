@@ -35,7 +35,21 @@ namespace FAA.WizardConsole
                 return false;
 
             wizard.LoadFromDataList(data);
-            WizardInstanceManager.ChangesSaved = true;
+            ChangesSaved = true;
+            return true;
+        }
+
+        public static bool LoadFromFolder(string folderPath)
+        {
+            wizard.LoadFromFolder(folderPath);
+            ChangesSaved = true;
+            return true;
+        }
+
+        public static bool SaveToFolder(string folderPath)
+        {
+            wizard.SaveToFolder(folderPath);
+            ChangesSaved = true;
             return true;
         }
     }

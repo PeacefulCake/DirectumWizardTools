@@ -74,7 +74,8 @@ namespace FAA.WizardTools.Types
             // Загрузить шаги из папки
             foreach (var fPath in folderList)
             {
-                string newStepName = Path.GetDirectoryName(fPath);
+                var di = new DirectoryInfo(fPath);
+                string newStepName = di.Name;
                 WizardStep createdStep = new WizardStep();
                 createdStep.LoadFromFolder(fPath);
                 namedSteps.Add(newStepName, createdStep);

@@ -15,16 +15,16 @@ namespace Test
         {
             string wholeWizard = File.ReadAllText(@"D:\DevProjects\WorkFriendly\WizardTools\Test\TestWizardData\Wizard22.txt");
 
-            Wizard w = new Wizard();
+            //Wizard w = new Wizard();
 
-            w.LoadFromDataList(StringUtils.GetListFromText(wholeWizard));
-
+            //w.LoadFromDataList(StringUtils.GetListFromText(wholeWizard));
+            //List<string> fileList = Directory.GetFiles(@"D:\DevProjects\WorkFriendly\WizardTools\Test\TestWizardData\SWDWTD", "*.isbl", SearchOption.TopDirectoryOnly).ToList();
 
             //w.SaveToFolder(@"D:\DevProjects\WorkFriendly\WizardTools\Test\TestWizardData\Wizard22\");
 
-            WizardParamList wpl = new WizardParamList();
+            /*WizardParamList wpl = new WizardParamList();
             wpl.LoadFromFolder(@"D:\DevProjects\WorkFriendly\WizardTools\Test\TestWizardData\Wizard22\SWDWTD\");
-            var v = wpl.ExportToString();
+            var v = wpl.ExportToString();*/
             //Console.Write(w.ExportToString());
 
 
