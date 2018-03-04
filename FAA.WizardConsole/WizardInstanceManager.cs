@@ -30,6 +30,7 @@ namespace FAA.WizardConsole
 
         public static bool LoadFromString(string wizardData)
         {
+            wizard = new Wizard();
             var data = StringUtils.GetListFromText(wizardData);
             if (data.First() != WSConstants.Objects.Wizard || data.Last() != WSConstants.Markup.End)
                 return false;
@@ -41,6 +42,7 @@ namespace FAA.WizardConsole
 
         public static bool LoadFromFolder(string folderPath)
         {
+            wizard = new Wizard();
             wizard.LoadFromFolder(folderPath);
             ChangesSaved = true;
             return true;
