@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FAA.WizardEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Wizard Editor" Height="350" Width="525">
     <Grid>
-        
+        <Menu HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="517">
+            <MenuItem Header="Файл" Height="25" Width="100">
+                <Label Content="Открыть" />
+                <Separator HorizontalAlignment="Left" Height="1" Width="142"/>
+                <MenuItem x:Name="Menu_OpenFromText" Header="Из текста" HorizontalAlignment="Left" Height="25" Width="140" Click="Menu_OpenFromText_Click"/>
+                <MenuItem x:Name="Menu_OpenFromFolder" Header="Из папки" HorizontalAlignment="Left" Height="25" Width="140" Click="Menu_OpenFromFolder_Click"/>
+                <Separator HorizontalAlignment="Left" Height="5" Width="142"/>
+                <Label Content="Сохранить" />
+                <Separator HorizontalAlignment="Left" Height="1" Width="142"/>
+                <MenuItem x:Name="Menu_SaveAsText" Header="Как текст" HorizontalAlignment="Left" Height="25" Width="140" Click="Menu_SaveAsText_Click"/>
+                <MenuItem x:Name="Menu_SaveAsFolder" Header="Как папку" HorizontalAlignment="Left" Height="25" Width="140" Click="Menu_SaveAsFolder_Click"/>
+
+            </MenuItem>
+            <MenuItem Header="ХЗ Че здесь будет" Height="25" Width="150"/>
+        </Menu>
+
     </Grid>
 </Window>
