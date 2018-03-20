@@ -61,6 +61,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="StepCopyDialog.xaml.cs">
+      <DependentUpon>StepCopyDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TextEdit.xaml.cs">
       <DependentUpon>TextEdit.xaml</DependentUpon>
     </Compile>
@@ -76,6 +79,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StepCopyDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TextEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,6 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\wrench.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\content-copy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
