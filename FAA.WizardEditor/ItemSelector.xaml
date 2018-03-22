@@ -1,0 +1,26 @@
+﻿<Window x:Class="FAA.WizardEditor.ItemSelector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FAA.WizardEditor"
+        mc:Ignorable="d"
+        Title="Копируемый элемент" Height="296" Width="456" Icon="Icons/playlist-plus.png">
+    <Grid>
+        <ComboBox x:Name="ComboBox_ItemsList" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="26,30,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_ItemsList_SelectionChanged">
+            <!--<ComboBoxItem Content="Param 1" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="OrStep 1" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Or anythign else 1" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Param 2" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="OrStep 2" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Or anythign else 2" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Param 2" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="OrStep 2" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Or anythign else 2" HorizontalAlignment="Left" Width="118"/>-->
+        </ComboBox>
+        <TextBox x:Name="TextBox_SelectedItem" HorizontalAlignment="Left" Height="23" Margin="270,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="192,74,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="315,74,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

@@ -61,12 +61,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ItemSelector.xaml.cs">
+      <DependentUpon>ItemSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StepCopyDialog.xaml.cs">
       <DependentUpon>StepCopyDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="TextEdit.xaml.cs">
       <DependentUpon>TextEdit.xaml</DependentUpon>
     </Compile>
+    <Page Include="ItemSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -119,10 +126,6 @@
     <Resource Include="Icons\pencil.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FAA.WizardConsole\FAA.WizardConsole.csproj">
-      <Project>{01c72b5a-8d1b-4f80-844e-b5a3a16defdb}</Project>
-      <Name>FAA.WizardConsole</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FAA.WizardTools\FAA.WizardTools.csproj">
       <Project>{78ff54a9-719d-4c5d-9af1-0a6723c5869a}</Project>
       <Name>FAA.WizardTools</Name>
@@ -133,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\content-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\playlist-plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

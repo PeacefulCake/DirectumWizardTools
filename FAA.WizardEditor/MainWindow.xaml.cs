@@ -1,5 +1,4 @@
-﻿using FAA.WizardConsole;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,30 +31,30 @@ namespace FAA.WizardEditor
             TextEdit te = new TextEdit();
             te.OnOkButton = (string text) =>
             {
-                WizardInstanceManager.LoadFromString(text);
+               // WizardInstanceManager.LoadFromString(text);
             };
             te.ShowDialog();
         }
 
         private void Menu_SaveAsText_Click(object sender, RoutedEventArgs e)
         {
-            if (!WizardInstanceManager.Loaded)
+            /*if (!WizardInstanceManager.Loaded)
             {
                 return;
             }
             TextEdit te = new TextEdit();
             te.TextField.Text = WizardInstanceManager.GetWizard.ExportToString();
-            te.ShowDialog();
+            te.ShowDialog();*/
         }
 
         private void Menu_SaveAsFolder_Click(object sender, RoutedEventArgs e)
         {
-            if (!WizardInstanceManager.Loaded)
+            /*if (!WizardInstanceManager.Loaded)
             {
                 return;
-            }
+            }*/
 
-            using (var fbd = new FolderBrowserDialog())
+            /*using (var fbd = new FolderBrowserDialog())
             {
                 DialogResult result = fbd.ShowDialog();
 
@@ -64,7 +63,7 @@ namespace FAA.WizardEditor
                     WizardInstanceManager.SaveToFolder(fbd.SelectedPath);
                     System.Windows.MessageBox.Show("Я сделяль!");
                 }
-            }
+            }*/
         }
 
         private void Menu_OpenFromFolder_Click(object sender, RoutedEventArgs e)
@@ -75,10 +74,19 @@ namespace FAA.WizardEditor
 
                 if (result == System.Windows.Forms.DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
-                    WizardInstanceManager.LoadFromFolder(fbd.SelectedPath);
+                    //WizardInstanceManager.LoadFromFolder(fbd.SelectedPath);
                     System.Windows.MessageBox.Show("Я сделяль!");
                 }
             }
+        }
+
+        private void Menu_ParamCopy_Click(object sender, RoutedEventArgs e)
+        {
+            ItemSelector selector = new ItemSelector();
+
+            //selector.
+
+            selector.ShowDialog();
         }
     }
 }

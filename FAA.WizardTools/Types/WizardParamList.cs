@@ -15,6 +15,14 @@ namespace FAA.WizardTools.Types
 
         private List<WizardParam> paramList;
 
+        public List<string> ParamNames
+        {
+            get
+            {
+                return paramList.Select(s => s.Name.DecodedValue).ToList();
+            }
+        }
+
         public WizardParamList()
         {
             paramList = new List<WizardParam>();

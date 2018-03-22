@@ -28,15 +28,10 @@ namespace FAA.WizardEditor
 
         public StepCopyDialog()
         {
-            InitializeComponent();
             ParamPairs = new List<ParamNamePair>();
-
-            Loaded += Main_Loaded;
-        }
-
-        private void Main_Loaded(object sender, RoutedEventArgs e)
-        {
-            ParamNamePair p = new ParamNamePair();
+            InitializeComponent();
+            
+            /*ParamNamePair p = new ParamNamePair();
             p.OldName = "OldParamName";
             p.NewName = "NewParamName";
             ParamPairs.Add(p);
@@ -49,33 +44,21 @@ namespace FAA.WizardEditor
             p = new ParamNamePair();
             p.OldName = "ThirdParamName";
             p.NewName = "ThirdParamName";
-            ParamPairs.Add(p);
+            ParamPairs.Add(p);*/
 
-            DataGrid_ParamNames.ItemsSource = new[]
-            {
-                new ParamNamePair()
-                {
-                    OldName = "OldParamName1",
-                    NewName = "NewParamName1"
-                },
-                new ParamNamePair()
-                {
-                    OldName = "OldParamName2",
-                    NewName = "NewParamName2"
-                },
-                new ParamNamePair()
-                {
-                    OldName = "OldParamName3",
-                    NewName = "NewParamName3"
-                }
-            };
+            Loaded += Main_Loaded;
+        }
 
-            //DataGrid_ParamNames.ItemsSource = ParamPairs;
+        private void Main_Loaded(object sender, RoutedEventArgs e)
+        {
+            //DataGrid_ParamNames.AutoGenerateColumns = true;
+            DataGrid_ParamNames.ItemsSource = ParamPairs;
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
             ParamPairs.Add(new ParamNamePair() { OldName = "AddedName", NewName = "NewAddedName" });
+            // TODO : Имея список всех параметров можно сверить на дублирование
             
         }
     }

@@ -15,6 +15,14 @@ namespace FAA.WizardTools.Types
 
         private List<WizardStep> stepList;
 
+        public List<string >StepNames
+        {
+            get
+            {
+                return stepList.Select(s => s.Name.DecodedValue).ToList();
+            }
+        }
+
         public WizardStepList()
         {
             stepList = new List<WizardStep>();

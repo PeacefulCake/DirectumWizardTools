@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace FAA.WizardTools.Editor
 {
-    class MessageHandler
+    public class MessageHandler
     {
+        private Action<string> sendMessage;
+
+        public MessageHandler(Action<string> messageHandler)
+        {
+            this.sendMessage = messageHandler;
+        }
+
+        public void SendMessage(string message)
+        {
+            sendMessage(message);
+        }
     }
 }

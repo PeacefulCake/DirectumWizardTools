@@ -19,6 +19,16 @@
                     <MenuItem x:Name="Menu_SaveAsFolder" Header="Как папку" HorizontalAlignment="Left" Height="25" Width="140" Click="Menu_SaveAsFolder_Click"/>
                 </MenuItem>
             </MenuItem>
+            <MenuItem Header="Правка" Height="25" Width="175">
+                <MenuItem Header="Шаги" Height="25" HorizontalAlignment="Left" Width="144">
+                    <MenuItem x:Name="Menu_StepCopy" Header="Копия" HorizontalAlignment="Left" Height="25" Width="140"/>
+                    <MenuItem x:Name="Menu_StepDuplicateParams" Header="Дюпарам" HorizontalAlignment="Left" Height="25" Width="140"/>
+                </MenuItem>
+                <MenuItem Header="Параметры" HorizontalAlignment="Left" Height="25" Width="144">
+                    <MenuItem x:Name="Menu_ParamCopy" Header="Копия" HorizontalAlignment="Left" Height="25" Width="140" Click="Menu_ParamCopy_Click"/>
+                    <MenuItem x:Name="Menu_ParamDoSomething" Header="Что-то" HorizontalAlignment="Left" Height="25" Width="140"/>
+                </MenuItem>
+            </MenuItem>
         </Menu>
         <TextBox x:Name="LogBox" Margin="10,30,10,10" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Auto" IsEnabled="False"/>
     </Grid>
