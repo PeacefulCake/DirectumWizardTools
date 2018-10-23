@@ -26,18 +26,23 @@ namespace FAA.WizardTools.Types
                 switch (actionType)
                 {
                     case "0":
+                    case "ikhInformation":
                         ActionTypeName = "Previous";
                         break;
                     case "1":
+                    case "ikhWarning":
                         ActionTypeName = "Next";
                         break;
                     case "2":
+                    case "ikhError":
                         ActionTypeName = "Cancel";
                         break;
                     case "3":
+                    case "ikhNoIcon":
                         ActionTypeName = "Finish";
                         break;
                     default:
+                        //ActionTypeName = actionType; // !! Иногда прилетает глючный текст МД
                         break;
                 }
             }

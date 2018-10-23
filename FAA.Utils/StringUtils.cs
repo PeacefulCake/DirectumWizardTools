@@ -85,8 +85,17 @@ namespace FAA.Utils
         {
             if(line.IndexOf(WSConstants.Markup.ValueSeparator) > -1)
             {
-                name = line.Split(WSConstants.Markup.ValueSeparatorArr, StringSplitOptions.None).First();
-                value = line.Split(WSConstants.Markup.ValueSeparatorArr, StringSplitOptions.None).Last();
+                var splittedString = line.Split(WSConstants.Markup.ValueSeparatorArr, StringSplitOptions.None);
+                name = splittedString.First();
+                if (splittedString.Count() == 2)
+                {
+                    value = splittedString.Last();
+                }
+                else
+                {
+                    value = line.Substring(name.Length + WSConstants.Markup.ValueSeparator.Length);
+                }
+                
                 return true;
             }
             else
